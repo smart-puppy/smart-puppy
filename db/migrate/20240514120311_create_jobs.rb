@@ -7,7 +7,7 @@ class CreateJobs < ActiveRecord::Migration[7.1]
       t.text :requirements
       t.string :location
       t.references :user, null: false, foreign_key: true
-      t.references :skill, null: false, foreign_key: true
+
 
       t.timestamps
     end
