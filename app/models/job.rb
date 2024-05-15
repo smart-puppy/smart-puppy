@@ -1,6 +1,7 @@
 class Job < ApplicationRecord
   belongs_to :user
-  belongs_to :skill
+  has_many :job_skills
+  has_many :skills, through: :job_skills
 
   validates :title, presence: true
   validates :description, presence: true

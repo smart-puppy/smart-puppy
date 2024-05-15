@@ -15,7 +15,15 @@ class JobsController < ApplicationController
   end
 
   def create
-    @job = current_user.jobs.build(job_params)
+    @job = Job.new(job_params)
+    @job.user = current_user
+    if @job.save
+      redirect_to job_path(@job)
+    else
+      render :new, status: :unprocessable_entity
+    end
+  end
+
 
     if @job.save
       redirect_to @job, notice: 'Job was successfully created.'
@@ -26,7 +34,7 @@ class JobsController < ApplicationController
 
   def update
     if @job.update(job_params)
-      redirect_to @job, notice: 'Job was successfully updated.'
+      redirect_to job_path(@job), notice: 'Job was successfully updated.'
     else
       render :edit
     end
