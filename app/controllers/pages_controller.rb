@@ -3,4 +3,11 @@ class PagesController < ApplicationController
 
   def home
   end
+
+  def dashboard
+    @user = current_user
+    @jobs = @user.jobs if @user
+    @resumes = @user.resumes if @user
+  end
+
 end
