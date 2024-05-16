@@ -10,6 +10,7 @@ require 'faker'
 #   end
 puts "Cleaning up the database..."
 
+UserSkill.destroy_all
 JobSkill.destroy_all
 Job.destroy_all
 Skill.destroy_all
@@ -53,7 +54,7 @@ end
 10.times do |i|
   Job.create!(
     title: Faker::Job.title,
-    description: Faker::Lorem.paragraph(sentence_count: 4),
+    description: Faker::Lorem.paragraph(sentence_count: 30),
     company_name: Faker::Company.name,
     requirements: Faker::Job.key_skill,
     location: Faker::Address.city,

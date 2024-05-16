@@ -1,5 +1,5 @@
 class JobsController < ApplicationController
-  before_action :authenticate_user!
+  skip_before_action :authenticate_user!, only: [ :index, :show ]
 
   # Is the below line correct? If not, what should it be?
   before_action :set_job, only: [:show, :edit, :update, :destroy]
