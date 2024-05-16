@@ -79,9 +79,10 @@ ActiveRecord::Schema[7.1].define(version: 2024_05_15_161119) do
   end
 
   create_table "skills", force: :cascade do |t|
-    t.string "name"
+    t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_skills_on_user_id"
   end
 
   create_table "user_skills", force: :cascade do |t|
@@ -128,6 +129,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_05_15_161119) do
   add_foreign_key "job_skills", "skills"
   add_foreign_key "jobs", "users"
   add_foreign_key "resumes", "users"
+  add_foreign_key "skills", "users"
   add_foreign_key "user_skills", "skills"
   add_foreign_key "user_skills", "users"
 end
