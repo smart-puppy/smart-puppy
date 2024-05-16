@@ -1,4 +1,7 @@
 class JobsController < ApplicationController
+  before_action :authenticate_user!
+
+  # Is the below line correct? If not, what should it be?
   before_action :set_job, only: [:show, :edit, :update, :destroy]
   def index
     @jobs = Job.all
@@ -18,17 +21,9 @@ class JobsController < ApplicationController
     @job = Job.new(job_params)
     @job.user = current_user
     if @job.save
-      redirect_to job_path(@job)
+      redirect_to job_path(@job), notice: 'Job was successfully created.'
     else
       render :new, status: :unprocessable_entity
-    end
-  end
-
-
-    if @job.save
-      redirect_to @job, notice: 'Job was successfully created.'
-    else
-      render :new
     end
   end
 
