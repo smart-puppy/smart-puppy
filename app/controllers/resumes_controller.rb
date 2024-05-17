@@ -21,4 +21,4 @@ class ResumesController < ApplicationController
   end
 
 end
-end
+
