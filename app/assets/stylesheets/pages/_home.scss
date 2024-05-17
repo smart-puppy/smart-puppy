@@ -1,1 +1,159 @@
-// Specific CSS for your home-page
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+
+  max-width: 100%;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  max-width: 100%;
+}
+
+h2 {
+  text-align: center;
+}
+
+.banner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white;
+  color: rgba(17, 113, 162, 255);
+  padding: 100px;
+  max-width: 100%;
+}
+
+.banner-content {
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
+.banner-content h1 {
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+.banner-content h2 {
+  font-size: 24px;
+  margin-bottom: 40px;
+}
+
+.banner-image {
+  max-width: 40%;
+}
+
+.banner-image img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Styles for carousel section */
+.carousel-item {
+  padding: 20px;
+}
+
+.carousel-card {
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 20px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.carousel-card:hover {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Styles for carousel*/
+.carousel-control-prev,
+.carousel-control-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1;
+  color: rgba(17, 113, 162, 255);
+}
+
+.carousel-control-prev {
+  left: 0;
+  color: rgba(17, 113, 162, 255);
+}
+
+.carousel-control-next {
+  right: 0;
+  color: rgba(17, 113, 162, 255);
+}
+
+.carousel-control-text {
+  display: none;
+}
+
+.rest-easy-section {
+  padding: 84px 129px 61px 130px;
+  opacity: 0;
+  max-width: 100%;
+}
+
+.rest-easy-section h1 {
+  text-align: center;
+}
+
+.rest-easy-section .box {
+  padding: 47px 191px;
+  border-radius: 15px;
+  border: 2px solid transparent;
+}
+
+.rest-easy-section .box p {
+  text-align: center;
+}
+
+
+
+/* ASK QUESTION SECTION */
+.accordion-button{
+  background-color: #082945;
+
+
+}
+
+.accordion-button:hover {
+  background-color: #d6e4f0; /* Light blue background on hover */
+}
+
+.accordion-button.active {
+  background-color: #b3c6d4; /* Light blue background when active */
+}
+
+
+/* Styles for footer */
+footer {
+  background-color: rgba(17, 113, 162, 255);
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
+
+.social-icons {
+  margin-bottom: 20px;
+}
+
+.social-icons a {
+  color: white;
+  text-decoration: none;
+  margin: 0 10px;
+}
+
+.links a {
+  color: white;
+  text-decoration: none;
+  margin: 0 10px;
+}
+
+.copyright {
+  font-size: 14px;
+}

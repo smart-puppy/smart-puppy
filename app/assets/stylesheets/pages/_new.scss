@@ -1,0 +1,122 @@
+
+body, html {
+  margin-top: 5%;
+  padding: 0;
+  height: 100%;
+  font-family: Arial, sans-serif;
+}
+
+.container {
+  display: flex;
+  height: 100%;
+}
+
+.left-side {
+  flex: 1;
+  background-color: #f0f0f0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.right-side {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+}
+
+.divider {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 3px;
+  background-color: black;
+  height: 800px;
+}
+
+.form-container {
+  max-width: 400px;
+  padding: 20px;
+
+  border-radius: 5px;
+}
+
+.form-container h2 {
+  text-align: center;
+}
+
+label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+input[type="text"], input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+button {
+  width: 100%;
+  padding: 10px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+.social-buttons {
+  margin-top: 20px;
+}
+
+.social-buttons button {
+  margin-right: 10px;
+}
+
+.user-type {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.user-type input[type="checkbox"] {
+  display: none;
+}
+
+.user-type label {
+  display: inline-block;
+  width: 49%;
+  text-align: center;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.user-type input[type="checkbox"]:checked + label {
+  background-color: #007bff;
+  color: white;
+}
+
+ .already-sign {
+  text-align: center;
+}
+
+
+.log-button {
+  background-color: white;
+}

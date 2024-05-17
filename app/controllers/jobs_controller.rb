@@ -1,7 +1,21 @@
 class JobsController < ApplicationController
+  skip_before_action :authenticate_user!, only: [:index, :show]
   before_action :set_job, only: [:show, :edit, :update, :destroy]
+
   def index
-    @jobs = Job.all
+    @per_page = (params[:per_page] || 10).to_i
+    @query = params[:query]
+
+    if @query.present?
+      Rails.logger.debug "Search query: #{@query}"
+      search_query = "%#{@query.downcase}%"
+      @jobs = Job.where('LOWER(title) LIKE :query OR LOWER(company_name) LIKE :query OR LOWER(requirements) LIKE :query OR LOWER(description) LIKE :query OR LOWER(location) LIKE :query', query: search_query)
+      Rails.logger.debug "Jobs found: #{@jobs.count}"
+    else
+      @jobs = Job.all
+    end
+
+    @jobs = @jobs.paginate(page: params[:page], per_page: @per_page)
   end
 
   def show
@@ -15,18 +29,18 @@ class JobsController < ApplicationController
   end
 
   def create
-    @job = current_user.jobs.build(job_params)
-
+    @job = Job.new(job_params)
+    @job.user = current_user
     if @job.save
-      redirect_to @job, notice: 'Job was successfully created.'
+      redirect_to job_path(@job), notice: 'Job was successfully created.'
     else
-      render :new
+      render :new, status: :unprocessable_entity
     end
   end
 
   def update
     if @job.update(job_params)
-      redirect_to @job, notice: 'Job was successfully updated.'
+      redirect_to job_path(@job), notice: 'Job was successfully updated.'
     else
       render :edit
     end
