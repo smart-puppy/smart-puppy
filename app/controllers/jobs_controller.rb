@@ -3,8 +3,11 @@ class JobsController < ApplicationController
 
   # Is the below line correct? If not, what should it be?
   before_action :set_job, only: [:show, :edit, :update, :destroy]
+
   def index
     @jobs = Job.all
+    @per_page = (params[:per_page] || 10).to_i
+    @jobs = Job.paginate(page: params[:page], per_page: @per_page)
   end
 
   def show
