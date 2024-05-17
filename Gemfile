@@ -28,6 +28,13 @@ gem "jbuilder"
 
 # Put faker
 gem "faker"
+
+# Paginate
+gem 'will_paginate', '~> 4.0'
+
+# Search gem
+gem "pg_search"
+
 # Use Redis adapter to run Action Cable in production
 # gem "redis", ">= 4.0.1"
 

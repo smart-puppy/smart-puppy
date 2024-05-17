@@ -1,19 +1,30 @@
-<div class="card mb-3 text-center my-5 mx-auto p-0 p-md-5" style="max-width: 540px;">
-  <div class="row g-0">
-    <div class="col-md-4">
-      <img src="https://images.unsplash.com/photo-1502945015378-0e284ca1a5be?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="img-fluid rounded-start" alt="...">
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <%= link_to 'Back to Jobs', jobs_path, class: "btn btn-secondary mb-3" %>
     </div>
-    <div class="col-md-8">
-      <div class="card-body">
-        <h5 class="card-title"><%= @job.title %></h5>
-        <p class="card-text"><%= @job.company_name %></p>
-        <p class="card-text"><%= @job.location %></p>
-        <p class="card-text"><%= @job.description %></p>
-        <p class="card-text"><%= @job.requirements %></p>
-        <p class="card-text"><small class="text-muted"><%= time_ago_in_words(@job.updated_at) %></small></p>
+  </div>
+  <div class="card mb-3 text-center mx-auto p-0 p-md-5" style="max-width: 800px;">
+    <div class="row g-0">
+      <div class="col-md-4">
+        <img src="https://images.unsplash.com/photo-1502945015378-0e284ca1a5be?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="img-fluid rounded-start" alt="...">
+      </div>
+      <div class="col-md-8">
+        <div class="card-body">
+          <h5 class="card-title"><strong>Job Title:</strong> <%= @job.title %></h5>
+          <p class="card-text"><strong>Company:</strong> <%= @job.company_name %></p>
+          <p class="card-text"><strong>Location:</strong> <%= @job.location %></p>
+          <p class="card-text" style="text-align: justify;"><strong>Job Description:</strong> <%= @job.description %></p>
+          <p class="card-text" style="text-align: justify;"><strong>Requirements:</strong> <%= @job.requirements %></p>
+          <p class="card-text text-end"><small class="text-muted">Posted: <%= time_ago_in_words(@job.updated_at) %></small></p>
+        </div>
       </div>
     </div>
   </div>
+
+  <div class="card mb-3 text-center mx-auto p-3" style="max-width: 800px;">
+    <div class="d-flex justify-content-center">
+      <%= link_to 'Apply for this job', new_job_application_path(@job), class: "btn btn-primary" %>
+    </div>
+  </div>
 </div>
-<%= link_to 'Apply for this job', new_job_application_path(@job) %>
-<%= link_to 'Back', jobs_path, class: "btn btn-secondary" %>

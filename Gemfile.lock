@@ -185,6 +185,9 @@ GEM
       racc (~> 1.4)
     orm_adapter (0.5.0)
     pg (1.5.6)
+    pg_search (2.3.6)
+      activerecord (>= 5.2)
+      activesupport (>= 5.2)
     popper_js (2.11.8)
     psych (5.1.2)
       stringio
@@ -284,6 +287,7 @@ GEM
     websocket-driver (0.7.6)
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.5)
+    will_paginate (4.0.0)
     xpath (3.2.0)
       nokogiri (~> 1.8)
     zeitwerk (2.6.13)
@@ -310,6 +314,7 @@ DEPENDENCIES
   importmap-rails
   jbuilder
   pg (~> 1.1)
+  pg_search
   puma (>= 5.0)
   rails (~> 7.1.3, >= 7.1.3.2)
   sassc-rails
@@ -320,6 +325,7 @@ DEPENDENCIES
   turbo-rails
   tzinfo-data
   web-console
+  will_paginate (~> 4.0)
 
 RUBY VERSION
    ruby 3.1.2p20
