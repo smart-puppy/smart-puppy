@@ -18,26 +18,32 @@
     </div>
   </div>
   <div class="row">
-    <% @jobs.each do |job| %>
-      <div class="col-12 col-sm-6 mb-4">
-        <div class="card h-100">
-          <div class="row g-0">
-            <div class="col-md-4">
-              <img src="https://images.unsplash.com/photo-1502945015378-0e284ca1a5be?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="img-fluid rounded-start" alt="...">
-            </div>
-            <div class="col-md-8">
-              <div class="card-body">
-                <h5 class="card-title"><strong>Job Title:</strong> <%= job.title %></h5>
-                <p class="card-text"><strong>Company Name:</strong> <%= job.company_name %></p>
-                <p class="card-text"><strong>Location:</strong> <%= job.location %></p>
-                <p class="card-text" style="text-align: justify;"><strong>Job Description:</strong> <%= job.description.truncate(50) %></p>
-                <p class="card-text"><strong>Requirements:</strong> <%= job.requirements %></p>
-                <%= link_to 'View job', job_path(job), class: "btn btn-link" %>
-                <p class="card-text"><small class="text-muted">Posted: <%= time_ago_in_words(job.updated_at) %></small></p>
+    <% if @jobs.any? %>
+      <% @jobs.each do |job| %>
+        <div class="col-12 col-sm-6 mb-4">
+          <div class="card h-100">
+            <div class="row g-0">
+              <div class="col-md-4">
+                <img src="https://images.unsplash.com/photo-1502945015378-0e284ca1a5be?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="img-fluid rounded-start" alt="...">
+              </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                  <h5 class="card-title"><strong>Job Title:</strong> <%= job.title %></h5>
+                  <p class="card-text"><strong>Company Name:</strong> <%= job.company_name %></p>
+                  <p class="card-text"><strong>Location:</strong> <%= job.location %></p>
+                  <p class="card-text" style="text-align: justify;"><strong>Job Description:</strong> <%= job.description.truncate(50) %></p>
+                  <p class="card-text"><strong>Requirements:</strong> <%= job.requirements %></p>
+                  <%= link_to 'View job', job_path(job), class: "btn btn-link" %>
+                  <p class="card-text"><small class="text-muted">Posted: <%= time_ago_in_words(job.updated_at) %></small></p>
+                </div>
               </div>
             </div>
           </div>
         </div>
+      <% end %>
+    <% else %>
+      <div class="col-12">
+        <p class="text-center">No jobs found.</p>
       </div>
     <% end %>
   </div>
