@@ -1,56 +1,37 @@
 .navbar-lewagon {
   justify-content: space-between;
-  background: white;
+  background: rgba(17, 113, 162, 1);
   height: 80px;
-  text-decoration: none;
-}
-
-.navbar-lewagon .navbar-collapse {
-  flex-grow: 0;
 }
 
 .navbar-lewagon .navbar-brand img {
   width: 80px;
 }
 
-.login-btn {
-  border-right: none;
-  text-decoration: none;
-
+.navbar-toggler {
+  border: none;
 }
 
-.btn-custom-blue {
-  background-color: rgb(84, 232, 235);
+.navbar-nav .nav-link {
+  color: white;
+  text-decoration: none;
+}
+
+.navbar-nav .nav-link:hover {
   color: rgba(17, 113, 162, 1);
+}
+
+
+.nav-item{
+  background-color: rgba(17, 113, 162, 1);
+  color: black;
   font-size: 16px;
-  margin-left: 10px;
-  text-decoration: none;
-
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
 }
 
-
-.nav-item1 {
-  background-color: rgba(212, 253, 254, 1);
-  height: 80px;
-  width: 150px;
-  padding: 15px;
-  color: #007bff;
-  text-align: center;
-  border-radius: 5px;
-  text-decoration: none;
-}
-
-
-.nav-item2 {
-  margin-right: 0;
-  margin-left: 5%;
-  height: 80px;
-  width: 90px;
-  background-color: #f6f8fb;
-  color: #fff;
-  text-align: center;
-  line-height: 80px;
-  border-radius: 5px;
-  text-decoration: none;
-
+.nav-item:hover {
+  background-color: rgb(84, 232, 235);
+  color: black;
 }

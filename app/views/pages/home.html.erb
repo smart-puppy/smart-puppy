@@ -1,17 +1,3 @@
-
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Landing Page</title>
-  <!-- Bootstrap CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-  <!-- Font Awesome CSS -->
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
-  <!-- Custom CSS -->
-  <link href="app/stylesheets/pages/_home.scss" rel="stylesheet">
-</head>
-<body>
-
 <div class="banner">
   <div class="banner-content">
     <h1>UNLEASH YOUR FULL POTENTIAL WITH</h1>
@@ -24,7 +10,7 @@
 
 <section class="container mt-5">
   <h2>Build a resume from template</h2>
-  <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+  <div id="carouselExampleControls1" class="carousel slide" data-bs-ride="carousel">
     <div class="carousel-inner">
       <div class="carousel-item active">
         <div class="row">
@@ -65,40 +51,35 @@
           <div class="col-md-4">
             <div class="carousel-card" onclick="cardClicked(6)">
               <h3>CV6</h3>
-              <p>Description of CV6/p>
+              <p>Description of CV6</p>
             </div>
           </div>
         </div>
       </div>
     </div>
     <!-- Add navigation arrows -->
-    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev" style="margin-left:-10%; color: black">
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls1" data-bs-slide="prev" style="margin-left:-10%; color: black">
       <span class="carousel-control-prev-icon" aria-hidden="true"></span>
       <span class="carousel-control-text">Previous</span>
     </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next" style="margin-right:-10%">
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls1" data-bs-slide="next" style="margin-right:-10%">
       <span class="carousel-control-next-icon" aria-hidden="true"></span>
       <span class="carousel-control-text">Next</span>
     </button>
   </div>
 </section>
 
-
-
-<section class="container mt-5" style="width: 1509px; height: 400px; top: 1867px; left: 3px; padding: 84px 129px 61px 130px; gap: 0px; opacity: 0px;">
-  <h1 style="text-align: center;">Rest easy with our ATS readability scoring</h1>
-  <div class="box" style="width: 1250px; height: 341px; top: 225px; left: 130px; padding: 47px 191px 47px 191px; gap: 0px; border-radius: 15px 0px 0px 0px; border: 2px 0px 0px 0px; opacity: 0px;">
-    <p>A resume not only needs to represent who you are, but it also needs to be ATS compliant. <br><br>
-    With our Applicant Tracking System (ATS) checker SmartPuppy can get you ahead of the pack.</p>
-  </div>
+<section class="container mt-5 ats-section">
+    <h1>Rest easy with our ATS readability scoring</h1>
+    <div class="box">
+        <p>A resume not only needs to represent who you are, but it also needs to be ATS compliant. <br><br>
+        With our Applicant Tracking System (ATS) checker, SmartPuppy can get you ahead of the pack.</p>
+    </div>
 </section>
-
-
-
 
 <section class="container mt-5">
   <h2>Need a cover letter, too? We've got you!</h2>
-  <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+  <div id="carouselExampleControls2" class="carousel slide" data-bs-ride="carousel">
     <div class="carousel-inner">
       <div class="carousel-item active">
         <div class="row">
@@ -146,11 +127,11 @@
       </div>
     </div>
     <!-- Add navigation arrows -->
-    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev" style="margin-left:-10%; color: black">
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls2" data-bs-slide="prev" style="margin-left:-10%; color: black">
       <span class="carousel-control-prev-icon" aria-hidden="true"></span>
       <span class="carousel-control-text">Previous</span>
     </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next" style="margin-right:-10%">
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls2" data-bs-slide="next" style="margin-right:-10%">
       <span class="carousel-control-next-icon" aria-hidden="true"></span>
       <span class="carousel-control-text">Next</span>
     </button>
@@ -214,41 +195,59 @@
     button.setAttribute('aria-expanded', !expanded);
     collapse.classList.toggle('collapse');
   }
-</script>
 
-
-
-
-<br>
-<footer>
-  <div class="social-icons">
-    <a href="#"><i class="fab fa-instagram"></i></a>
-    <a href="#"><i class="fab fa-github"></i></a>
-    <a href="#"><i class="fab fa-linkedin"></i></a>
-  </div>
-  <div class="links">
-    <a href="#">About Us</a> |
-    <a href="#">Get in Touch</a> |
-    <a href="#">Explore Jobs</a> |
-    <a href="#">List Hobs</a>
-    <a href="#">Create CV</a>
-    <a href="#">Cookies Preferencies</a>
-      <a href="#">Explore Talent</a>
-     <a href="#">Privacy Policy</a>
-  </div>
-
-  <br>
-  <div class="copyright">
-    &copy; 2024 Smart Puppy. All rights reserved.
-  </div>
-</footer>
-
-<script>
   function cardClicked(cardId) {
     alert("Card " + cardId + " clicked!");
     // Implement action for clicking on a card
   }
 </script>
 
-<!-- Bootstrap JS -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+<br>
+ <footer>
+    <div class="social-icons">
+      <a href="#"><i class="fab fa-instagram"></i></a>
+      <a href="#"><i class="fab fa-github"></i></a>
+      <a href="#"><i class="fab fa-linkedin"></i></a>
+    </div>
+    <div class="links">
+      <a href="#">About Us</a> |
+      <a href="#">Get in Touch</a> |
+      <a href="#">Explore Jobs</a> |
+      <a href="#">List Jobs</a> |
+      <a href="#">Create CV</a> |
+      <a href="#">Cookies Preferences</a> |
+      <a href="#">Explore Talent</a> |
+      <a href="#">Privacy Policy</a>
+    </div>
+
+    <!-- Scroll-up arrow -->
+  <div id="scrollUp" class="scroll-up-arrow" onclick="scrollToTop()">
+<i class="fas fa-rocket"></i>
+
+</div>
+
+    <div class="copyright">
+      &copy; 2024 Smart Puppy. All rights reserved.
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Font Awesome JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js"></script>
+
+  <script>
+    window.onscroll = function() {
+      const scrollUpArrow = document.getElementById("scrollUp");
+      if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+        scrollUpArrow.style.display = "block";
+      } else {
+        scrollUpArrow.style.display = "none";
+      }
+    };
+
+    function scrollToTop() {
+      document.body.scrollTop = 0;
+      document.documentElement.scrollTop = 0;
+    }
+  </script>
