@@ -1,223 +1,64 @@
-<!DOCTYPE html>
-<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sign Up</title>
-  <style>
-    body, html {
-      margin-top: 0;
-      padding: 0;
-      height: 100%;
-      font-family: Arial, sans-serif;
-      color: rgba(17,113,162,255);
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Two-Column Layout</title>
+    <link rel="stylesheet" href="styles.css">
 
-    .container {
-      display: flex;
-      height: 100%;
-      margin-top: 5%;
-    }
-
-.left-side {
-  flex: 1;
-  background-color: #f0f0f0;
-  display: flex;
-  justify-content: flex-start; /* Align items to the start of the container */
-  align-items: center;
-  flex-direction: column;
-  margin-top: -3%; /* Added margin to move it slightly higher */
-}
-
-.left-side h1 {
-  text-align: center;
-  margin-top: 2%;
-  margin-left: 20%;
-  margin-right: 20%;
-}
-
-/* CSS for the logo */
-.logo-round {
-  border-radius: 50%;
-  width: 400px; /* Adjust size as needed */
-  height: 400px; /* Adjust size as needed */
-}
-
-.right-side {
-  margin-top: 5%;
-  flex: 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  position: relative;
-}
-
-.divider {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 3px;
-  background-color: black;
-  height: 800px;
-}
-
-.form-container {
-  max-width: 400px;
-  padding: 20px;
-  border-radius: 5px;
-}
-
-.form-container h2 {
-  text-align: center;
-}
-
-label {
-  display: block;
-  margin-bottom: 10px;
-}
-
-input[type="text"], input[type="password"] {
-  width: 100%;
-  padding: 10px;
-  margin-bottom: 20px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  box-sizing: border-box;
-}
-
-button {
-  width: 100%;
-  padding: 15px; /* Increased padding for larger buttons */
-  background-color: #007bff;
-  color: #fff;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-button:hover {
-  background-color: lightblue;
-}
-
-.social-buttons {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 20px;
-}
-
-.social-buttons button {
-  width: 150px; /* Adjust width for larger buttons */
-  padding: 12px; /* Adjust padding for larger buttons */
-  font-size: 15px; /* Adjust font size for larger buttons */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 5px; /* Add gap between icon and text */
-
-}
-
-.social-buttons button i {
-  font-size: 30px; /* Adjust the font size of the icon */
-}
-
-
-
-.user-type {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 20px;
-}
-
-.user-type input[type="checkbox"] {
-  display: none;
-}
-
-.user-type label {
-  display: inline-block;
-  width: 49%;
-  text-align: center;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-.user-type input[type="checkbox"]:checked + label {
-  background-color: #007bff;
-  color: white;
-}
-
-.already-sign {
-  margin-top: 20px;
-  text-align: center;
-}
-
-.log-button {
-  background-color: white;
-  color: rgba(17,113,162,255);
-}
-  </style>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha384-PQ6CHZAdKT4PiHiPBO6I8f79d5U80qZ4u+CUADz1rIt+K/GtF1A9z6YQnbVbhKZ+" crossorigin="anonymous">
 </head>
+
 <body>
-  <div class="container">
-    <div class="left-side">
-      <%= image_tag "logoicon.png", alt: "Logo", class: "logo-round" %>
-      <h1>Stay ahead of the pack with</h1>
-      <h1><strong>Smart Puppy</strong></h1>
+<div class="signin-container container">
+    <div class="left-section">
+        <%= image_tag "logoicon.png", alt: "Logo" %>
+        <h1>Stay ahead of the pack with</h1>
+        <h1><strong>Smart Puppy</strong></h1>
     </div>
+
     <div class="divider"></div>
-    <div class="right-side">
-      <div class="form-container">
-        <h2>Become part of the pack</h2>
-        <h2>Already a user? Get back in here!</h2>
-        <br>
-        <br>
-        <div class="user-type">
-          <input type="checkbox" id="career-builder" name="user-type" value="career-builder">
-          <label for="career-builder">Career Builder</label>
-          <input type="checkbox" id="business" name="user-type" value="business">
-          <label for="business">Business</label>
+
+    <div class="right-section">
+        <div class="element">
+            <h3>Become a part of the pack</h3>
+            <p>Already a user? Get back in here!</p>
+
+            <!-- Select role buttons -->
+
+            <div class="role-buttons">
+                <button class="role-button" id="job-founder-btn" onclick="chooseRole('job-founder')">Job Founder</button>
+                <button class="role-button" id="business-btn" onclick="chooseRole('business')">Business</button>
+            </div>
+
+            <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+                <div class="form-inputs">
+                    <%= f.input :email, required: false, autofocus: true, input_html: { autocomplete: "email" } %>
+                    <%= f.input :password, required: false, input_html: { autocomplete: "current-password" } %>
+                    <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
+                </div>
+                <div class="form-actions">
+                    <%= f.button :submit, "Log in" %>
+                </div>
+            <% end %>
+            <%= render "devise/shared/links" %>
+
+            <!-- Sign up with social icons -->
+            <div class="social-icons">
+                <a href="#" class="social-icon"><i class="fab fa-facebook"></i>Sign up with</a>
+                <a href="#" class="social-icon"><i class="fab fa-linkedin"></i>Sign up with</a>
+                <a href="#" class="social-icon"><i class="fab fa-instagram"></i>Sign up with</a>
+            </div>
         </div>
-        <form action="#">
-          <label for="email">Email:</label>
-          <input type="text" id="email" name="email">
-          <label for="password">Password:</label>
-          <input type="password" id="password" name="password">
-          <label for="confirm-password">Confirm Password:</label>
-          <input type="password" id="confirm-password" name="confirm-password">
-          <button type="submit" class= "log-button">Sign Up</button>
-          <div class="social-buttons">
-            <button type="button" class="log-button">Signup with <i class="fab fa-linkedin"></i></button>
-            <button type="button" class="log-button">Signup with <i class="fab fa-instagram"></i></button>
-            <button type="button" class="log-button">Signup with <i class="fab fa-google"></i></button>
-          </div>
-          <p class="already-sign">Already have an account? <a href="#">Log In</a></p>
-        </form>
-      </div>
     </div>
-  </div>
+</div>
 
-      <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      const careerBuilderCheckbox = document.getElementById('career-builder');
-      const businessCheckbox = document.getElementById('business');
+<script>
+    // JavaScript function to handle selecting role buttons
+    function chooseRole(role) {
+        // Remove 'active' class from all buttons
+        document.querySelectorAll('.role-button').forEach(button => {
+            button.classList.remove('active');
+        });
 
-      careerBuilderCheckbox.addEventListener('change', function() {
-        if (careerBuilderCheckbox.checked) {
-          businessCheckbox.checked = false;
-        }
-      });
-
-      businessCheckbox.addEventListener('change', function() {
-        if (businessCheckbox.checked) {
-          careerBuilderCheckbox.checked = false;
-        }
-      });
-    });
-  </script>
-</body>
-</html>
+        // Add 'active' class to the clicked button
+        document.getElementById(`${role}-btn`).classList.add('active');
+    }
+</script>
