@@ -50,14 +50,17 @@ h2 {
 }
 
 .banner-image {
-  flex: 1;
-  max-width: 100%;
-  padding: 20px;
+  flex-shrink: 0;
+  margin-right: 8%;
+  width: 450px;
+  height: 450px;
+  overflow: hidden;
+  border-radius: 50%;
 }
-
 .banner-image img {
-  max-width: 100%;
-  height: auto;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 /* Carousel item section */
