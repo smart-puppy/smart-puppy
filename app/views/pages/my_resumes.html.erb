@@ -1,0 +1,22 @@
+<!-- app/views/pages/my_resumes.html.erb -->
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <%= link_to 'Go back to Dashboard', dashboard_path, class: "btn btn-secondary mb-3" %>
+    </div>
+  </div>
+  <h1>My Resumes</h1>
+  <div class="row">
+    <% @resumes.each do |resume| %>
+      <div class="col-12 col-md-4 mb-4">
+        <div class="card h-100">
+          <div class="card-body">
+            <h5 class="card-title"><%= resume.title %></h5>
+            <p class="card-text"><%= time_ago_in_words(resume.created_at) %> ago</p>
+            <%= link_to 'Download', rails_blob_path(resume.file, disposition: "attachment"), class: "btn btn-primary" %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
