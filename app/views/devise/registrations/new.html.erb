@@ -1,25 +1,67 @@
-<h2>Sign up</h2>
 
-<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= f.error_notification %>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup Page</title>
+    <link rel="stylesheet" href="styles.css">
 
-  <div class="form-inputs">
-    <%= f.input :email,
-                required: true,
-                autofocus: true,
-                input_html: { autocomplete: "email" }%>
-    <%= f.input :password,
-                required: true,
-                hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
-                input_html: { autocomplete: "new-password" } %>
-    <%= f.input :password_confirmation,
-                required: true,
-                input_html: { autocomplete: "new-password" } %>
-  </div>
+</head>
 
-  <div class="form-actions">
-    <%= f.button :submit, "Sign up" %>
-  </div>
-<% end %>
+<body>
+<div class="signin-container container">
+    <div class="left-section">
+        <%= image_tag "logoicon.png", alt: "Logo" %>
+        <h1>Stay ahead of the pack with</h1>
+        <h1><strong>Smart Puppy</strong></h1>
+    </div>
 
-<%= render "devise/shared/links" %>
+    <div class="divider"></div>
+
+    <div class="right-section">
+        <div class="element">
+            <h3>Become a part of the pack</h3>
+            <p>Already a user? Get back in here!</p>
+
+            <!-- Select role buttons -->
+
+            <div class="role-buttons">
+                <button class="role-button" id="job-founder-btn" onclick="chooseRole('job-founder')">Job Founder</button>
+                <button class="role-button" id="business-btn" onclick="chooseRole('business')">Business</button>
+            </div>
+
+            <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+                <div class="form-inputs">
+                    <%= f.input :email, required: false, autofocus: true, input_html: { autocomplete: "email" } %>
+                    <%= f.input :password, required: false, input_html: { autocomplete: "current-password" } %>
+                    <%= f.input :password_confirmation, required: false, input_html: { autocomplete: "current-password" } %>
+
+                    <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
+                </div>
+                <div class="form-actions">
+                    <%= f.button :submit, "Signup" %>
+                </div>
+            <% end %>
+
+
+            <!-- Sign up with social icons -->
+            <div class="social-icons">
+                <a href="#" class="social-icon"><i class="fab fa-facebook"></i>Sign up with</a>
+                <a href="#" class="social-icon"><i class="fab fa-linkedin"></i>Sign up with</a>
+                <a href="#" class="social-icon"><i class="fab fa-instagram"></i>Sign up with</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    // JavaScript function to handle selecting role buttons
+    function chooseRole(role) {
+        // Remove 'active' class from all buttons
+        document.querySelectorAll('.role-button').forEach(button => {
+            button.classList.remove('active');
+        });
+
+        // Add 'active' class to the clicked button
+        document.getElementById(`${role}-btn`).classList.add('active');
+    }
+</script>

@@ -6,7 +6,7 @@ class PagesController < ApplicationController
 
   def dashboard
     @user = current_user
-    @jobs = @user.jobs if @user
+    @jobs = @user.jobs.limit(6) if @user
     @resumes = @user.resumes if @user
   end
 
