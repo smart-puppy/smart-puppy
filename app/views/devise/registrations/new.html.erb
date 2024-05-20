@@ -1,14 +1,4 @@
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Signup Page</title>
-    <link rel="stylesheet" href="styles.css">
-
-</head>
-
-<body>
-<div class="signin-container container">
+<div class="signin-container container" data-controller=“business”>
     <div class="left-section">
         <%= image_tag "logoicon.png", alt: "Logo" %>
         <h1>Stay ahead of the pack with</h1>
@@ -25,8 +15,8 @@
             <!-- Select role buttons -->
 
             <div class="role-buttons">
-                <button class="role-button" id="careerpup-btn" onclick="chooseRole('careerpup')">CareerPup</button>
-                <button class="role-button" id="business-btn" onclick="chooseRole('business')">Business Partner</button>
+                <button class="role-button" id="careerpup-btn" onclick="chooseRole('careerpup')" data-action="click->business#toggleBusiness">CareerPup</button>
+                <button class="role-button" id="business-btn" onclick="chooseRole('business')" data-action="click->business#toggleBusiness">Business Partner</button>
             </div>
 
             <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
@@ -34,7 +24,7 @@
                     <%= f.input :email, required: false, autofocus: true, input_html: { autocomplete: "email" } %>
                     <%= f.input :password, required: false, input_html: { autocomplete: "current-password" } %>
                     <%= f.input :password_confirmation, required: false, input_html: { autocomplete: "current-password" } %>
-                    <%= f.input :business, required: true  %>
+                    <%= f.input :business, as: :hidden, required: true, data: { business_target: "checkbox" } %>
 
                     <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
                 </div>
