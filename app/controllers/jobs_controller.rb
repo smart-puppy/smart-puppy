@@ -1,6 +1,7 @@
 class JobsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
   before_action :set_job, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_business!, only: [:new, :create, :edit, :update, :destroy]
 
   def index
     @per_page = (params[:per_page] || 10).to_i
@@ -59,5 +60,11 @@ class JobsController < ApplicationController
 
   def job_params
     params.require(:job).permit(:title, :description, :company_name, :requirements, :location, :skill_id, :photo)
+  end
+
+  def authenticate_business!
+    unless current_user&.business?
+      redirect_to jobs_path, alert: 'You must be a business partner to perform this action.'
+    end
   end
 end
