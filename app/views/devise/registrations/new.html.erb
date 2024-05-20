@@ -20,13 +20,13 @@
     <div class="right-section">
         <div class="element">
             <h3>Become a part of the pack</h3>
-            <p>Already a user? Get back in here!</p>
+            <%= link_to "Already a user? Get back in here!", new_user_session_path %>
 
             <!-- Select role buttons -->
 
             <div class="role-buttons">
-                <button class="role-button" id="job-founder-btn" onclick="chooseRole('job-founder')">Job Founder</button>
-                <button class="role-button" id="business-btn" onclick="chooseRole('business')">Business</button>
+                <button class="role-button" id="careerpup-btn" onclick="chooseRole('careerpup')">CareerPup</button>
+                <button class="role-button" id="business-btn" onclick="chooseRole('business')">Business Partner</button>
             </div>
 
             <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>

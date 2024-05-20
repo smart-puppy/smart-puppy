@@ -1,4 +1,5 @@
 require 'faker'
+require 'open-uri'
 # This file should ensure the existence of records required to run the application in every environment (production,
 # development, test). The code here should be idempotent so that it can be executed at any point in every environment.
 # The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
@@ -87,7 +88,7 @@ puts "Reseeding the seeds file"
 # THESE SEEDS ARE FOR TESTING PURPOSES ONLY!!!!! -> -> ->
 # Create job seeker users
 50.times do |i|
-  User.create!(
+  user = User.new(
     email: Faker::Internet.email,
     password: Devise.friendly_token,
     first_name: Faker::Name.first_name,
@@ -102,11 +103,13 @@ puts "Reseeding the seeds file"
     education: Faker::Educator.course,
     business: false
   )
+  user.photo.attach(io: URI.open('https://source.unsplash.com/200x200/?user'), filename: 'user-avatar.jpg')
+  user.save!
 end
 
 # Create business users
 25.times do |i|
-  User.create!(
+  user = User.new(
     email: Faker::Internet.email,
     password: Devise.friendly_token,
     business: true,
@@ -116,11 +119,13 @@ end
     industry: Faker::Company.industry,
     location: Faker::Address.city
   )
+  user.photo.attach(io: URI.open('https://source.unsplash.com/200x200/?user'), filename: 'user-avatar.jpg')
+  user.save!
 end
 
 # Create jobs
 10.times do |i|
-  job = Job.create!(
+  job = Job.new(
     title: Faker::Job.title,
     description: Faker::Lorem.paragraph(sentence_count: 100),
     company_name: Faker::Company.name,
@@ -128,6 +133,8 @@ end
     location: Faker::Address.city,
     user: User.where(business: true).sample
   )
+  job.photo.attach(io: URI.open('https://source.unsplash.com/1600x900/?company-logo'), filename: 'company-logo.jpg')
+  job.save!
 end
 
 # Create skills
