@@ -31,8 +31,7 @@
     <% if @job.user == current_user %>
       <p>This job was posted by you.</p>
     <% else %>
-      <%# <%= link_to 'Apply for this job', new_job_application_path(@job), class: "btn btn-primary" %>
-      <p> You are logged in as a Business Partner. You cannot apply for this job. </p>
+      <%= link_to 'Apply for this job', new_job_application_path(@job), class: "btn btn-primary" %>
     <% end %>
     </div>
   </div>
