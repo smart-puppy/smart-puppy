@@ -6,22 +6,26 @@ class PagesController < ApplicationController
 
   def dashboard
     @user = current_user
-  @jobs = @user.jobs.limit(6) if @user
-  @resumes = @user.resumes if @user
-  @applications = Application.all
-  @job = @user.job if @user && @user.job.present?
-  @applications = @job.applications if @job.present?
+    if @user
+      if @user.business?
+        @jobs = @user.jobs.limit(6)
+        @applications = Application.where(job: @jobs)
+      else
+        # @jobs = @user.applied_jobs.limit(6)
+        @resumes = @user.resumes
+      end
+    end
   end
 
 
   def my_jobs
     @user = current_user
-    @jobs = @user.jobs if @user
+    @jobs = @user.applied_jobs
   end
 
   def my_resumes
     @user = current_user
-    @resumes = @user.resumes if @user
+    @resumes = @user.resumes
   end
 
   def about_us

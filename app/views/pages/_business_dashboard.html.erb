@@ -1,35 +1,60 @@
 <div class="container">
   <h1 class="mb-4">Dashboard: Business-Partner</h1>
+  <div class="mt-4">
+    <h2>Overview</h2>
+    <p><strong>Jobs Posted:</strong> <%= @jobs_count %></p>
+    <p><strong>Incoming Applications:</strong> <%= @applications_count %></p>
+  </div>
 
   <!-- Section for Managing Job Postings -->
   <div class="section mt-4">
     <h2 class="mb-3">Job Postings</h2>
     <div class="row justify-content-center">
-      <% @jobs.each do |job| %>
-        <div class="col-12 col-md-4">
-          <div class="card job-card mb-3">
-            <div class="card-body">
-              <h5 class="card-title"><%= job.title %></h5>
-              <p class="card-text"><%= job.company_name %></p>
-              <p class="card-text"><%= job.location %></p>
-            </div>
-            <div class="card-footer">
-              <%= link_to "View Job", job_path(job), class: "btn btn-primary btn-lg btn-block" %>
+      <% if @jobs && @jobs.any? %>
+        <% @jobs.each do |job| %>
+          <div class="col-12 col-md-4">
+           <div class="card job-card mb-3">
+              <div class="card-body">
+                <h5 class="card-title"><%= job.title %></h5>
+                <p class="card-text"><%= job.company_name %></p>
+                <p class="card-text"><%= job.location %></p>
+                <%= link_to "View Job", job_path(job), class: "btn btn-primary btn-lg btn-block" %>
+                <%= link_to "Edit Job", edit_job_path(job), class: "btn btn-primary" %>
+                <%= link_to "Delete Job", job_path(job), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: "btn btn-danger" %>
+              </div>
             </div>
           </div>
-        </div>
+        <% end %>
+      <% else %>
+        <p class="text-center">You have no job postings yet.</p>
       <% end %>
     </div>
+
     <%= link_to "Post New Job", new_job_path, class: "btn btn-success btn-lg btn-block mt-3" %>
   </div>
 
   <!-- Section for Viewing Job Applications -->
   <div class="section mt-4">
-    <h2 class="mb-3">Job Applications</h2>
-    <div class="row justify-content-center">
-      <!-- Your job application cards here -->
-    </div>
-    <div class="text-center mt-3">
+  <h2 class="mb-3">Job Applications</h2>
+  <div class="row justify-content-center">
+    <!-- Your job application cards here -->
+      <% if @applications && @applications.any? %>
+        <% @applications.each do |application| %>
+          <div class="col-12 col-md-4">
+            <div class="card mb-3">
+              <div class="card-body">
+                <h5 class="card-title"><%= application.user.first_name %> <%= application.user.last_name %></h5>
+                <p class="card-text"><%= application.job.title %></p>
+                <p class="card-text"><%= time_ago_in_words(application.created_at) %> ago</p>
+                <%= link_to "View Application", job_application_path(application.job, application), class: "btn btn-link" %>
+                <%= link_to "Download Resume", rails_blob_path(application.resume.file, disposition: "attachment"), class: "btn btn-primary" %>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      <% else %>
+        <p class="text-center">You have no job applications yet.</p>
+      <% end %
     </div>
   </div>
 </div>

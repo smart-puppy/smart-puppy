@@ -21,13 +21,16 @@ class ApplicationsController < ApplicationController
 
   def new
     @application = Application.new
+    @job = Job.find(params[:job_id])
   end
 
   def create
     @application = Application.new(application_params)
+    @job = Job.find(params[:job_id])
     @application.user = current_user
-    if @application.save
-      redirect_to jobs_path, notice: 'Application was successfully sent.'
+    @application.job = @job
+    if @application.save!
+      redirect_to job_path(@job), notice: 'Application was successfully sent.'
     else
       render :new, status: :unprocessable_entity
     end

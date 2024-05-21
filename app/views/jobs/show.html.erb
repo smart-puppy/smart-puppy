@@ -1,4 +1,4 @@
-<% if current_user.business %>
+<% if user_signed_in? && current_user&.business %>
 <%= render "business_show" %>
 <% else %>
   <%= render "careerpup_show" %>
