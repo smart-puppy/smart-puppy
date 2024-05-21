@@ -20,6 +20,9 @@ class JobsController < ApplicationController
   end
 
   def show
+    # @applications = @job.applications
+    @job = Job.find(params[:id])
+    @applications = @job.applications.includes(:user) # Include user to avoid N+1 query problem
   end
 
   def new
