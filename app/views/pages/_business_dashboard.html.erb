@@ -1,8 +1,52 @@
 <div class="container">
-  <h1>Dashboard - Business Partner</h1>
+  <h1>Dashboard: Business-Partner</h1>
 
 <%# When a business user signs in, we want to see all their jobs
 just like in CareerPup's Dashboard, instead these are jobs they have created.
 Logically, instead of all applications ofr jobs flooding the dashboard,
 we can click on an individual job, and then on the show p
 age, we can view a list of all applicants underneath. %>
+
+
+<!-- Section for Managing Job Postings -->
+  <div class=“mt-4”>
+    <h2>Job Postings</h2>
+    <div class=“row”>
+      <% @jobs.each do |job| %>
+        <div class= "col-12 col-md-4">
+          <div class="card mb-3">
+            <div class=“card-body”>
+              <h5 class=“card-title”><%= job.title %></h5>
+              <p class=“card-text”><%= job.company_name %></p>
+              <p class=“card-text”><%= job.location %></p>
+              <%= link_to "View Job", job_path(job), class: "btn btn-link" %>
+              <%= link_to "Edit Job", edit_job_path(job), class: "btn btn-primary" %>
+              <%= link_to "Delete Job", job_path(job), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: "btn btn-danger" %>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+    <%= link_to "Post New Job", new_job_path, class: "btn btn-success float-end " %>
+  </div>
+  <!-- Section for Viewing Job Applications -->
+  <div class=“mt-4”>
+    <h2>Job Applications</h2>
+    <div class=“row”>
+      <%# <% @applications.each do |application| %> %>
+        <%# <div class=“col-12 col-md-4”> %>
+          <%# <div class= "card mb-3"> %>
+            <%# <div class=“card-body”> %>
+              <%# <h5 class=“card-title”><%= application.candidate_name %></h5> %>
+              <%# <p class=“card-text”><%= application.job_title %></p> %>
+              <%# <p class=“card-text”><%= time_ago_in_words(application.created_at) %> ago</p> %>
+              <%# <%= link_to "View Application", application_path(application), class: "btn btn-link" %> %>
+              <%# <%= link_to "Download Resume", rails_blob_path(application.resume.file, disposition: “attachment”), class: "btn btn-primary" %> %>
+            <%# </div> %>
+          </div>
+        </div>
+      <%# <% end %> %>
+    </div>
+    <%# <%= link_to "View All Applications", applications_path, class: "btn btn-secondary float-end" %> %>
+  </div>
+</div>
