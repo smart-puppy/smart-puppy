@@ -1,24 +1,25 @@
-<div class="container">
-  <h1>Dashboard - CareerPup</h1>
-
+ <div class="pup-dashboard-container">
+  <h1 class="pup-dashboard-title">Dashboard - CareerPup</h1>
+  
+  
   <div class="mt-4">
     <h2>Overview</h2>
     <p><strong>Jobs Applied For:</strong> <%= @applied_jobs_count %></p>
     <p><strong>Resumes Uploaded:</strong> <%= @resumes_count %></p>
   </div>
 
-  <div class="mt-4">
-    <h2>My Jobs</h2>
+  <div class="pup-dashboard-section mt-4">
+    <h2 class="pup-dashboard-subtitle">My Jobs</h2>
     <div class="row">
       <% if @jobs && @jobs.any? %>
         <% @jobs.each do |job| %>
           <div class="col-12 col-md-4">
-            <div class="card mb-3">
+           <div class="pup-dashboard-card card mb-3">
               <div class="card-body">
                 <h5 class="card-title"><%= job.title %></h5>
                 <p class="card-text"><%= job.company_name %></p>
                 <p class="card-text"><%= job.location %></p>
-                <%= link_to 'View job', job_path(job), class: "btn btn-link" %>
+                  <%= link_to 'View job', job_path(job), class: "btn pup-dashboard-btn-link" %>    
               </div>
             </div>
           </div>
@@ -27,20 +28,22 @@
         <p class="text-center">You have no jobs posted yet.</p>
       <% end %>
     </div>
-    <%= link_to 'View All My Jobs', my_jobs_path, class: "btn btn-secondary float-end" %>
+    <div class="pup-dashboard-btn-container">
+      <%= link_to 'View All My Jobs', my_jobs_path, class: "btn pup-dashboard-btn-secondary" %>
+    </div>
   </div>
 
-  <div class="mt-4">
-    <h2>My Resumes</h2>
+  <div class="pup-dashboard-section mt-4">
+    <h2 class="pup-dashboard-subtitle">My Resumes</h2>
     <div class="row">
       <% if @resumes && @resumes.any? %>
         <% @resumes.each do |resume| %>
           <div class="col-12 col-md-4">
-            <div class="card mb-3">
+            <div class="pup-dashboard-card card mb-3">
               <div class="card-body">
                 <h5 class="card-title"><%= resume.title %></h5>
                 <p class="card-text"><%= time_ago_in_words(resume.created_at) %> ago</p>
-                <%= link_to 'Download', rails_blob_path(resume.file, disposition: "attachment"), class: "btn btn-primary" %>
+                 <%= link_to 'Download', rails_blob_path(resume.file, disposition: "attachment"), class: "btn pup-dashboard-btn-primary" %>
               </div>
             </div>
           </div>
@@ -49,6 +52,9 @@
         <p class="text-center">You have no resumes uploaded yet.</p>
       <% end %>
     </div>
-    <%= link_to 'View All My Resumes', my_resumes_path, class: "btn btn-secondary float-end" %>
+    <div class="pup-dashboard-btn-container">
+      <%= link_to 'View All My Resumes', my_resumes_path, class: "btn pup-dashboard-btn-secondary" %>
+    </div>
   </div>
+
 </div>
