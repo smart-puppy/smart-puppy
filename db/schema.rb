@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_05_20_112841) do
+ActiveRecord::Schema[7.1].define(version: 2024_05_21_155226) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -44,12 +44,10 @@ ActiveRecord::Schema[7.1].define(version: 2024_05_20_112841) do
 
   create_table "applications", force: :cascade do |t|
     t.string "status"
-    t.binary "cv_file"
-    t.binary "cover_letter"
     t.bigint "user_id", null: false
     t.bigint "job_id", null: false
-    t.bigint "resume_id", null: false
-    t.bigint "cover_letter_id", null: false
+    t.bigint "resume_id"
+    t.bigint "cover_letter_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["cover_letter_id"], name: "index_applications_on_cover_letter_id"
@@ -107,10 +105,9 @@ ActiveRecord::Schema[7.1].define(version: 2024_05_20_112841) do
   end
 
   create_table "skills", force: :cascade do |t|
-    t.bigint "user_id", null: false
+    t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_skills_on_user_id"
   end
 
   create_table "user_skills", force: :cascade do |t|
@@ -159,7 +156,6 @@ ActiveRecord::Schema[7.1].define(version: 2024_05_20_112841) do
   add_foreign_key "job_skills", "skills"
   add_foreign_key "jobs", "users"
   add_foreign_key "resumes", "users"
-  add_foreign_key "skills", "users"
   add_foreign_key "user_skills", "skills"
   add_foreign_key "user_skills", "users"
 end
