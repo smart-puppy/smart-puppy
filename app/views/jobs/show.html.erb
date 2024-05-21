@@ -1,19 +1,5 @@
-<div class="card mb-3 text-center my-5 mx-auto p-0 p-md-5" style="max-width: 540px;">
-  <div class="row g-0">
-    <div class="col-md-4">
-      <img src="https://images.unsplash.com/photo-1502945015378-0e284ca1a5be?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="img-fluid rounded-start" alt="...">
-    </div>
-    <div class="col-md-8">
-      <div class="card-body">
-        <h5 class="card-title"><%= @job.title %></h5>
-        <p class="card-text"><%= @job.company_name %></p>
-        <p class="card-text"><%= @job.location %></p>
-        <p class="card-text"><%= @job.description %></p>
-        <p class="card-text"><%= @job.requirements %></p>
-        <p class="card-text"><small class="text-muted"><%= time_ago_in_words(@job.updated_at) %></small></p>
-      </div>
-    </div>
-  </div>
-</div>
-<%= link_to 'Apply for this job', new_job_application_path(@job) %>
-<%= link_to 'Back', jobs_path, class: "btn btn-secondary" %>
+<% if current_user.business %>
+<%= render "business_show" %>
+<% else %>
+  <%= render "careerpup_show" %>
+<% end %>

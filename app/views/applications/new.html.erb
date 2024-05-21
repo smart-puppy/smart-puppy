@@ -1,1 +1,33 @@
 <h1>Application page</h1>
+
+
+<p>Maybe all of this code needs re-done.</p>
+
+<%= simple_form_for(@application) do |f| %>
+  <% fields = [
+    { attribute: :first_name, label: "First Name" },
+    { attribute: :last_name, label: "Last Name" },
+    { attribute: :email, label: "Email" },
+    { attribute: :cv_file, label: "CV File"}
+  ] %>
+
+  <% fields.each do |field| %>
+    <div class="row">
+      <div class="col-12">
+        <%= f.input field[:attribute], label: field[:label], required: true, input_html: { class: "form-control" } %>
+      </div>
+    </div>
+  <% end %>
+
+  <div class="row">
+    <div class="col-12">
+      <%= f.input :cv_file, as: :file %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-12">
+      <%= f.button :submit, "Apply", class: "btn btn-primary" %>
+    </div>
+  </div>
+<% end %>
