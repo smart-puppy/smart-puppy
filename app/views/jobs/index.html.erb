@@ -1,5 +1,5 @@
-<% if current_user.business %>
-<%= render "business_index" %>
+<% if current_user && current_user.business %>
+  <%= render "business_index" %>
 <% else %>
   <%= render "careerpup_index" %>
 <% end %>
