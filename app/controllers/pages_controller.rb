@@ -31,4 +31,8 @@ class PagesController < ApplicationController
 
   def privacy_policy
   end
+
+  def users_dashboard
+    @users = User.all
+  end
 end

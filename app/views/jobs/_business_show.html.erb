@@ -31,9 +31,26 @@
     <% if @job.user == current_user %>
       <p>This job was posted by you.</p>
     <% else %>
-      <%# <%= link_to 'Apply for this job', new_job_application_path(@job), class: "btn btn-primary" %>
       <p> You are logged in as a Business Partner. You cannot apply for this job. </p>
     <% end %>
     </div>
+  </div>
+
+  <div class="card mb-3 text-center mx-auto p-3" style="max-width: 800px;">
+    <h3>Applications</h3>
+    <% if @applications.any? %>
+      <% @applications.each do |application| %>
+        <div class="card mb-3">
+          <div class="card-body">
+            <h5 class="card-title"><%= application.user.first_name %> <%= application.user.last_name %></h5>
+            <p class="card-text"><strong>Status:</strong> <%= application.status %></p>
+            <p class="card-text"><strong>Applied:</strong> <%= time_ago_in_words(application.created_at) %> ago</p>
+            <%= link_to 'View Application', application_path(application), class: "btn btn-primary" %>
+          </div>
+        </div>
+      <% end %>
+    <% else %>
+      <p>No applications yet.</p>
+    <% end %>
   </div>
 </div>
