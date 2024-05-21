@@ -3,11 +3,8 @@
 
 <p>Maybe all of this code needs re-done.</p>
 
-<%= simple_form_for(@application) do |f| %>
+<%= simple_form_for [@job, @application] do |f| %>
   <% fields = [
-    { attribute: :first_name, label: "First Name" },
-    { attribute: :last_name, label: "Last Name" },
-    { attribute: :email, label: "Email" },
     { attribute: :cv_file, label: "CV File"}
   ] %>
 

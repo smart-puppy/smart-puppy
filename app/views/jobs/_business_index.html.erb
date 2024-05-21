@@ -10,6 +10,7 @@
       <%= form_with url: jobs_path, method: :get, class: "d-flex" do %>
         <%= text_field_tag :query, params[:query], class: "form-control me-2", placeholder: "Type a keyword" %>
         <%= submit_tag "Search", name: "", class: "btn btn-primary me-2" %>
+        <%= select_tag :sort, options_for_select([["Newest", "newest"], ["Oldest", "oldest"], ["Title", "title"], ["Company", "company_name"], ["Location", "location"]], params[:sort]), class: "form-select me-2" %>
         <%= link_to 'Reset', jobs_path, class: "btn btn-secondary" %>
       <% end %>
     </div>
