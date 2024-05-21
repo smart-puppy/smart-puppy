@@ -49,13 +49,15 @@ Rails.application.routes.draw do
   # root "posts#index"
 
   # Nested resources for jobs and applications
-  resources :jobs do
+
+  resources :jobs, only: [:index, :show, :new, :create, :edit, :update, :destroy] do
     resources :applications, only: [:show, :index, :new, :create]
 
   end
 
   get 'dashboard/my_jobs', to: 'pages#my_jobs', as: :my_jobs
   get 'dashboard/my_resumes', to: 'pages#my_resumes', as: :my_resumes
+
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
   # Can be used by load balancers and uptime monitors to verify that the app is live.

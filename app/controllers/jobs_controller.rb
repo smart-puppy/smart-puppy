@@ -52,7 +52,7 @@ class JobsController < ApplicationController
 
   def destroy
     @job.destroy
-    redirect_to jobs_url, notice: 'Job was successfully destroyed.'
+    redirect_to dashboard_path, notice: 'Job was successfully deleted.'
   end
 
   private
@@ -67,7 +67,7 @@ class JobsController < ApplicationController
 
   def authenticate_business!
     unless current_user&.business?
-      redirect_to jobs_path, alert: 'You must be a business partner to perform this action.'
+      redirect_to jobs_path, alert: 'You are not authorized to edit this job.'
     end
   end
 end
