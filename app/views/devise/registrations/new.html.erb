@@ -24,7 +24,10 @@
                     <%= f.input :email, required: false, autofocus: true, input_html: { autocomplete: "email" } %>
                     <%= f.input :password, required: false, input_html: { autocomplete: "current-password" } %>
                     <%= f.input :password_confirmation, required: false, input_html: { autocomplete: "current-password" } %>
-                    <%= f.input :business, required: true, input_html: { data: { business_target: "checkbox" } } %>
+
+                    <div class="hidden-checkbox-container">
+                        <%= f.input :business, required: true, input_html: { data: { business_target: "checkbox" } } %>
+                    </div>
 
                     <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
                 </div>
@@ -32,7 +35,6 @@
                     <%= f.button :submit, "Signup" %>
                 </div>
             <% end %>
-
 
             <!-- Sign up with social icons -->
             <div class="social-icons">

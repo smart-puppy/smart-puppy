@@ -1,15 +1,18 @@
 <div class="banner">
-  <div class="banner-content">
-    <h1>UNLEASH YOUR FULL POTENTIAL WITH</h1>
-    <h1><strong>SmartPuppy</strong>!</h1>
-    <%= link_to "Get started with SmartPuppy", new_user_registration_path, class: "nav-link" %>
-  </div>
-  <div class="banner-image">
-    <%= image_tag "logoicon.png", alt: "Banner Image" %>
-  </div>
+<div class="banner-content">
+ <h1>UNLEASH YOUR FULL POTENTIAL WITH</h1> <h1><strong>Smart Puppy</strong>!</h1>
+<button class="banner-button" onclick="location.href='<%= new_user_registration_path %>';">Get started with Smart Puppy</button>
+ </div>
+ <div class="banner-image">
+ <%= image_tag "logoicon.png", alt: "Banner Image" %>
+ </div>
 </div>
 
-<section class="container mt-5">
+
+
+<%#
+<div class="container">
+  <section class="mt-5 carouselcv">
   <h2>Build a resume from template</h2>
   <div id="carouselExampleControls1" class="carousel slide" data-bs-ride="carousel">
     <div class="carousel-inner">
@@ -61,132 +64,293 @@
     <!-- Add navigation arrows -->
     <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls1" data-bs-slide="prev" style="margin-left:-10%; color: black">
       <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="carousel-control-text">Previous</span>
+
     </button>
     <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls1" data-bs-slide="next" style="margin-right:-10%">
       <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="carousel-control-text">Next</span>
+
     </button>
   </div>
 </section>
+ %>
 
-<section class="container mt-5 ats-section">
-    <h1>Rest easy with our ATS readability scoring</h1>
-    <div class="box">
-        <p>A resume not only needs to represent who you are, but it also needs to be ATS compliant. <br><br>
-        With our Applicant Tracking System (ATS) checker, SmartPuppy can get you ahead of the pack.</p>
-    </div>
-</section>
 
-<section class="container mt-5">
-  <h2>Need a cover letter, too? We've got you!</h2>
-  <div id="carouselExampleControls2" class="carousel slide" data-bs-ride="carousel">
-    <div class="carousel-inner">
-      <div class="carousel-item active">
-        <div class="row">
-          <div class="col-md-4">
-            <div class="carousel-card" onclick="cardClicked(1)">
-              <h3>Cover Letter 1</h3>
-              <p>Description of Cover Letter 1</p>
+<div class="container">
+  <section class="mt-5 carouselcoverletter">
+    <h2>Need a cover letter, too? We've got you!</h2>
+    <div id="carouselExampleControls2" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <div class="row">
+            <div class="col-md-4">
+              <div class="carousel-card" onclick="cardClicked(1)">
+                <h3>Cover Letter 1</h3>
+                <img src="<%= asset_path('coverletter1.png') %>" alt="Cover Letter 1 Image"> <!-- Add image -->
+                <p>Description of Cover Letter 1</p>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="carousel-card" onclick="cardClicked(2)">
+                <h3>Cover Letter 2</h3>
+                <img src="<%= asset_path('coverletter1.png') %>" alt="Cover Letter 2 Image"> <!-- Add image -->
+                <p>Description of Cover Letter 2</p>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="carousel-card" onclick="cardClicked(3)">
+                <h3>Cover Letter 3</h3>
+                <img src="<%= asset_path('coverletter1.png') %>" alt="Cover Letter 3 Image"> <!-- Add image -->
+                <p>Description of Cover Letter 3</p>
+              </div>
             </div>
           </div>
-          <div class="col-md-4">
-            <div class="carousel-card" onclick="cardClicked(2)">
-              <h3>Cover Letter 2</h3>
-              <p>Description of Cover Letter 2</p>
+        </div>
+        <div class="carousel-item">
+          <div class="row">
+            <div class="col-md-4">
+              <div class="carousel-card" onclick="cardClicked(4)">
+                <h3>Cover Letter 4</h3>
+                <img src="<%= asset_path('coverletter1.png') %>" alt="Cover Letter 4 Image"> <!-- Add image -->
+                <p>Description of Cover Letter 4</p>
+              </div>
             </div>
-          </div>
-          <div class="col-md-4">
-            <div class="carousel-card" onclick="cardClicked(3)">
-              <h3>Cover Letter 3</h3>
-              <p>Description of Cover Letter 3</p>
+            <div class="col-md-4">
+              <div class="carousel-card" onclick="cardClicked(5)">
+                <h3>Cover Letter 5</h3>
+                <img src="<%= asset_path('coverletter1.png') %>" alt="Cover Letter 5 Image"> <!-- Add image -->
+                <p>Description of Cover Letter 5</p>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="carousel-card" onclick="cardClicked(6)">
+                <h3>Cover Letter 6</h3>
+                <img src="<%= asset_path('coverletter1.png') %>" alt="Cover Letter 6 Image"> <!-- Add image -->
+                <p>Description of Cover Letter 6</p>
+              </div>
             </div>
           </div>
         </div>
       </div>
-      <div class="carousel-item">
-        <div class="row">
-          <div class="col-md-4">
-            <div class="carousel-card" onclick="cardClicked(4)">
-              <h3>Cover Letter 4</h3>
-              <p>Description of Cover Letter 4</p>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls2" data-bs-slide="prev" style="margin-left:-10%; color: black">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls2" data-bs-slide="next" style="margin-right:-10%">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      </button>
+    </div>
+  </section>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="container">
+  <section class="mt-5 ats-section">
+    <div class="ats-content">
+      <div class="ats-text">
+        <h1>Rest Easy with Our ATS Readability Scoring</h1>
+        <div class="box">
+          <p>
+            A resume not only needs to represent who you are, but it also needs to be ATS compliant.
+            With our Applicant Tracking System (ATS) checker, SmartPuppy can get you ahead of the pack.
+            Our ATS scoring system analyzes your resume to ensure it meets the criteria set by top employers.
+            <br><br>
+            Rest assured, our advanced algorithms will review your resume for key factors such as keyword optimization,
+            formatting, and readability. This means your resume will have a higher chance of passing through
+            automated systems and landing in the hands of hiring managers. With SmartPuppy, you can confidently
+            apply for jobs knowing that your resume is optimized for success.
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="ats-image">
+      <%= image_tag "ats_scores.png", alt: "ATS Scores Image" %>
+    </div>
+  </section>
+</div>
+
+
+
+
+<div class="container">
+  <section class="mt-5 carouselcoverletter">
+    <h2>Need a cover letter, too? We've got you!</h2>
+    <div id="carouselExampleControls2" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <div class="row">
+            <div class="col-md-4">
+              <div class="carousel-card" onclick="cardClicked(1)">
+                <h3>Cover Letter 1</h3>
+                <img src="<%= asset_path('coverletter1.png') %>" alt="Cover Letter 1 Image"> <!-- Add image -->
+                <p>Description of Cover Letter 1</p>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="carousel-card" onclick="cardClicked(2)">
+                <h3>Cover Letter 2</h3>
+                <img src="<%= asset_path('coverletter1.png') %>" alt="Cover Letter 2 Image"> <!-- Add image -->
+                <p>Description of Cover Letter 2</p>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="carousel-card" onclick="cardClicked(3)">
+                <h3>Cover Letter 3</h3>
+                <img src="<%= asset_path('coverletter1.png') %>" alt="Cover Letter 3 Image"> <!-- Add image -->
+                <p>Description of Cover Letter 3</p>
+              </div>
             </div>
           </div>
-          <div class="col-md-4">
-            <div class="carousel-card" onclick="cardClicked(5)">
-              <h3>Cover Letter 5</h3>
-              <p>Description of Cover Letter 5</p>
+        </div>
+        <div class="carousel-item">
+          <div class="row">
+            <div class="col-md-4">
+              <div class="carousel-card" onclick="cardClicked(4)">
+                <h3>Cover Letter 4</h3>
+                <img src="<%= asset_path('coverletter1.png') %>" alt="Cover Letter 4 Image"> <!-- Add image -->
+                <p>Description of Cover Letter 4</p>
+              </div>
             </div>
-          </div>
-          <div class="col-md-4">
-            <div class="carousel-card" onclick="cardClicked(6)">
-              <h3>Cover Letter 6</h3>
-              <p>Description of Cover Letter 6</p>
+            <div class="col-md-4">
+              <div class="carousel-card" onclick="cardClicked(5)">
+                <h3>Cover Letter 5</h3>
+                <img src="<%= asset_path('coverletter1.png') %>" alt="Cover Letter 5 Image"> <!-- Add image -->
+                <p>Description of Cover Letter 5</p>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="carousel-card" onclick="cardClicked(6)">
+                <h3>Cover Letter 6</h3>
+                <img src="<%= asset_path('coverletter1.png') %>" alt="Cover Letter 6 Image"> <!-- Add image -->
+                <p>Description of Cover Letter 6</p>
+              </div>
             </div>
           </div>
         </div>
       </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls2" data-bs-slide="prev" style="margin-left:-10%; color: black">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls2" data-bs-slide="next" style="margin-right:-10%">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      </button>
     </div>
-    <!-- Add navigation arrows -->
-    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls2" data-bs-slide="prev" style="margin-left:-10%; color: black">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="carousel-control-text">Previous</span>
+  </section>
+</div>
+
+
+
+
+
+<div class="container">
+  <section class="mt-5 section-questions">
+    <div class="questions-image">
+      <!-- Add your image here -->
+         <%= image_tag "questions.jpg", alt: "Questions Image" %>
+    </div>
+    <div class="questions-content">
+      <h2>Frequently Asked Questions</h2>
+      <div class="accordion" id="faqAccordion">
+        <!-- Question 1 -->
+        <div class="accordion-item">
+          <h3 class="accordion-header" id="headingOne">
+            <button class="accordion-button collapsed" type="button" aria-expanded="false" aria-controls="collapseOne" onclick="toggleCollapse('collapseOne')" style="background-color: rgba(212,253,254,255)">
+              Question 1: What is SmartPuppy?
+            </button>
+          </h3>
+          <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne">
+            <div class="accordion-body">
+              SmartPuppy is an online platform that helps you create professional resumes, cover letters, and optimize them for Applicant Tracking Systems (ATS).
+            </div>
+          </div>
+        </div>
+
+        <!-- Question 2 -->
+        <div class="accordion-item">
+          <h3 class="accordion-header" id="headingTwo">
+            <button class="accordion-button collapsed" type="button" aria-expanded="false" aria-controls="collapseTwo" onclick="toggleCollapse('collapseTwo')" style="background-color: rgba(212,253,254,255)">
+              Question 2: How does SmartPuppy work?
+            </button>
+          </h3>
+          <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo">
+            <div class="accordion-body">
+              SmartPuppy offers a user-friendly interface where you can choose from various resume templates, customize them with your information, and download the final document.
+            </div>
+          </div>
+        </div>
+
+        <!-- Question 3 -->
+        <div class="accordion-item">
+          <h3 class="accordion-header" id="headingThree">
+            <button class="accordion-button collapsed" type="button" aria-expanded="false" aria-controls="collapseThree" onclick="toggleCollapse('collapseThree')" style="background-color: rgba(212,253,254,255)">
+              Question 3: Can SmartPuppy help with cover letters?
+            </button>
+          </h3>
+          <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree">
+            <div class="accordion-body">
+              Yes, SmartPuppy provides templates and guidance for creating cover letters tailored to different job applications.
+            </div>
+          </div>
+        </div>
+
+        <!-- Question 4 -->
+<div class="accordion-item">
+  <h3 class="accordion-header" id="headingFour">
+    <button class="accordion-button collapsed" type="button" aria-expanded="false" aria-controls="collapseFour" onclick="toggleCollapse('collapseFour')" style="background-color: rgba(212,253,254,255)">
+      Question 4: Is SmartPuppy free to use?
     </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls2" data-bs-slide="next" style="margin-right:-10%">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="carousel-control-text">Next</span>
+  </h3>
+  <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour">
+    <div class="accordion-body">
+      Yes, SmartPuppy offers basic features for free. However, there are premium subscription plans available for additional features and benefits.
+    </div>
+  </div>
+</div>
+
+<!-- Question 5 -->
+<div class="accordion-item">
+  <h3 class="accordion-header" id="headingFive">
+    <button class="accordion-button collapsed" type="button" aria-expanded="false" aria-controls="collapseFive" onclick="toggleCollapse('collapseFive')" style="background-color: rgba(212,253,254,255)">
+      Question 5: Can I export my resume in different formats?
     </button>
+  </h3>
+  <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive">
+    <div class="accordion-body">
+      Yes, SmartPuppy allows you to export your resume in various formats such as PDF, Word document, or plain text.
+    </div>
   </div>
+</div>
+
+
+
+
+        <!-- Add more questions and answers here -->
+      </div>
+    </div>
+  </section>
+</div>
+
+
+
+<section class="container mt-5 text-center">
+   <div class="section-to-start">
+   <h1>Do it all straight from the SmartPuppy platform!</h1>
+   <button class="lower-button" onclick="location.href='<%= new_user_registration_path %>';">Get started with Smart Puppy</button>
+   </div>
 </section>
+</div>
 
-<section class="container mt-5">
-  <h2>Frequently Asked Questions</h2>
-  <div class="accordion" id="faqAccordion">
-    <!-- Question 1 -->
-    <div class="accordion-item">
-      <h2 class="accordion-header" id="headingOne">
-        <button class="accordion-button collapsed" type="button" aria-expanded="false" aria-controls="collapseOne" onclick="toggleCollapse('collapseOne')" style="background-color: rgba(212,253,254,255)">
-          Question 1: What is SmartPuppy?
-        </button>
-      </h2>
-      <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne">
-        <div class="accordion-body">
-          SmartPuppy is an online platform that helps you create professional resumes, cover letters, and optimize them for Applicant Tracking Systems (ATS).
-        </div>
-      </div>
-    </div>
 
-    <!-- Question 2 -->
-    <div class="accordion-item">
-      <h2 class="accordion-header" id="headingTwo">
-        <button class="accordion-button collapsed" type="button" aria-expanded="false" aria-controls="collapseTwo" onclick="toggleCollapse('collapseTwo')" style="background-color: rgba(212,253,254,255)">
-          Question 2: How does SmartPuppy work?
-        </button>
-      </h2>
-      <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo">
-        <div class="accordion-body">
-          SmartPuppy offers a user-friendly interface where you can choose from various resume templates, customize them with your information, and download the final document.
-        </div>
-      </div>
-    </div>
-
-    <!-- Question 3 -->
-    <div class="accordion-item">
-      <h2 class="accordion-header" id="headingThree">
-        <button class="accordion-button collapsed" type="button" aria-expanded="false" aria-controls="collapseThree" onclick="toggleCollapse('collapseThree')" style="background-color: rgba(212,253,254,255)">
-          Question 3: Can SmartPuppy help with cover letters?
-        </button>
-      </h2>
-      <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree">
-        <div class="accordion-body">
-          Yes, SmartPuppy provides templates and guidance for creating cover letters tailored to different job applications.
-        </div>
-      </div>
-    </div>
-
-    <!-- Add more questions and answers here -->
-  </div>
-</section>
 
 <script>
   function toggleCollapse(collapseId) {

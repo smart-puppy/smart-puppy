@@ -17,6 +17,7 @@ class PagesController < ApplicationController
     end
   end
 
+
   def my_jobs
     @user = current_user
     @jobs = @user.applied_jobs

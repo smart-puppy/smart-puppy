@@ -1,0 +1,96 @@
+.pup-dashboard-container {
+  margin-top: 20px;
+  padding: 20px;
+  background-color: rgba(212, 253, 254, 255);
+  border-radius: 10px;
+}
+
+.pup-dashboard-title {
+  text-align: center;
+  color: rgba(17, 113, 162, 255);
+  font-size: 2.5em;
+  margin-bottom: 30px;
+  font-family: Arial, sans-serif;
+}
+
+.pup-dashboard-subtitle {
+  text-align: center;
+  color: rgba(17, 113, 162, 255);
+  margin-bottom: 20px;
+  font-size: 1.8em;
+}
+
+.pup-dashboard-section {
+  padding: 20px;
+  margin-bottom: 40px;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.pup-dashboard-card {
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
+  background-color: rgba(245, 245, 245, 255);
+  border: none;
+}
+
+.pup-dashboard-card:hover {
+  transform: scale(1.05);
+}
+
+.pup-dashboard-card .card-body {
+  text-align: center;
+}
+
+.pup-dashboard-btn-container {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.pup-dashboard-btn-link {
+  color: rgba(17, 113, 162, 255);
+  text-decoration: none;
+  background-color: rgba(212, 253, 254, 255);
+  border: 1px solid rgba(17, 113, 162, 255);
+  padding: 10px 20px;
+  border-radius: 5px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.pup-dashboard-btn-link:hover {
+  background-color: rgba(17, 113, 162, 255);
+  color: white;
+}
+
+.pup-dashboard-btn-primary {
+  background-color: rgba(17, 113, 162, 255);
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.pup-dashboard-btn-primary:hover {
+  background-color: rgba(13, 90, 130, 255);
+}
+
+.pup-dashboard-btn-secondary {
+  background-color: rgba(212, 253, 254, 255);
+  border: 1px solid rgba(17, 113, 162, 255);
+  color: rgba(17, 113, 162, 255);
+  padding: 10px 20px;
+  border-radius: 5px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.pup-dashboard-btn-secondary:hover {
+  background-color: rgba(17, 113, 162, 255);
+  color: white;
+}
+
+.mt-4 {
+  margin-top: 40px;
+}

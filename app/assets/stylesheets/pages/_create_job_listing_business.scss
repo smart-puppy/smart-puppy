@@ -1,0 +1,58 @@
+/* Center the job creation form on the page */
+.job-create-container {
+  width: 80%;
+  margin: 0 auto;
+  padding: 50px 0;
+}
+
+/* Style the form title */
+.job-create-title {
+  text-align: center;
+  font-size: 24px;
+  margin-bottom: 30px;
+}
+
+/* Style the form rows */
+.job-create-row {
+  margin-bottom: 20px;
+}
+
+/* Style the form columns */
+.job-create-col {
+  width: 100%;
+}
+
+/* Style the form inputs */
+.job-create-input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+/* Style the file input */
+.job-create-file-input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+/* Style the submit button */
+.job-create-submit-btn {
+  width: 100%;
+  padding: 10px;
+  background-color: rgba(17,113,162,255);
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+/* Change button color on hover */
+.job-create-submit-btn:hover {
+  background-color: rgba(212,253,254,255);
+}
