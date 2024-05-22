@@ -1,0 +1,64 @@
+body {
+  background-color:rgba(17,113,162,255);
+   padding-top: 10px;
+}
+
+
+* {
+  margin: 0;
+  padding: 0;
+
+}
+
+.card-body {
+
+  background-color: rgba(212, 253, 254, 1);
+}
+
+/* Business Index Container */
+.business-index-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(212, 253, 254, 1); /* Updated background color */
+  padding: 20px; /* Added padding */
+}
+
+/* Form Inputs */
+.business-form-control {
+  width: 100%;
+}
+
+/* Buttons */
+.business-btn {
+  margin-right: 10px;
+}
+
+/* Cards */
+.business-card {
+
+
+  background-color: white; /* Set white background color */
+}
+
+/* Card Title */
+.business-card-title {
+  font-weight: bold;
+}
+
+/* Card Text */
+.business-card-text {
+  margin-bottom: 10px;
+}
+
+/* Text Center */
+.business-text-center {
+  text-align: center;
+}
+
+/* Adjustments for small screens */
+@media (max-width: 576px) {
+  .business-index-container {
+    padding: 10px;
+  }
+}

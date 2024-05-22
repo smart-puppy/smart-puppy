@@ -1,61 +1,46 @@
-<div class="container">
-  <div class="row">
-    <div class="col-12">
-      <%= link_to 'Back to Dashboard', dashboard_path, class: "btn btn-secondary mb-3" %>
-      <%= link_to 'Create a new Job listing', new_job_path, class: "btn btn-secondary mb-3" %>
-    </div>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Where Do You Wanna Look for a Job?</title>
+  <style>
+    /* Optional: Makes the sample page fill the window. */
+    html, body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* Adjust the width and height of the iframe */
+    .map-container {
+      max-width: 800px;
+      margin: 0 auto; /* Center the iframe horizontally */
+      padding-top: 20px; /* Add space above the map */
+    }
+
+    h1 {
+      text-align: center; /* Center the heading */
+    }
+
+    .navbar {
+      z-index: 9999; /* Ensure the navbar appears above other elements */
+    }
+  </style>
+</head>
+<body>
+  <!-- Your navbar code -->
+  <nav class="navbar">
+    <!-- Navbar content goes here -->
+  </nav>
+
+  <!-- Introductory heading -->
+  <h1>Where Do You Wanna Look for a Job?</h1>
+
+  <!-- Embedding your iframe with a specific container -->
+  <div class="map-container">
+    <iframe src="https://map.proxi.co/r/ZS4hapLm7PxD1gUwM-uA" allow="geolocation; clipboard-write" width="100%" height="500px" style="border-width: 0px;" allowfullscreen></iframe>
   </div>
-  <div class="row justify-content-center">
-    <div class="col-12 col-md-8 my-3">
-      <%= form_with url: jobs_path, method: :get, class: "d-flex" do %>
-        <%= text_field_tag :query, params[:query], class: "form-control me-2", placeholder: "Type a keyword" %>
-        <%= submit_tag "Search", name: "", class: "btn btn-primary me-2" %>
-        <%= link_to 'Reset', jobs_path, class: "btn btn-secondary" %>
-      <% end %>
-    </div>
-    <div class="col-12 col-md-2 my-3">
-      <%= form_with url: jobs_path, method: :get, local: true do %>
-        <%= select_tag :per_page, options_for_select([5, 10, 20, 50, 100], params[:per_page]), class: "form-select", onchange: "this.form.submit();" %>
-      <% end %>
-    </div>
-  </div>
-  <div class="row">
-    <% if @jobs.any? %>
-      <% @jobs.each do |job| %>
-        <div class="col-12 col-sm-6 mb-4">
-          <div class="card h-100">
-            <div class="row g-0">
-              <div class="col-md-4">
-                <% if job.photo.attached? %>
-                 <%= cl_image_tag job.photo.key, height: 200, width: 300, crop: :fill %>
-                <% else %>
-                 <img src="https://images.unsplash.com/photo-1502945015378-0e284ca1a5be?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="img-fluid rounded-start" alt="...">
-                <% end %>
-              </div>
-              <div class="col-md-8">
-                <div class="card-body">
-                  <h5 class="card-title"><strong>Job Title:</strong> <%= job.title %></h5>
-                  <p class="card-text"><strong>Company Name:</strong> <%= job.company_name %></p>
-                  <p class="card-text"><strong>Location:</strong> <%= job.location %></p>
-                  <p class="card-text" style="text-align: justify;"><strong>Job Description:</strong> <%= job.description.truncate(50) %></p>
-                  <p class="card-text"><strong>Requirements:</strong> <%= job.requirements %></p>
-                  <%= link_to 'View job', job_path(job), class: "btn btn-link" %>
-                  <p class="card-text"><small class="text-muted">Posted: <%= time_ago_in_words(job.updated_at) %></small></p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      <% end %>
-    <% else %>
-      <div class="col-12">
-        <p class="text-center">No jobs found.</p>
-      </div>
-    <% end %>
-  </div>
-  <div class="row">
-    <div class="col-12 d-flex justify-content-center">
-      <%= will_paginate @jobs %>
-    </div>
-  </div>
-</div>
+
+  <!-- Attribution text -->
+  <div style="font-family: Sans-Serif; font-size:12px;color:#000000;opacity:0.5; padding-top: 5px; text-align: center;"> powered by <a href="https://www.proxi.co/?utm_source=poweredbyproxi" style="color:#000000" target="_blank">Proxi</a> </div>
+</body>
+</html>
