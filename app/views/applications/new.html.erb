@@ -1,8 +1,5 @@
 <h1>Application page</h1>
 
-
-<p>Maybe all of this code needs re-done.</p>
-
 <%= simple_form_for [@job, @application] do |f| %>
   <% fields = [
     { attribute: :cv_file_cloudinary, label: "CV File"}
@@ -17,11 +14,12 @@
   <% end %>
 
 <%# Upload from your computer %>
+<%#
   <div class="row">
     <div class="col-12">
       <%= f.input :cv_file_cloudinary, as: :file %>
-    </div>
-  </div>
+    <%# </div> %>
+  <%# </div> %>
 
 <%# Pre-selected resumes %
  Input code, pliz :>

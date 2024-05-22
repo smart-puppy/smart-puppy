@@ -7,6 +7,7 @@
   </div>
   <h1>My Resumes</h1>
   <div class="row">
+  <% if @resumes.any? %>
     <% @resumes.each do |resume| %>
       <div class="col-12 col-md-4 mb-4">
         <div class="card h-100">
@@ -18,5 +19,8 @@
         </div>
       </div>
     <% end %>
+  <% else %>
+    <p class="text-center">You have no resumes uploaded yet.</p>
+  <% end %>
   </div>
 </div>
