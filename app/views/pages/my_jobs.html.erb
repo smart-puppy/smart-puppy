@@ -11,8 +11,13 @@
       <div class="jobs-col-12 jobs-col-md-6 jobs-mb-4">
         <div class="jobs-card jobs-h-100">
           <div class="jobs-row jobs-g-0">
-            <div class="jobs-col-md-4">
-              <img src="https://images.unsplash.com/photo-1502945015378-0e284ca1a5be?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="jobs-img-fluid jobs-rounded-start" alt="...">
+            <div class="col-md-4">
+              <% if job.photo.attached? %>
+                <%= cl_image_tag job.photo.key, height: 200, width: 300, crop: :fill %>
+              <% else %>
+                <img src="https://images.unsplash.com/photo-1502945015378-0e284ca1a5be?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="img-fluid rounded-start" alt="...">
+              <% end %>
+            </div>
             </div>
             <div class="jobs-col-md-8">
               <div class="jobs-card-body">
