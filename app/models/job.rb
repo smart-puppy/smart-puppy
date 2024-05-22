@@ -2,6 +2,8 @@ class Job < ApplicationRecord
   belongs_to :user
   has_many :job_skills
   has_many :skills, through: :job_skills
+  has_many :applications
+  has_one_attached :photo
 
   validates :title, presence: true
   validates :description, presence: true

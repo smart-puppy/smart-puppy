@@ -6,18 +6,26 @@ class PagesController < ApplicationController
 
   def dashboard
     @user = current_user
-    @jobs = @user.jobs.limit(6) if @user
-    @resumes = @user.resumes if @user
+    if @user
+      if @user.business?
+        @jobs = @user.jobs.limit(6)
+        @applications = Application.where(job: @jobs)
+      else
+        # @jobs = @user.applied_jobs.limit(6)
+        @resumes = @user.resumes
+      end
+    end
   end
+
 
   def my_jobs
     @user = current_user
-    @jobs = @user.jobs if @user
+    @jobs = @user.applied_jobs
   end
 
   def my_resumes
     @user = current_user
-    @resumes = @user.resumes if @user
+    @resumes = @user.resumes
   end
 
   def about_us
@@ -30,5 +38,9 @@ class PagesController < ApplicationController
   end
 
   def privacy_policy
+  end
+
+  def users_dashboard
+    @users = User.all
   end
 end

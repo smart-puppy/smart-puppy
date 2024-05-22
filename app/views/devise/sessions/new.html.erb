@@ -19,14 +19,7 @@
     <div class="right-section">
         <div class="element">
             <h3>Become a part of the pack</h3>
-            <p>Already a user? Get back in here!</p>
-
-            <!-- Select role buttons -->
-
-            <div class="role-buttons">
-                <button class="role-button" id="job-founder-btn" onclick="chooseRole('job-founder')">Job Founder</button>
-                <button class="role-button" id="business-btn" onclick="chooseRole('business')">Business</button>
-            </div>
+            <%= link_to "Not a user yet? Get signed up now!", new_user_registration_path %>
 
             <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
                 <div class="form-inputs">

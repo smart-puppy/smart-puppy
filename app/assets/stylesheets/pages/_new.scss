@@ -75,6 +75,12 @@
     outline: none; /* Remove default focus outline */
   }
 
+  .hidden-checkbox-container {
+    display: none;
+}
+
+
+
   .social-icons {
     margin-top: 20px;
     display: flex;

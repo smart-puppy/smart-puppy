@@ -1,6 +1,7 @@
 class JobsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
   before_action :set_job, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_business!, only: [:new, :create, :edit, :update, :destroy]
 
   def index
     @per_page = (params[:per_page] || 10).to_i
@@ -19,6 +20,9 @@ class JobsController < ApplicationController
   end
 
   def show
+    # @applications = @job.applications
+    @job = Job.find(params[:id])
+    @applications = @job.applications.includes(:user) # Include user to avoid N+1 query problem
   end
 
   def new
@@ -48,7 +52,7 @@ class JobsController < ApplicationController
 
   def destroy
     @job.destroy
-    redirect_to jobs_url, notice: 'Job was successfully destroyed.'
+    redirect_to dashboard_path, notice: 'Job was successfully deleted.'
   end
 
   private
@@ -58,6 +62,12 @@ class JobsController < ApplicationController
   end
 
   def job_params
-    params.require(:job).permit(:title, :description, :company_name, :requirements, :location, :skill_id)
+    params.require(:job).permit(:title, :description, :company_name, :requirements, :location, :skill_id, :photo)
+  end
+
+  def authenticate_business!
+    unless current_user&.business?
+      redirect_to jobs_path, alert: 'You are not authorized to edit this job.'
+    end
   end
 end

@@ -1,1 +1,36 @@
 <h1>Application page</h1>
+
+
+<p>Maybe all of this code needs re-done.</p>
+
+<%= simple_form_for [@job, @application] do |f| %>
+  <% fields = [
+    { attribute: :cv_file_cloudinary, label: "CV File"}
+  ] %>
+
+  <% fields.each do |field| %>
+    <div class="row">
+      <div class="col-12">
+        <%= f.input field[:attribute], label: field[:label], required: true, input_html: { class: "form-control" } %>
+      </div>
+    </div>
+  <% end %>
+
+<%# Upload from your computer %>
+  <div class="row">
+    <div class="col-12">
+      <%= f.input :cv_file_cloudinary, as: :file %>
+    </div>
+  </div>
+
+<%# Pre-selected resumes %
+ Input code, pliz :>
+ Attaching an instance of resume that already has a resume attached.
+<%# > %>
+
+  <div class="row">
+    <div class="col-12">
+      <%= f.button :submit, "Apply", class: "btn btn-primary" %>
+    </div>
+  </div>
+<% end %>
