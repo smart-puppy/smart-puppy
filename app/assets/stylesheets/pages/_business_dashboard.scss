@@ -14,6 +14,23 @@
   justify-content: space-between; /* Distribute content evenly between left and right */
 }
 
+
+/* Banner styles */
+.dashboard-banner {
+  background-color: #007bff; /* Choose your desired background color */
+  color: #fff; /* Choose your desired text color */
+  padding: 20px;
+  height: 400px;
+}
+
+.dashboard-title {
+  margin-bottom: 0; /* Remove default margin */
+  margin-top: 8%;
+}
+
+
+
+
 /* Left Section */
 .left-section {
   width: calc(50% - 10px); /* Adjust the width to leave space between sections */
