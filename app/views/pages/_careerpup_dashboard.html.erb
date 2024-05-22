@@ -1,7 +1,7 @@
  <div class="pup-dashboard-container">
   <h1 class="pup-dashboard-title">Dashboard - CareerPup</h1>
-  
-  
+
+
   <div class="mt-4">
     <h2>Overview</h2>
     <p><strong>Jobs Applied For:</strong> <%= @applied_jobs_count %></p>
@@ -19,7 +19,7 @@
                 <h5 class="card-title"><%= job.title %></h5>
                 <p class="card-text"><%= job.company_name %></p>
                 <p class="card-text"><%= job.location %></p>
-                  <%= link_to 'View job', job_path(job), class: "btn pup-dashboard-btn-link" %>    
+                  <%= link_to 'View job', job_path(job), class: "btn pup-dashboard-btn-link" %>
               </div>
             </div>
           </div>
@@ -43,7 +43,7 @@
               <div class="card-body">
                 <h5 class="card-title"><%= resume.title %></h5>
                 <p class="card-text"><%= time_ago_in_words(resume.created_at) %> ago</p>
-                 <%= link_to 'Download', rails_blob_path(resume.file, disposition: "attachment"), class: "btn pup-dashboard-btn-primary" %>
+                 <%= link_to 'Download', rails_blob_path(resume.resume_file, disposition: "attachment"), class: "btn pup-dashboard-btn-primary" %>
               </div>
             </div>
           </div>
