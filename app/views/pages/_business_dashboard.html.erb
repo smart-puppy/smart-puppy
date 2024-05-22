@@ -20,7 +20,7 @@
                 <p class="card-text"><%= job.location %></p>
                 <%= link_to "View Job", job_path(job), class: "btn btn-primary btn-lg btn-block" %>
                 <%= link_to "Edit Job", edit_job_path(job), class: "btn btn-primary" %>
-                <%= link_to "Delete Job", job_path(job), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: "btn btn-danger" %>
+                <%= link_to "Delete Job", job_path(job), data: { turbo_method: :delete, turbo_confirm: "Permanently delete this job?" }, class: "btn btn-danger" %>
               </div>
             </div>
           </div>

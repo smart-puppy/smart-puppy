@@ -1,5 +1,7 @@
-<div class="container">
-  <h1>Edit Job</h1>
+<!-- app/views/jobs/edit.html.erb -->
+
+<div class="edit-container">
+  <h1 class= "edit-h1" >Edit Job</h1>
 
   <%= form_with(model: @job, local: true) do |form| %>
     <div class="form-group">
@@ -9,7 +11,7 @@
 
     <div class="form-group">
       <%= form.label :description, class: "form-label" %>
-      <%= form.text_area :description, class: "form-control", rows: 5, required: true %>
+      <%= form.text_area :description, class: "form-control form-textarea", rows: 5, required: true %>
     </div>
 
     <div class="form-group">
@@ -19,7 +21,7 @@
 
     <div class="form-group">
       <%= form.label :requirements, class: "form-label" %>
-      <%= form.text_area :requirements, class: "form-control", rows: 5, required: true %>
+      <%= form.text_area :requirements, class: "form-control form-textarea", rows: 5, required: true %>
     </div>
 
     <div class="form-group">
@@ -28,8 +30,8 @@
     </div>
 
     <div class="form-group mt-3">
-      <%= form.submit "Update Job", class: "btn btn-primary" %>
-      <%= link_to 'Cancel', job_path(@job), class: "btn btn-secondary" %>
+      <%= form.submit "Update Job", class: "btn update-btn-primary" %>
+      <%= link_to 'Cancel', job_path(@job), class: "btn cancel-btn-secondary" %>
     </div>
   <% end %>
 </div>
