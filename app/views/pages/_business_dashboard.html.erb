@@ -14,6 +14,9 @@
     </div>
   </div>
 
+
+
+
   <!-- Section for Managing Job Postings -->
   <div class="mt-4 dashboard-business-container">
     <div class="left-section job-listing-section">
@@ -29,9 +32,9 @@
                   <p class="card-text job-listing-card-text"><%= job.location %></p>
                 </div>
                 <div class="card-footer job-listing-card-footer">
-                  <a href="#" class="btn btn-primary">View Job</a>
-                  <a href="#" class="btn btn-primary">Edit Job</a>
-                  <a href="#" class="btn btn-danger">Delete Job</a>
+                  <%= link_to "View Job", job_path(job), class: "btn btn-primary" %>
+                  <%= link_to "Edit Job", edit_job_path(job), class: "btn btn-primary" %>
+                  <%= link_to "Delete Job", job_path(job), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: "btn btn-danger" %>
                 </div>
               </div>
             </div>
@@ -59,8 +62,9 @@
                   <p class="card-text job-listing-card-text"><%= time_ago_in_words(application.created_at) %> ago</p>
                 </div>
                 <div class="card-footer job-listing-card-footer">
-                  <a href="#" class="btn btn-primary">View Application</a>
-                  <a href="#" class="btn btn-primary">Download Resume</a>
+                <%= link_to "View Application" %>
+                  <%= link_to "View Application", job_application_path(application.job, application), class: "btn btn-primary" %>
+                  <%= link_to "Download Resume", rails_blob_path(application.resume.file, disposition: "attachment"), class: "btn btn-primary" %>
                 </div>
               </div>
             </div>
@@ -75,3 +79,7 @@
     </div>
   </div>
 </div>
+
+
+
+
