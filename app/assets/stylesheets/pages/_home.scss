@@ -1,5 +1,6 @@
 /* General styles */
 body {
+  background-color: rgba(17, 113, 162, 255);
   margin: 0;
   padding: 0;
   font-family: Arial, sans-serif;
@@ -7,221 +8,421 @@ body {
   overflow-x: hidden;
 }
 
-*, *::before, *::after {
-  box-sizing: inherit;
+/* Fade-in animation */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Shelling animation */
+@keyframes shelling {
+  0% {
+    box-shadow: inset 0 0 0 0 rgba(17, 113, 162, 0);
+  }
+  100% {
+    box-shadow: inset 0 0 0 20px rgba(17, 113, 162, 1); /* Increased width of shadow */
+  }
 }
 
 /* Container styles */
 .container {
-  max-width: 100%;
+  width: 100%;
+  max-width: 1200px;
   margin: 0 auto;
   padding: 20px;
 }
 
-/* Heading styles */
-h2 {
-  text-align: center;
+/* All sections */
+.section,
+.carousel-item,
+.carouselcv,
+.carouselcoverletter,
+.ats-section,
+.section-questions,
+.text-center,
+.section-to-start {
+  background-color: rgba(212, 253, 254, 255);
+  padding: 40px 20px;
+  margin: 20px auto; /* Center horizontally */
+  border-radius: 10px;
+  text-align: center; /* Center text */
+
+  p {
+    text-align: justify;
+  }
 }
 
 /* Banner section */
 .banner {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: center; /* Center horizontally */
   align-items: center;
-  background-color: white;
+  background-color: rgba(212, 253, 254, 255);
   color: rgba(17, 113, 162, 255);
-  padding: 50px 20px;
+  padding-top: 5%;
+  padding-bottom: 8%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  margin: 0 auto; /* Center horizontally */
+  max-width: 1450px; /* Limit width */
+  animation: fadeIn 1s ease-in-out, shelling 3s ease-in-out forwards; /* Apply fade-in and shelling animation */
+
+  .banner-content {
+    flex: 1;
+    margin-left: 15%;
+    margin-right: 10%;
+    animation: fadeIn 3s ease-in-out; /* Apply fade-in animation */
+
+    h1 {
+      text-align: left;
+    }
+  }
+
+  .banner-image {
+    flex-shrink: 0;
+    margin-right: 10%;
+    width: 450px;
+    height: 450px;
+    overflow: hidden;
+    border-radius: 50%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 3s ease-in-out; /* Apply fade-in animation */
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  .banner-button {
+    width: 200px;
+    background-color: rgba(17, 113, 162, 255);
+    border: none;
+    color: white;
+    padding: 20px 35px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin-top: 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+
+    &:hover {
+      background-color: green;
+      color: white;
+    }
+  }
 }
 
-.banner-content {
-  flex: 1;
-  margin: 0 5%;
-}
-
-.banner-content h1 {
-  font-size: 36px;
-  margin-bottom: 20px;
-}
-
-.banner-content h2 {
-  font-size: 24px;
-  margin-bottom: 40px;
-}
-
-.banner-image {
-  flex-shrink: 0;
-  margin-right: 8%;
-  width: 450px;
-  height: 450px;
-  overflow: hidden;
-  border-radius: 50%;
-}
-.banner-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-/* Carousel item section */
-.carousel-item {
-  padding: 20px;
-}
-
+/* Carousel card */
 .carousel-card {
   border: 1px solid #ddd;
   border-radius: 10px;
   padding: 20px;
   text-align: center;
   cursor: pointer;
+  margin-bottom: 20px; /* Add margin bottom for consistent spacing */
+
+  h3 {
+    margin-top: 0;
+    margin-bottom: 10px;
+  }
+
+  p {
+    margin-bottom: 0;
+  }
+
+  &:hover {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  }
+
+  img {
+    max-width: 100%; /* Ensure images fit inside the card */
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 10px; /* Add margin bottom for spacing between image and text */
+  }
 }
 
-.carousel-card:hover {
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+@media screen and (max-width: 768px) {
+  .carousel-card {
+    padding: 10px; /* Reduce padding for smaller devices */
+  }
 }
 
-/* Carousel control section */
-.carousel-control-prev,
-.carousel-control-next {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  z-index: 1;
-  color: rgba(17, 113, 162, 255);
-}
-
-.carousel-control-prev {
-  left: 0;
-}
-
-.carousel-control-next {
-  right: 0;
-}
-
-.carousel-control-text {
-  display: none;
-}
-
-/* Rest easy section */
-.rest-easy-section {
-  padding: 40px 20px;
-  opacity: 1;
-}
-
-.rest-easy-section h1 {
-  text-align: center;
-}
-
-.rest-easy-section .box {
-  padding: 20px;
-  border-radius: 15px;
-  border: 2px solid transparent;
-}
-
-.rest-easy-section .box p {
-  text-align: justify;
-}
-
-/* ats section */
+/* ATS section */
 .ats-section {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
+  flex-wrap: wrap;
+  background-color: rgba(212, 253, 254, 255);
   padding: 40px 20px;
-  text-align: center;
-}
-
-.ats-section h1 {
-  text-align: center;
-  margin-bottom: 20px;
-  justify-content: center;
-}
-
-.ats-section p {
-  text-align: center;
-  margin-bottom: 20px;
-  justify-content: center;
-}
-
-.ats-section .box {
-  width: 80%;
-  max-width: 800px;
-  padding: 20px;
-  border-radius: 15px;
-  border: 2px solid;
-  background-color: #f7f7f7;
-  text-align: center;
-  justify-content: center;
-}
-
-.box p {
-  text-align: justify-center;
-  margin: 0;
-  justify-content: center;
-}
-
-/* Ask Questions section */
-.accordion-item {
-  border: 1px solid #ddd;
-  margin: 0 auto;
-  max-width: 50%;
+  margin: 20px auto; /* Center horizontally */
   border-radius: 10px;
-  margin-bottom: 20px;
-  text-align: justify-center;
 }
 
-.accordion-header {
-  display: flex;
+.ats-content {
+  flex: 1;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.ats-text {
   text-align: center;
+  padding: 20px;
+}
+
+.ats-text h1 {
+  margin-bottom: 20px;
+}
+
+.ats-text p {
+  text-align: justify;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.ats-image {
+  flex: 1;
+  padding: 20px;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
   align-items: center;
 }
 
-.accordion-item button.accordion-button {
-  text-align: center;
+.ats-image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+/* Only the text of accordion items centered */
+.section-questions {
+  display: flex;
+  align-items: center;
+
+  .questions-image {
+    flex: 1;
+    max-width: 50%; /* Take up half of the container */
+    overflow: hidden;
+
+    img {
+      width: 100%; /* Ensure the image fills its container */
+      height: auto; /* Maintain aspect ratio */
+      display: block; /* Prevent any whitespace below the image */
+    }
+  }
+
+  .questions-content {
+    flex: 1;
+    max-width: 50%; /* Take up half of the container */
+    padding: 20px;
+
+    .accordion-item {
+      .accordion-body {
+        text-align: center;
+      }
+
+      button.accordion-button {
+        text-align: center;
+      }
+    }
+  }
+}
+
+.section-to-start {
+  text-align: center; /* Center the content horizontally */
+
+  .lower-button {
+    width: 200px;
+    background-color: rgba(17, 113, 162, 255);
+    border: none;
+    color: white;
+    padding: 20px 35px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin-top: 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+  }
+
+  .lower-button:hover {
+    background-color: green;
+    color
+    : white;
+  }
+}
+
+
+/* Adjust the styling of the box if needed */
+.accordion {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+  .accordion-item {
+    margin-bottom: 20px;
+  }
 }
 
 /* Footer styles */
 footer {
+  width: 100%;
   background-color: rgba(17, 113, 162, 255);
   color: white;
   text-align: center;
   padding: 20px;
-  position: relative; /* Add position relative for arrow placement */
-}
+  position: relative;
 
-.social-icons {
-  margin-bottom: 20px;
-}
+  .social-icons {
+    margin-bottom: 20px;
 
-.social-icons a {
-  color: white;
-  text-decoration: none;
-  margin: 0 10px;
-}
+    a {
+      color: white;
+      text-decoration: none;
+      margin: 0 10px;
+      font-size: 24px; /* Increase font size */
+      transition: transform 0.3s;
 
-.links a {
-  color: white;
-  text-decoration: none;
-  margin: 0 10px;
-}
+      &:hover {
+        transform: scale(1.2);
+      }
+    }
+  }
 
-.copyright {
-  margin-top: 1%;
-  font-size: 14px;
+  .links {
+    a {
+      color: white;
+      text-decoration: none;
+      margin: 0 10px;
+    }
+  }
+
+  .copyright {
+    margin-top: 1%;
+    font-size: 14px;
+  }
 }
 
 /* Scroll-up arrow */
 .scroll-up-arrow {
   position: absolute;
-  right: 20px; /* Adjust the distance from the right */
-  bottom: 20px; /* Adjust the distance from the bottom */
-  font-size: 48px; /* Increase the size of the arrow */
-  color: white; /* Arrow color */
+  right: 20px;
+  bottom: 20px;
+  font-size: 48px;
+  color: white;
   cursor: pointer;
+
+  &:hover {
+    background-color: rgba(17, 113, 162, 200);
+  }
 }
 
-.scroll-up-arrow:hover {
-  background-color: rgba(17, 113, 162, 200);
+/* Responsive Styles */
+
+/* For smaller devices */
+@media screen and (max-width: 768px) {
+  .banner .banner-content {
+    margin-left: 10%;
+    margin-right: 10%;
+  }
+
+  .banner .banner-image {
+    width: 300px;
+    height: 300px;
+  }
+
+  .banner .banner-button {
+    width: 150px;
+    padding: 15px 25px;
+  }
+
+  .section-to-start .lower-button {
+    width: 150px;
+    padding: 15px 25px;
+  }
+}
+
+/* For extra small devices */
+@media screen and (max-width: 576px) {
+  .banner .banner-content {
+    margin-left: 5%;
+    margin-right: 5%;
+  }
+
+  .banner .banner-image {
+    width: 200px;
+    height: 200px;
+  }
+
+  .banner .banner-button {
+    width: 120px;
+    padding: 10px 20px;
+    font-size: 14px;
+  }
+
+  .section-to-start .lower-button {
+    width: 120px;
+    padding: 10px 20px;
+    font-size: 14px;
+  }
+}
+
+/* For smaller devices */
+@media screen and (max-width: 768px) {
+  .ats-section {
+    flex-direction: column-reverse; /* Reverse the flex direction */
+  }
+
+  .ats-content,
+  .ats-image {
+    max-width: 100%; /* Allow content to take full width */
+    padding: 20px;
+    box-sizing: border-box;
+  }
+
+  .ats-image img {
+    max-width: 100%; /* Ensure image fills its container */
+    height: auto;
+    border-radius: 10px;
+  }
+
+  .ats-text {
+    text-align: center;
+    padding: 20px;
+  }
+}
+
+
+/* For smaller devices */
+@media screen and (max-width: 768px) {
+  .section-questions {
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Center items horizontally */
+  }
+
+  .questions-content,
+  .questions-image {
+    width: 100%; /* Take full width */
+    padding: 20px;
+    box-sizing: border-box;
+  }
+
+  .accordion-item {
+    width: 100%; /* Take full width */
+    text-align: center; /* Center accordion items */
+  }
+
+  .accordion-button {
+    width: 100%; /* Take full width */
+    text-align: center; /* Center accordion button */
+  }
 }
