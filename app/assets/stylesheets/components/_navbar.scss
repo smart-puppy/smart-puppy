@@ -1,25 +1,11 @@
-/* Navbar Custom CSS */
 .navbar-lewagon {
   justify-content: space-between;
   background: rgba(17, 113, 162, 1);
-  height: 80px; /* Increase height to accommodate the avatar and login button */
-  max-width: 100%;
-  margin: 0 auto;
-  padding-left: 20px;
-  padding-right: 20px;
-  padding-top: 20px; /* Increased padding-top */
-  padding-bottom: 10px;
-  position: relative;
-  z-index: 1000;
+  height: 80px;
 }
 
 .navbar-lewagon .navbar-brand img {
-  width: 60px;
-  margin-left: 0;
-}
-
-.login-btn {
-  margin-right: 0;
+  width: 80px;
 }
 
 .navbar-toggler {
@@ -35,22 +21,17 @@
   color: rgba(17, 113, 162, 1);
 }
 
-.nav-item {
+
+.nav-item{
   background-color: rgba(17, 113, 162, 1);
-  color: white;
+  color: black;
   font-size: 16px;
   border: none;
   border-radius: 5px;
-  padding: 5px 15px;
-  margin: 0 5px;
+  padding: 10px 20px;
 }
 
 .nav-item:hover {
   background-color: rgb(84, 232, 235);
   color: black;
-}
-
-/* Adjust dropdown menu */
-.dropdown-menu {
-  right: 20px; /* Distance from the right border */
 }

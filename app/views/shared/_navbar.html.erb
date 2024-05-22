@@ -1,5 +1,5 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
-  <div class="container-fluid navbarfull">
+  <div class="container-fluid">
     <%= link_to root_path, class: "navbar-brand" do %>
       <%= image_tag "logoicon.png", class: "logo-icon", alt: "Logo" %>
     <% end %>
@@ -8,8 +8,8 @@
       <span class="navbar-toggler-icon"></span>
     </button>
 
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav mx-auto"> <!-- Change justify-content to mx-auto -->
+    <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+      <ul class="navbar-nav">
         <% if user_signed_in? %>
           <li class="nav-item active">
             <%= link_to "Home", root_path, class: "nav-link" %>
@@ -19,6 +19,15 @@
           </li>
           <li class="nav-item">
             <%= link_to "Jobs", jobs_path, class: "nav-link" %>
+          </li>
+          <li class="nav-item dropdown">
+            <a href="#" class="avatar" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <%= image_tag "robbie.jpg", class: "avatar", alt: "dropdown menu" %>
+            </a>
+            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+              <%= link_to "Messages", "#", class: "dropdown-item" %>
+              <%= link_to "Log out", destroy_user_session_path, data: { turbo_method: :delete }, class: "dropdown-item" %>
+            </div>
           </li>
         <% else %>
           <li class="nav-item">
@@ -30,54 +39,11 @@
           <li class="nav-item">
             <%= link_to "Jobs", jobs_path, class: "nav-link" %>
           </li>
-        <% end %>
-      </ul>
-
-      <!-- Move the login button inside the collapse div -->
-      <% if user_signed_in? %>
-        <div class="navbar-nav">
-          <li class="nav-item dropdown">
-            <a href="#" class="avatar nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              <%= image_tag "robbie.jpg", class: "avatar", alt: "dropdown menu" %>
-            </a>
-            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-              <%= link_to "Messages", "#", class: "dropdown-item" %>
-              <%= link_to "Log out", destroy_user_session_path, data: { turbo_method: :delete }, class: "dropdown-item" %>
-            </div>
-          </li>
-        </div>
-      <% else %>
-        <ul class="navbar-nav">
           <li class="nav-item">
             <%= link_to "Login", new_user_session_path, class: "nav-link login-btn" %>
           </li>
-        </ul>
-      <% end %>
+        <% end %>
+      </ul>
     </div>
   </div>
-
-<script>
-
-document.addEventListener("DOMContentLoaded", function() {
-  // Get all avatar links
-  var avatarLinks = document.querySelectorAll('.navbar .avatar');
-
-  // Loop through each avatar link
-  avatarLinks.forEach(function(avatarLink) {
-    // Add a click event listener to each avatar link
-    avatarLink.addEventListener('click', function(event) {
-      // Prevent the default action of the click event
-      event.preventDefault();
-
-      // Get the dropdown menu associated with the clicked avatar link
-      var dropdownMenu = avatarLink.parentElement.querySelector('.dropdown-menu');
-
-      // Toggle the 'show' class on the dropdown menu
-      dropdownMenu.classList.toggle('show');
-    });
-  });
-});
-
-</script>
-
 </div>
