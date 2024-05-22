@@ -1,5 +1,5 @@
 <div class="container">
-  <h1 class="mb-4">Dashboard: Business-Partner</h1>
+  <h1 class="mb-4">Dashboard: Business Partner</h1>
   <div class="mt-4">
     <h2>Overview</h2>
     <p><strong>Jobs Posted:</strong> <%= @jobs_count %></p>
@@ -29,7 +29,6 @@
         <p class="text-center">You have no job postings yet.</p>
       <% end %>
     </div>
-
     <%= link_to "Post New Job", new_job_path, class: "btn btn-success btn-lg btn-block mt-3" %>
   </div>
 
@@ -47,14 +46,19 @@
                 <p class="card-text"><%= application.job.title %></p>
                 <p class="card-text"><%= time_ago_in_words(application.created_at) %> ago</p>
                 <%= link_to "View Application", job_application_path(application.job, application), class: "btn btn-link" %>
-                <%= link_to "Download Resume", rails_blob_path(application.resume.file, disposition: "attachment"), class: "btn btn-primary" %>
+                <% if application.cv_file_cloudinary.attached? %>
+                <%= link_to "Download Resume", rails_blob_path(application.cv_file_cloudinary, disposition: "attachment"), class: "btn btn-primary" %>
+                <% else %>
+                <p>No resume attached</p>
+              <% end %>
+                <%# <%= link_to("Download", application.cv_file_cloudinary("My_cv", :file, :attachment => true)) %>
               </div>
             </div>
           </div>
         <% end %>
       <% else %>
         <p class="text-center">You have no job applications yet.</p>
-      <% end %
+      <% end %>
     </div>
   </div>
 </div>
