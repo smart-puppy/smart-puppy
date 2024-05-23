@@ -1,12 +1,19 @@
 <div class="container">
   <div class="card mb-3 mx-auto p-0 p-md-5" style="max-width: 800px;">
     <div class="card-body">
-      <h5 class="card-title"><%= @application.user.first_name %> <%= @application.user.last_name %></h5>
+      <h2 class="card-title"><%= @application.user.first_name %> <%= @application.user.middle_name %> <%= @application.user.last_name %></h2>
+      <p class="card-text"><strong>Username:</strong> <%= @application.user.username %></p>
       <p class="card-text"><strong>Email:</strong> <%= @application.user.email %></p>
+      <p class="card-text"><strong>Phone:</strong> <%= @application.user.phone_number %></p>
+      <p class="card-text"><strong>Pronouns:</strong> <%= @application.user.pronouns %></p>
+      <p class="card-text"><strong>Industry:</strong> <%= @application.user.industry %></p>
+      <p class="card-text"><strong>Current Job Position:</strong> <%= @application.user.job_position %></p>
+      <p class="card-text"><strong>Location:</strong> <%= @application.user.location %></p>
+      <p class="card-text"><strong>Education:</strong> <%= @application.user.education %></p>
       <p class="card-text"><strong>Status:</strong> <%= @application.status %></p>
-      <p class="card-text"><strong>Applied:</strong> <%= time_ago_in_words(@application.created_at) %> ago</p>
       <p class="card-text"><strong>Cover Letter:</strong> <%= @application.cover_letter %></p>
       <p class="card-text"><strong>CV File:</strong> <%= link_to 'Download CV', rails_blob_path(@application.cv_file_cloudinary, disposition: "attachment") %></p>
+      <p class="card-text"><strong>Applied:</strong> <%= time_ago_in_words(@application.created_at) %> ago</p>
       <%= link_to 'Back to Job', job_path(@application.job), class: "btn btn-secondary" %>
     </div>
   </div>

@@ -7,7 +7,6 @@ Rails.application.routes.draw do
 
   # Static pages
   get 'dashboard', to: 'pages#dashboard'
-  get 'users-dashboard', to: 'pages#users_dashboard', as: :users_dashboard
   get 'about-us', to: 'pages#about_us', as: :about_us
   get 'get-in-touch', to: 'pages#get_in_touch', as: :get_in_touch
   get 'cookies-preferences', to: 'pages#cookies_preferences', as: :cookies_preferences
