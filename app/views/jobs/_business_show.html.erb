@@ -7,18 +7,12 @@
   <h1 class="banner-text">Latest job opportunities and applications below</h1>
 </div>
 
-
 <div class="show-business-container">
-
 
   <!-- Job Listings on the Left -->
   <div class="show-business-job-listing">
-
     <div class="card mb-3 text-center mx-auto p-0 p-md-5 show-business-card">
-
-
       <div class="row g-0">
-
         <div class="col-md-12">
           <% if @job.photo.attached? %>
             <%= cl_image_tag @job.photo.key, height: 200, width: 300, crop: :fill, class: "show-business-img-fluid rounded-start" %>
@@ -47,35 +41,30 @@
         </div>
       </div>
     </div>
-  </div>
 
-
-
-  <!-- Applications on the Right -->
-  <div class="show-business-applications">
-    <% if @job.user == current_user %>
-      <div class="card mb-3 text-center mx-auto p-3" style="max-width: 800px;">
-        <h3>Applications</h3>
-        <% if @applications.any? %>
-          <% @applications.each do |application| %>
-            <div class="card mb-3">
-              <div class="card-body">
-                <h5 class="card-title"><%= application.user.first_name %> <%= application.user.last_name %></h5>
-                <p class="card-text"><strong>Status:</strong> <%= application.status %></p>
-                <p class="card-text"><strong>Applied:</strong> <%= time_ago_in_words(application.created_at) %> ago</p>
-                <%= link_to 'View Application', job_application_path(application.job, application), class: "btn btn-primary" %>
+    <!-- Applications on the Right -->
+    <div class="show-business-applications">
+      <% if @job.user == current_user %>
+        <div class="card mb-3 text-center mx-auto p-3" style="max-width: 800px;">
+          <h3>Applications</h3>
+          <% if @applications.any? %>
+            <% @applications.each do |application| %>
+              <div class="card mb-3">
+                <div class="card-body">
+                  <h5 class="card-title"><%= application.user.first_name %> <%= application.user.last_name %></h5>
+                  <p class="card-text"><strong>Status:</strong> <%= application.status %></p>
+                  <p class="card-text"><strong>Applied:</strong> <%= time_ago_in_words(application.created_at) %> ago</p>
+                  <%= link_to 'View Application', job_application_path(application.job, application), class: "btn btn-primary" %>
+                </div>
               </div>
-            </div>
+            <% end %>
+          <% else %>
+            <p  style="margin-top: 15%; text-align: center">No applications yet.</p>
           <% end %>
-        <% else %>
-          <p  style="margin-top: 15%; text-align: center">No applications yet.</p>
-        <% end %>
-      </div>
-    <% end %>
+        </div>
+      <% end %>
+    </div>
   </div>
-
-</div>
-
 
 </div>
 

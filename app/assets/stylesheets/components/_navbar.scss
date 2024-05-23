@@ -13,8 +13,8 @@
 }
 
 .navbar-nav .nav-link {
-  color: white;
   text-decoration: none;
+
 }
 
 .navbar-nav .nav-link:hover {
@@ -25,13 +25,19 @@
 .nav-item{
   background-color: rgba(17, 113, 162, 1);
   color: black;
+  margin-right: 5px;
   font-size: 16px;
   border: none;
-  border-radius: 5px;
-  padding: 10px 20px;
+  border-radius: 10px;
+  padding: 7px 20px;
+  background-color: rgb(84, 232, 235);
+  border-style: solid;
+  border-color: black;
+  border-width: .5px;
 }
 
+
+
 .nav-item:hover {
-  background-color: rgb(84, 232, 235);
-  color: black;
+  opacity: 0.9;
 }
