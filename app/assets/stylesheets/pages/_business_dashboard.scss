@@ -1,142 +1,144 @@
-/* Reset CSS */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-/* Dashboard Business Container */
-.dashboard-business-container {
-  margin-top: 5%;
+/* Container Styles */
+.container {
+  padding: 20px;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 20px;
-  display: flex;
-  justify-content: space-between; /* Distribute content evenly between left and right */
+  border-radius: 30px;
 }
 
-/* Banner styles */
 .dashboard-banner {
-  background-color: #007bff; /* Choose your desired background color */
-  color: #fff; /* Choose your desired text color */
-  padding: 20px;
-  height: 400px;
-}
-
-.dashboard-title {
-  margin-bottom: 0; /* Remove default margin */
-  margin-top: 8%;
-}
-
-/* Left Section */
-.left-section {
-  width: calc(50% - 10px); /* Adjust the width to leave space between sections */
-}
-
-/* Right Section */
-.right-section {
-  width: calc(50% - 10px); /* Adjust the width to leave space between sections */
-}
-
-/* Dashboard Title */
-.dashboard-title {
+  height: 500px;
+  background-size: cover;
+  background-position: center;
+  color: white;
+  padding: 40px 20px;
   text-align: center;
   margin-bottom: 20px;
-}
-
-/* Overview */
-.dashboard-overview {
-  text-align: center; /* Center the overview text */
-  margin-bottom: 20px;
-  margin-top: 5%;
-}
-
-/* Overview Text */
-.dashboard-overview p {
-  text-align: center; /* Center the overview text */
-  margin-top: 5%;
-}
-
-/* Section Title */
-.dashboard-subtitle {
-  text-align: center;
-  margin-bottom: 20px;
-}
-
-/* Job Listing Section */
-.job-listing-section,
-.job-applications-section {
-  background-color: rgba(212, 253, 254, 1); /* Light blue background color */
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  margin-bottom: 20px;
-  height: 100%; /* Ensure the section takes up the full height */
   display: flex;
-  flex-direction: column; /* Align child elements vertically */
-}
-/* Job Listing Card */
-.job-listing-card,
-.job-applications-card {
-  border: 1px solid #ced4da; /* Border color */
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  margin-bottom: 20px; /* Add margin between cards */
-  height: 100%; /* Ensure all cards have the same height */
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  border-radius: 30px;
+
 }
 
-/* Job Listing Card Body */
-.job-listing-card-body,
-.job-applications-card-body {
-  padding: 20px;
-  height: 100%; /* Ensure all card bodies have the same height */
-}
-
-/* Job Listing Card Title */
-.job-listing-card-title,
-.job-applications-card-title {
-  font-size: 1.25rem;
-  margin-bottom: 10px;
-  white-space: nowrap; /* Prevent text from wrapping */
-  overflow: hidden; /* Hide overflowing text */
-  text-overflow: ellipsis; /* Display ellipsis (...) for truncated text */
-}
-
-/* Job Listing Card Text */
-.job-listing-card-text,
-.job-applications-card-text {
-  margin-bottom: 10px;
-}
-
-/* Job Listing Card Footer */
-.job-listing-card-footer,
-.job-applications-card-footer {
-  text-align: center;
-  margin-top: auto; /* Push the footer to the bottom */
-}
-
-/* Job Listing Card Footer Links */
-.job-listing-card-footer a,
-.job-applications-card-footer a {
-  display: inline-block;
+.dashboard-banner::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+  z-index: 1;
+  border-radius: 30px;
+}
+
+.dashboard-banner h1,
+.dashboard-banner h2 {
+  z-index: 2;
+  margin: 0;
+  padding: 10px 20px;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+  border-radius: 5px; /* Rounded corners */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Text shadow */
+}
+
+.dashboard-banner h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+.dashboard-banner h2 {
+  font-size: 2rem;
+  border: 2px solid black; /* Black border around the text */
+  color: white; /* White text color */
+}
+
+
+
+.col-md-12 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Style for the <p> tags */
+.p {
+  margin-right: 20px; /* Adjust as needed */
+  text-align: center;
+
+}
+
+.text-center {
+  background-color: rgba(212,253,254,255);
+}
+
+
+/* Card Styles */
+.card {
+  border-radius: 30px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card-body {
+  padding: 20px;
+}
+
+.card-footer {
+  display: flex;
+  justify-content: space-around;
+  padding: 10px 20px;
+  background-color: #f8f9fa;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.card-title {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.card-text {
+  font-size: 1rem;
   margin-bottom: 5px;
 }
 
-/* Post New Job Button */
+/* Button Styles */
+.btn-light-blue {
+  background-color: lightblue;
+  color: white;
+  border-color: lightblue;
+
+}
+
+.btn-light-blue .fas {
+  color: white;
+}
+
+.btn-primary, .btn-danger, .btn-success {
+  margin: 5px;
+  border-radius: 50px;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .card {
+    margin-bottom: 20px;
+  }
+}
+
+.job-applications-section {
+  margin-top: 5%; /* Adjust the value as needed */
+}
+
+/* Section Header Styles */
+.dashboard-subtitle {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
 .post-new-job-button {
   text-align: center;
-  margin-top: 5%;
-}
-
-/* Buttons */
-.btn-primary {
-  background-color: #28a745; /* Change background color of primary buttons */
-  border-color: #28a745; /* Change border color of primary buttons */
-}
-
-.btn-secondary {
-  background-color: #6c757d; /* Change background color of secondary buttons */
-  border-color: #6c757d; /* Change border color of secondary buttons */
-  color: #fff; /* Change text color of secondary buttons */
+  margin-top: 20px;
 }

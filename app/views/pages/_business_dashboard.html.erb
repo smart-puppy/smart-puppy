@@ -3,14 +3,17 @@
     <h1 class="dashboard-title">Dashboard: Business Partner</h1>
     <h2>Overview</h2>
   </div>
-  <div class="mt-4 dashboard-overview">
-    <div class="row justify-content-center">
-      <div class="col-md-6">
-        <p><strong>Jobs Posted:</strong> <%= @jobs_count %></p>
-        <p><strong>Incoming Applications:</strong> <%= @applications_count %></p>
-      </div>
+
+
+<div class="text-center">
+  <div class="col-md-12 d-flex justify-content-center">
+    <div class="d-flex">
+      <p class="mr-12" style="margin-right: 10%; margin-left: 15%;"><strong>Jobs Posted:</strong> <%= @jobs_count %></p>
+      <p><strong>Incoming Applications:</strong> <%= @applications_count %></p>
     </div>
   </div>
+</div>
+
 
   <!-- Section for Managing Job Postings -->
   <div class="mt-4 dashboard-business-container">
@@ -19,50 +22,55 @@
       <div class="row justify-content-center">
         <% if @jobs && @jobs.any? %>
           <% @jobs.each do |job| %>
-            <div class="col-12 col-md-4"  style="margin-bottom: 5%">
+            <div class="col-12 col-md-4" style="margin-bottom: 5%">
               <div class="card job-listing-card mb-3">
                 <div class="card-body job-listing-card-body">
-                  <h5 class="card-title job-listing-card-title"><%= job.title %></h5>
-                  <p class="card-text job-listing-card-text"><%= job.company_name %></p>
-                  <p class="card-text job-listing-card-text"><%= job.location %></p>
+                  <h5 class="card-title job-listing-card-title"><strong>Job Title: </strong><%= job.title %></h5>
+                  <p class="card-text job-listing-card-text"><strong>Company: </strong><%= job.company_name %></p>
+                  <p class="card-text job-listing-card-text"><strong>Location: </strong><%= job.location %></p>
+                  <p class="card-text job-listing-card-text"><strong>Description: </strong><%= job.description.truncate(50) %></p>
+                  <p class="card-text job-listing-card-text"><strong>Requirements: </strong><%= job.requirements %></p>
+                  <p class="card-text job-listing-card-text">Posted: <%= time_ago_in_words(job.updated_at) %> ago</p>
+
+
+
+
+
+
+                  <div class="card-footer job-listing-card-footer">
+
+                  <%= link_to job_path(job), class: "btn btn-primary btn-light-blue" do %>
+                    <i class="fas fa-eye"></i> <!-- View icon -->
+                  <% end %>
+                  <%= link_to edit_job_path(job), class: "btn btn-primary btn-light-blue" do %>
+                    <i class="fas fa-edit"></i> <!-- Edit icon -->
+                  <% end %>
+                  <%= link_to job_path(job), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: "btn btn-danger btn-light-blue" do %>
+                    <i class="fas fa-trash-alt"></i> <!-- Delete icon -->
+                  <% end %>
                 </div>
-
-
-
-
-<div class="card-footer job-listing-card-footer">
-  <%= link_to job_path(job), class: "btn btn-primary" do %>
-    <i class="fas fa-eye"></i> <!-- View icon -->
-  <% end %>
-
-  <%= link_to edit_job_path(job), class: "btn btn-primary" do %>
-    <i class="fas fa-edit"></i> <!-- Edit icon -->
-  <% end %>
-
-  <%= link_to job_path(job), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: "btn btn-danger" do %>
-    <i class="fas fa-trash-alt"></i> <!-- Delete icon -->
-  <% end %>
-</div>
-
-
-
               </div>
+                </div>
 
             </div>
           <% end %>
         <% else %>
-          <p class="text-center">You have no job postings yet.</p>
+          <p class="text-center" style="background-color: rgba(212,253,254,255);">You have no job postings yet.</p>
         <% end %>
       </div>
       <div class="post-new-job-button">
         <%= link_to "Post New Job", new_job_path, class: "btn btn-success" %>
       </div>
+       <hr> <!-- Horizontal line to separate sections -->
     </div>
+
+
+
 
     <!-- Section for Viewing Job Applications -->
     <div class="right-section job-applications-section">
       <h2 class="dashboard-subtitle job-listing-title">Job Applications</h2>
-      <div class="row justify-content-center">
+      <div class="row justify-content-center" >
         <% if @applications && @applications.any? %>
           <% @applications.each do |application| %>
             <div class="col-12 col-md-4">
@@ -84,7 +92,7 @@
             </div>
           <% end %>
         <% else %>
-          <p class="text-center">You have no job applications yet.</p>
+          <p class="text-center" style="background-color: rgba(212,253,254,255)">You have no job applications yet.</p>
         <% end %>
       </div> <!-- Closing tag for row -->
     </div> <!-- Closing tag for right-section -->
