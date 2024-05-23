@@ -10,10 +10,7 @@
     <div class="right-section" data-controller='business'>
         <div class="element">
             <h3>Become a part of the pack</h3>
-            <%= link_to "Already a user? Get back in here!", new_user_session_path %>
-
-            <!-- Select role buttons -->
-
+            <%= link_to "Already a user? Get back in here!", new_user_session_path, style: "text-decoration: none; color: black;" %>
             <div class="role-buttons">
                 <button class="role-button" id="careerpup-btn" onclick="chooseRole('careerpup')" data-action="click->business#uncheckBusiness">CareerPup</button>
                 <button class="role-button" id="business-btn" onclick="chooseRole('business')" data-action="click->business#checkBusiness">Business Partner</button>
@@ -45,6 +42,7 @@
         </div>
     </div>
 </div>
+
 
 <script>
     // JavaScript function to handle selecting role buttons
