@@ -1,17 +1,12 @@
 <body>
-
 <div class="container-fluid business-index-container">
-
   <div class="row">
-
     <div class="business-index-banner" style="background-image: url('https://source.unsplash.com/1600x900/?job,application');">
-      <!-- Your banner content here -->
-
-       <h1 class="banner-title">Post a new job to find the right candidates!</h1>
-
       <div class="banner-overlay">
-
+        <h1 class="banner-title">Post a new job to find the right candidates!</h1>
         <div class="container-searchform">
+
+
           <div class="row justify-content-center">
             <div class="col-12 col-md-8 my-3">
               <%= form_with url: jobs_path, method: :get, class: "business-form-search d-flex" do %>
@@ -30,6 +25,7 @@
         </div>
       </div>
     </div>
+
 
     <div class="row">
       <% if @jobs.any? %>
