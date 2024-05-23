@@ -11,7 +11,7 @@ class PagesController < ApplicationController
         @jobs = @user.jobs.limit(6)
         @applications = Application.where(job: @jobs)
       else
-        # @jobs = @user.applied_jobs.limit(6)
+        @jobs = @user.applied_jobs.limit(6)
         @resumes = @user.resumes
       end
     end

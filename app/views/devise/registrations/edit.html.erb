@@ -23,7 +23,7 @@
     <%= f.input :job_position, required: false %>
     <%= f.input :education, required: true %>
     <%# <%= f.input :experience, required: true %>
-    <%= f.input :skills, required: true %>
+    <%= f.association :skills, required: true %>
 
     <%= f.input :password,
                 hint: "Leave it blank if you don't want to change it",
