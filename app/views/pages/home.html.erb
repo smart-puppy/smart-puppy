@@ -1,253 +1,179 @@
-<div class="banner">
-<div class="banner-content">
- <h1>UNLEASH YOUR FULL POTENTIAL WITH</h1> <h1><strong>Smart Puppy</strong>!</h1>
-<button class="banner-button" onclick="location.href='<%= new_user_registration_path %>';">Get started with Smart Puppy</button>
- </div>
- <div class="banner-image">
- <%= image_tag "logoicon.png", alt: "Banner Image" %>
- </div>
-</div>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
 
-
-
-<%#
-<div class="container">
-  <section class="mt-5 carouselcv">
-  <h2>Build a resume from template</h2>
-  <div id="carouselExampleControls1" class="carousel slide" data-bs-ride="carousel">
-    <div class="carousel-inner">
-      <div class="carousel-item active">
-        <div class="row">
-          <div class="col-md-4">
-            <div class="carousel-card" onclick="cardClicked(1)">
-              <h3>CV1</h3>
-              <p>Description of CV1</p>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="carousel-card" onclick="cardClicked(2)">
-              <h3>CV2</h3>
-              <p>Description of CV2</p>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="carousel-card" onclick="cardClicked(3)">
-              <h3>CV3</h3>
-              <p>Description of CV3</p>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="carousel-item">
-        <div class="row">
-          <div class="col-md-4">
-            <div class="carousel-card" onclick="cardClicked(4)">
-              <h3>CV4</h3>
-              <p>Description of CV4</p>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="carousel-card" onclick="cardClicked(5)">
-              <h3>CV5</h3>
-              <p>Description of CV5</p>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="carousel-card" onclick="cardClicked(6)">
-              <h3>CV6</h3>
-              <p>Description of CV6</p>
-            </div>
-          </div>
-        </div>
-      </div>
+<div id="body">
+  <div class="banner">
+    <div class="banner-content">
+      <h1>UNLEASH YOUR FULL POTENTIAL WITH</h1>
+      <h1><strong>Smart Puppy</strong>!</h1>
+      <button class="banner-button" onclick="location.href='<%= new_user_registration_path %>';">Get started with Smart Puppy</button>
     </div>
-    <!-- Add navigation arrows -->
-    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls1" data-bs-slide="prev" style="margin-left:-10%; color: black">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls1" data-bs-slide="next" style="margin-right:-10%">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-
-    </button>
+    <div class="banner-image">
+      <%= image_tag "logoicon.png", alt: "Banner Image" %>
+    </div>
   </div>
-</section>
- %>
 
-
-<div class="container">
-  <section class="mt-5 carouselcoverletter">
-    <h2>Need a cover letter, too? We've got you!</h2>
-    <div id="carouselExampleControls2" class="carousel slide" data-bs-ride="carousel">
-      <div class="carousel-inner">
-        <div class="carousel-item active">
-          <div class="row">
-            <div class="col-md-4">
-              <div class="carousel-card" onclick="cardClicked(1)">
-                <h3>Cover Letter 1</h3>
-                <img src="<%= asset_path('coverletter1.png') %>" alt="Cover Letter 1 Image"> <!-- Add image -->
-                <p>Description of Cover Letter 1</p>
+  <div class="container">
+    <section class="mt-5 carouselcoverletter">
+      <h2>Need a cover letter? We've got you!</h2>
+      <div id="carouselExampleControls1" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <div class="row">
+              <div class="col-md-4">
+                <div class="carousel-card" onclick="cardClicked(1)">
+                  <h3>Cover Letter 1</h3>
+                  <img src="<%= asset_path('coverletter1.png') %>" alt="Cover Letter 1 Image">
+                  <p>Description of Cover Letter 1</p>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="carousel-card" onclick="cardClicked(2)">
+                  <h3>Cover Letter 2</h3>
+                  <img src="<%= asset_path('coverletter1.png') %>" alt="Cover Letter 2 Image">
+                  <p>Description of Cover Letter 2</p>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="carousel-card" onclick="cardClicked(3)">
+                  <h3>Cover Letter 3</h3>
+                  <img src="<%= asset_path('coverletter1.png') %>" alt="Cover Letter 3 Image">
+                  <p>Description of Cover Letter 3</p>
+                </div>
               </div>
             </div>
-            <div class="col-md-4">
-              <div class="carousel-card" onclick="cardClicked(2)">
-                <h3>Cover Letter 2</h3>
-                <img src="<%= asset_path('coverletter1.png') %>" alt="Cover Letter 2 Image"> <!-- Add image -->
-                <p>Description of Cover Letter 2</p>
+          </div>
+          <div class="carousel-item">
+            <div class="row">
+              <div class="col-md-4">
+                <div class="carousel-card" onclick="cardClicked(4)">
+                  <h3>Cover Letter 4</h3>
+                  <img src="<%= asset_path('coverletter1.png') %>" alt="Cover Letter 4 Image">
+                  <p>Description of Cover Letter 4</p>
+                </div>
               </div>
-            </div>
-            <div class="col-md-4">
-              <div class="carousel-card" onclick="cardClicked(3)">
-                <h3>Cover Letter 3</h3>
-                <img src="<%= asset_path('coverletter1.png') %>" alt="Cover Letter 3 Image"> <!-- Add image -->
-                <p>Description of Cover Letter 3</p>
+              <div class="col-md-4">
+                <div class="carousel-card" onclick="cardClicked(5)">
+                  <h3>Cover Letter 5</h3>
+                  <img src="<%= asset_path('coverletter1.png') %>" alt="Cover Letter 5 Image">
+                  <p>Description of Cover Letter 5</p>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="carousel-card" onclick="cardClicked(6)">
+                  <h3>Cover Letter 6</h3>
+                  <img src="<%= asset_path('coverletter1.png') %>" alt="Cover Letter 6 Image">
+                  <p>Description of Cover Letter 6</p>
+                </div>
               </div>
             </div>
           </div>
         </div>
-        <div class="carousel-item">
-          <div class="row">
-            <div class="col-md-4">
-              <div class="carousel-card" onclick="cardClicked(4)">
-                <h3>Cover Letter 4</h3>
-                <img src="<%= asset_path('coverletter1.png') %>" alt="Cover Letter 4 Image"> <!-- Add image -->
-                <p>Description of Cover Letter 4</p>
-              </div>
-            </div>
-            <div class="col-md-4">
-              <div class="carousel-card" onclick="cardClicked(5)">
-                <h3>Cover Letter 5</h3>
-                <img src="<%= asset_path('coverletter1.png') %>" alt="Cover Letter 5 Image"> <!-- Add image -->
-                <p>Description of Cover Letter 5</p>
-              </div>
-            </div>
-            <div class="col-md-4">
-              <div class="carousel-card" onclick="cardClicked(6)">
-                <h3>Cover Letter 6</h3>
-                <img src="<%= asset_path('coverletter1.png') %>" alt="Cover Letter 6 Image"> <!-- Add image -->
-                <p>Description of Cover Letter 6</p>
-              </div>
-            </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls1" data-bs-slide="prev" style="margin-left:-11%; color: black">
+          <span class="carousel-control-prev-icon" aria-hidden="true" style="background-color: rgba(17,113,162,255);"></span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls1" data-bs-slide="next" style="margin-right:-11%">
+          <span class="carousel-control-next-icon" aria-hidden="true" style="background-color: rgba(17,113,162,255);"></span>
+        </button>
+      </div>
+    </section>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+  <div class="container">
+    <section class="mt-5 ats-section">
+      <div class="ats-content">
+        <div class="ats-text">
+          <h1>Rest Easy with Our ATS Readability Scoring</h1>
+          <div class="box">
+            <p>
+              A resume not only needs to represent who you are, but it also needs to be ATS compliant.
+              With our Applicant Tracking System (ATS) checker, SmartPuppy can get you ahead of the pack.
+              Our ATS scoring system analyzes your resume to ensure it meets the criteria set by top employers.
+              <br><br>
+              Rest assured, our advanced algorithms will review your resume for key factors such as keyword optimization,
+              formatting, and readability. This means your resume will have a higher chance of passing through
+              automated systems and landing in the hands of hiring managers. With SmartPuppy, you can confidently
+              apply for jobs knowing that your resume is optimized for success.
+            </p>
           </div>
         </div>
       </div>
-      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls2" data-bs-slide="prev" style="margin-left:-10%; color: black">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      </button>
-      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls2" data-bs-slide="next" style="margin-right:-10%">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      </button>
-    </div>
-  </section>
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div class="container">
-  <section class="mt-5 ats-section">
-    <div class="ats-content">
-      <div class="ats-text">
-        <h1>Rest Easy with Our ATS Readability Scoring</h1>
-        <div class="box">
-          <p>
-            A resume not only needs to represent who you are, but it also needs to be ATS compliant.
-            With our Applicant Tracking System (ATS) checker, SmartPuppy can get you ahead of the pack.
-            Our ATS scoring system analyzes your resume to ensure it meets the criteria set by top employers.
-            <br><br>
-            Rest assured, our advanced algorithms will review your resume for key factors such as keyword optimization,
-            formatting, and readability. This means your resume will have a higher chance of passing through
-            automated systems and landing in the hands of hiring managers. With SmartPuppy, you can confidently
-            apply for jobs knowing that your resume is optimized for success.
-          </p>
-        </div>
+      <div class="ats-image">
+        <%= image_tag "ats_scores.png", alt: "ATS Scores Image" %>
       </div>
-    </div>
-    <div class="ats-image">
-      <%= image_tag "ats_scores.png", alt: "ATS Scores Image" %>
-    </div>
-  </section>
-</div>
+    </section>
+  </div>
 
 
 
-
-<div class="container">
-  <section class="mt-5 carouselcoverletter">
-    <h2>Need a cover letter, too? We've got you!</h2>
-    <div id="carouselExampleControls2" class="carousel slide" data-bs-ride="carousel">
-      <div class="carousel-inner">
-        <div class="carousel-item active">
-          <div class="row">
-            <div class="col-md-4">
-              <div class="carousel-card" onclick="cardClicked(1)">
-                <h3>Cover Letter 1</h3>
-                <img src="<%= asset_path('coverletter1.png') %>" alt="Cover Letter 1 Image"> <!-- Add image -->
-                <p>Description of Cover Letter 1</p>
+  <div class="container">
+    <section class="mt-5 carouselcoverletter">
+      <h2>Need a CV, too? We've got you again!</h2>
+      <div id="carouselExampleControls2" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <div class="row">
+              <div class="col-md-4">
+                <div class="carousel-card" onclick="cardClicked(1)">
+                  <h3>CV 1</h3>
+                  <img src="<%= asset_path('coverletter1.png') %>" alt="Cover Letter 1 Image">
+                  <p>Description of CV 1</p>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="carousel-card" onclick="cardClicked(2)">
+                  <h3>CV 2</h3>
+                  <img src="<%= asset_path('coverletter1.png') %>" alt="Cover Letter 2 Image">
+                  <p>Description of CV 2</p>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="carousel-card" onclick="cardClicked(3)">
+                  <h3>CV 3</h3>
+                  <img src="<%= asset_path('coverletter1.png') %>" alt="Cover Letter 3 Image">
+                  <p>Description of CV 3</p>
+                </div>
               </div>
             </div>
-            <div class="col-md-4">
-              <div class="carousel-card" onclick="cardClicked(2)">
-                <h3>Cover Letter 2</h3>
-                <img src="<%= asset_path('coverletter1.png') %>" alt="Cover Letter 2 Image"> <!-- Add image -->
-                <p>Description of Cover Letter 2</p>
+          </div>
+          <div class="carousel-item">
+            <div class="row">
+              <div class="col-md-4">
+                <div class="carousel-card" onclick="cardClicked(4)">
+                  <h3>CV 4</h3>
+                  <img src="<%= asset_path('coverletter1.png') %>" alt="Cover Letter 4 Image">
+                  <p>Description of CV 4</p>
+                </div>
               </div>
-            </div>
-            <div class="col-md-4">
-              <div class="carousel-card" onclick="cardClicked(3)">
-                <h3>Cover Letter 3</h3>
-                <img src="<%= asset_path('coverletter1.png') %>" alt="Cover Letter 3 Image"> <!-- Add image -->
-                <p>Description of Cover Letter 3</p>
+              <div class="col-md-4">
+                <div class="carousel-card" onclick="cardClicked(5)">
+                  <h3>CV 5</h3>
+                  <img src="<%= asset_path('coverletter1.png') %>" alt="Cover Letter 5 Image">
+                  <p>Description of CV 5</p>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="carousel-card" onclick="cardClicked(6)">
+                  <h3>CV 6</h3>
+                  <img src="<%= asset_path('coverletter1.png') %>" alt="Cover Letter 6 Image">
+                  <p>Description of CV 6</p>
+                </div>
               </div>
             </div>
           </div>
         </div>
-        <div class="carousel-item">
-          <div class="row">
-            <div class="col-md-4">
-              <div class="carousel-card" onclick="cardClicked(4)">
-                <h3>Cover Letter 4</h3>
-                <img src="<%= asset_path('coverletter1.png') %>" alt="Cover Letter 4 Image"> <!-- Add image -->
-                <p>Description of Cover Letter 4</p>
-              </div>
-            </div>
-            <div class="col-md-4">
-              <div class="carousel-card" onclick="cardClicked(5)">
-                <h3>Cover Letter 5</h3>
-                <img src="<%= asset_path('coverletter1.png') %>" alt="Cover Letter 5 Image"> <!-- Add image -->
-                <p>Description of Cover Letter 5</p>
-              </div>
-            </div>
-            <div class="col-md-4">
-              <div class="carousel-card" onclick="cardClicked(6)">
-                <h3>Cover Letter 6</h3>
-                <img src="<%= asset_path('coverletter1.png') %>" alt="Cover Letter 6 Image"> <!-- Add image -->
-                <p>Description of Cover Letter 6</p>
-              </div>
-            </div>
-          </div>
-        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls2" data-bs-slide="prev" style="margin-left:-11%; color: black">
+          <span class="carousel-control-prev-icon" aria-hidden="true" style="background-color: rgba(17,113,162,255);"></span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls2" data-bs-slide="next" style="margin-right:-11%">
+          <span class="carousel-control-next-icon" aria-hidden="true" style="background-color: rgba(17,113,162,255);"></span>
+        </button>
       </div>
-      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls2" data-bs-slide="prev" style="margin-left:-10%; color: black">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      </button>
-      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls2" data-bs-slide="next" style="margin-right:-10%">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      </button>
-    </div>
-  </section>
-</div>
+    </section>
+  </div>
 
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 
 
 
@@ -331,10 +257,6 @@
   </div>
 </div>
 
-
-
-
-        <!-- Add more questions and answers here -->
       </div>
     </div>
   </section>
@@ -367,6 +289,8 @@
   }
 </script>
 
+
+
   <!-- Bootstrap JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
   <!-- Font Awesome JS -->
@@ -387,3 +311,4 @@
       document.documentElement.scrollTop = 0;
     }
   </script>
+</div>  <!-- End of body div -->

@@ -1,0 +1,119 @@
+/* Styles for the My Jobs page */
+.jobs-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.jobs-title {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.jobs-row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: -15px;
+  margin-right: -15px;
+}
+
+.jobs-col-12, .jobs-col-md-6 {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.jobs-col-12 {
+  flex: 0 0 100%;
+  max-width: 100%;
+}
+
+.jobs-col-md-6 {
+  flex: 0 0 50%;
+  max-width: 50%;
+}
+
+.jobs-card {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.jobs-card-body {
+  padding: 20px;
+}
+
+.jobs-card-title {
+  font-size: 1.25rem;
+  margin-bottom: 10px;
+}
+
+.jobs-card-text {
+  margin-bottom: 10px;
+  color: #555;
+}
+
+.jobs-img-fluid {
+  width: 100%;
+  height: auto;
+  border-radius: 8px 0 0 8px;
+  object-fit: cover;
+}
+
+.jobs-rounded-start {
+  border-top-left-radius: 8px;
+  border-bottom-left-radius: 8px;
+}
+
+.jobs-btn {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 1rem;
+  color: #007bff;
+  text-decoration: none;
+  border: 1px solid #007bff;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.jobs-btn:hover {
+  background-color: #007bff;
+  color: #fff;
+}
+
+.jobs-btn-secondary {
+  background-color: #6c757d;
+  border-color: #6c757d;
+  color: #fff;
+}
+
+.jobs-btn-secondary:hover {
+  background-color: #5a6268;
+  border-color: #545b62;
+}
+
+.jobs-btn-link {
+  color: #007bff;
+  text-decoration: underline;
+  border: none;
+  background: none;
+  padding: 0;
+}
+
+.jobs-mb-3 {
+  margin-bottom: 1rem;
+}
+
+.jobs-mb-4 {
+  margin-bottom: 1.5rem;
+}
+
+.jobs-h-100 {
+  height: 100%;
+}
+
+.jobs-text-muted {
+  color: #6c757d;
+}

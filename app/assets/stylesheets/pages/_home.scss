@@ -1,5 +1,5 @@
 /* General styles */
-body {
+#body {
   background-color: rgba(17, 113, 162, 255);
   margin: 0;
   padding: 0;
@@ -31,7 +31,6 @@ body {
   margin: 0 auto;
   padding: 20px;
 }
-
 /* All sections */
 .section,
 .carousel-item,
@@ -46,12 +45,12 @@ body {
   margin: 20px auto; /* Center horizontally */
   border-radius: 10px;
   text-align: center; /* Center text */
+  animation: fadeIn 1s ease-in-out; /* Apply fade-in animation */
 
   p {
     text-align: justify;
   }
 }
-
 /* Banner section */
 .banner {
   display: flex;
@@ -60,7 +59,7 @@ body {
   align-items: center;
   background-color: rgba(212, 253, 254, 255);
   color: rgba(17, 113, 162, 255);
-  padding-top: 5%;
+  padding-top: 8%;
   padding-bottom: 8%;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   border-radius: 10px;
@@ -148,6 +147,11 @@ body {
   }
 }
 
+/* Zoom effect */
+.zoomed-image {
+  transform: scale(1.2); /* Increase scale for zoom effect */
+}
+
 @media screen and (max-width: 768px) {
   .carousel-card {
     padding: 10px; /* Reduce padding for smaller devices */
@@ -162,6 +166,7 @@ body {
   padding: 40px 20px;
   margin: 20px auto; /* Center horizontally */
   border-radius: 10px;
+  animation: fadeIn 1s ease-in-out; /* Apply fade-in and shelling animation */
 }
 
 .ats-content {
@@ -236,6 +241,7 @@ body {
 
 .section-to-start {
   text-align: center; /* Center the content horizontally */
+  padding: 40px 20px;
 
   .lower-button {
     width: 200px;
@@ -247,7 +253,7 @@ body {
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
-    margin-top: 20px;
+    margin-top: 5%;
     cursor: pointer;
     border-radius: 5px;
     transition: background-color 0.3s;
@@ -255,11 +261,9 @@ body {
 
   .lower-button:hover {
     background-color: green;
-    color
-    : white;
+    color: white;
   }
 }
-
 
 /* Adjust the styling of the box if needed */
 .accordion {
@@ -320,6 +324,7 @@ footer {
   font-size: 48px;
   color: white;
   cursor: pointer;
+  margin-right: 5%;
 
   &:hover {
     background-color: rgba(17, 113, 162, 200);

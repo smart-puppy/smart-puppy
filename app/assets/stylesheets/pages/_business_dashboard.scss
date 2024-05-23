@@ -1,0 +1,140 @@
+/* Reset CSS */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Dashboard Business Container */
+.dashboard-business-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between; /* Distribute content evenly between left and right */
+}
+
+
+/* Banner styles */
+.dashboard-banner {
+  background-color: #007bff; /* Choose your desired background color */
+  color: #fff; /* Choose your desired text color */
+  padding: 20px;
+  height: 400px;
+}
+
+.dashboard-title {
+  margin-bottom: 0; /* Remove default margin */
+  margin-top: 8%;
+}
+
+
+
+
+/* Left Section */
+.left-section {
+  width: calc(50% - 10px); /* Adjust the width to leave space between sections */
+}
+
+/* Right Section */
+.right-section {
+  width: calc(50% - 10px); /* Adjust the width to leave space between sections */
+}
+
+/* Dashboard Title */
+.dashboard-title {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Overview */
+.dashboard-overview {
+  text-align: center; /* Center the overview text */
+  margin-bottom: 20px;
+  margin-top: 5%;
+}
+
+/* Overview Text */
+.dashboard-overview p {
+  text-align: center; /* Center the overview text */
+  margin-top: 5%;
+}
+
+/* Section Title */
+.dashboard-subtitle {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Job Listing Section */
+.job-listing-section {
+  background-color: rgba(212, 253, 254, 1); /* Light blue background color */
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+  height: 100%; /* Ensure the section takes up the full height */
+  display: flex;
+  flex-direction: column; /* Align child elements vertically */
+}
+
+/* Job Listing Title */
+.job-listing-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+/* Job Listing Card */
+.job-listing-card {
+  border: 1px solid #ced4da; /* Border color */
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+
+/* Job Listing Card Body */
+.job-listing-card-body {
+  padding: 20px;
+}
+
+/* Job Listing Card Title */
+.job-listing-card-title {
+  font-size: 1.25rem;
+  margin-bottom: 10px;
+}
+
+/* Job Listing Card Text */
+.job-listing-card-text {
+  margin-bottom: 10px;
+}
+
+/* Job Listing Card Footer */
+.job-listing-card-footer {
+  text-align: center;
+  margin-top: auto; /* Push the footer to the bottom */
+}
+
+/* Job Listing Card Footer Links */
+.job-listing-card-footer a {
+  display: inline-block;
+  width: 100%;
+  margin-bottom: 5px;
+}
+
+/* Job Applications Section */
+.job-applications-section {
+  background-color: rgba(212, 253, 254, 1); /* Light blue background color */
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+  height: 100%; /* Ensure the section takes up the full height */
+  display: flex;
+  flex-direction: column; /* Align child elements vertically */
+}
+
+/* Post New Job Button */
+.post-new-job-button {
+  text-align: center;
+}

@@ -1,3 +1,11 @@
+/* Reset CSS */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Pup Dashboard Container */
 .pup-dashboard-container {
   margin-top: 20px;
   padding: 20px;
@@ -5,6 +13,7 @@
   border-radius: 10px;
 }
 
+/* Pup Dashboard Title */
 .pup-dashboard-title {
   text-align: center;
   color: rgba(17, 113, 162, 255);
@@ -13,13 +22,7 @@
   font-family: Arial, sans-serif;
 }
 
-.pup-dashboard-subtitle {
-  text-align: center;
-  color: rgba(17, 113, 162, 255);
-  margin-bottom: 20px;
-  font-size: 1.8em;
-}
-
+/* Pup Dashboard Section */
 .pup-dashboard-section {
   padding: 20px;
   margin-bottom: 40px;
@@ -28,6 +31,15 @@
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
+/* Pup Dashboard Subtitle */
+.pup-dashboard-subtitle {
+  text-align: center;
+  color: rgba(17, 113, 162, 255);
+  margin-bottom: 20px;
+  font-size: 1.8em;
+}
+
+/* Pup Dashboard Card */
 .pup-dashboard-card {
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -36,19 +48,27 @@
   border: none;
 }
 
+/* Pup Dashboard Card Hover */
 .pup-dashboard-card:hover {
   transform: scale(1.05);
 }
 
+/* Pup Dashboard Card Body */
 .pup-dashboard-card .card-body {
   text-align: center;
 }
 
+/* Pup Dashboard Button Container */
 .pup-dashboard-btn-container {
   text-align: center;
   margin-top: 20px;
 }
 
+.pup-dashboard-section.my-jobs > .row {
+  color: white;
+}
+
+/* Pup Dashboard Button Link */
 .pup-dashboard-btn-link {
   color: rgba(17, 113, 162, 255);
   text-decoration: none;
@@ -59,11 +79,13 @@
   transition: background-color 0.3s, color 0.3s;
 }
 
+/* Pup Dashboard Button Link Hover */
 .pup-dashboard-btn-link:hover {
   background-color: rgba(17, 113, 162, 255);
   color: white;
 }
 
+/* Pup Dashboard Button Primary */
 .pup-dashboard-btn-primary {
   background-color: rgba(17, 113, 162, 255);
   border: none;
@@ -73,10 +95,12 @@
   transition: background-color 0.3s;
 }
 
+/* Pup Dashboard Button Primary Hover */
 .pup-dashboard-btn-primary:hover {
   background-color: rgba(13, 90, 130, 255);
 }
 
+/* Pup Dashboard Button Secondary */
 .pup-dashboard-btn-secondary {
   background-color: rgba(212, 253, 254, 255);
   border: 1px solid rgba(17, 113, 162, 255);
@@ -86,11 +110,23 @@
   transition: background-color 0.3s, color 0.3s;
 }
 
+/* Pup Dashboard Button Secondary Hover */
 .pup-dashboard-btn-secondary:hover {
   background-color: rgba(17, 113, 162, 255);
   color: white;
 }
 
+/* Margin Top 4 */
 .mt-4 {
   margin-top: 40px;
 }
+
+/* Centered Text */
+.centered-text {
+  text-align: center;
+
+  }
+
+  p.text-center {
+    background-color: white;
+  }

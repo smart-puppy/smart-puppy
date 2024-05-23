@@ -1,64 +1,76 @@
-<div class="container">
-  <h1 class="mb-4">Dashboard: Business Partner</h1>
-  <div class="mt-4">
+<div class="container text-center">
+  <div class="dashboard-banner" style="background-image: url('https://source.unsplash.com/random/1600x900/?job,application');">
+    <h1 class="dashboard-title">Dashboard: Business-Partner</h1>
     <h2>Overview</h2>
-    <p><strong>Jobs Posted:</strong> <%= @jobs_count %></p>
-    <p><strong>Incoming Applications:</strong> <%= @applications_count %></p>
+  </div>
+  <div class="mt-4 dashboard-overview">
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+        <p><strong>Jobs Posted:</strong> <%= @jobs_count %></p>
+        <p><strong>Incoming Applications:</strong> <%= @applications_count %></p>
+      </div>
+    </div>
   </div>
 
   <!-- Section for Managing Job Postings -->
-  <div class="section mt-4">
-    <h2 class="mb-3">Job Postings</h2>
-    <div class="row justify-content-center">
-      <% if @jobs && @jobs.any? %>
-        <% @jobs.each do |job| %>
-          <div class="col-12 col-md-4">
-           <div class="card job-card mb-3">
-              <div class="card-body">
-                <h5 class="card-title"><%= job.title %></h5>
-                <p class="card-text"><%= job.company_name %></p>
-                <p class="card-text"><%= job.location %></p>
-                <%= link_to "View Job", job_path(job), class: "btn btn-primary btn-lg btn-block" %>
-                <%= link_to "Edit Job", edit_job_path(job), class: "btn btn-primary" %>
-                <%= link_to "Delete Job", job_path(job), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: "btn btn-danger" %>
+  <div class="mt-4 dashboard-business-container">
+    <div class="left-section job-listing-section">
+      <h2 class="dashboard-subtitle job-listing-title">Job Postings</h2>
+      <div class="row justify-content-center">
+        <% if @jobs && @jobs.any? %>
+          <% @jobs.each do |job| %>
+            <div class="col-12 col-md-4">
+              <div class="card job-listing-card mb-3">
+                <div class="card-body job-listing-card-body">
+                  <h5 class="card-title job-listing-card-title"><%= job.title %></h5>
+                  <p class="card-text job-listing-card-text"><%= job.company_name %></p>
+                  <p class="card-text job-listing-card-text"><%= job.location %></p>
+                </div>
+                <div class="card-footer job-listing-card-footer">
+                  <%= link_to "View Job", job_path(job), class: "btn btn-primary" %>
+                  <%= link_to "Edit Job", edit_job_path(job), class: "btn btn-primary" %>
+                  <%= link_to "Delete Job", job_path(job), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: "btn btn-danger" %>
+                </div>
               </div>
             </div>
-          </div>
+          <% end %>
+        <% else %>
+          <p class="text-center">You have no job postings yet.</p>
         <% end %>
-      <% else %>
-        <p class="text-center">You have no job postings yet.</p>
-      <% end %>
+      </div>
+      <div class="post-new-job-button">
+        <%= link_to "Post New Job", new_job_path, class: "btn btn-success" %>
+      </div>
     </div>
-    <%= link_to "Post New Job", new_job_path, class: "btn btn-success btn-lg btn-block mt-3" %>
-  </div>
 
-  <!-- Section for Viewing Job Applications -->
-  <div class="section mt-4">
-  <h2 class="mb-3">Job Applications</h2>
-  <div class="row justify-content-center">
-    <!-- Your job application cards here -->
-      <% if @applications && @applications.any? %>
-        <% @applications.each do |application| %>
-          <div class="col-12 col-md-4">
-            <div class="card mb-3">
-              <div class="card-body">
-                <h5 class="card-title"><%= application.user.first_name %> <%= application.user.last_name %></h5>
-                <p class="card-text"><%= application.job.title %></p>
-                <p class="card-text"><%= time_ago_in_words(application.created_at) %> ago</p>
-                <%= link_to "View Application", job_application_path(application.job, application), class: "btn btn-link" %>
-                <% if application.cv_file_cloudinary.attached? %>
-                <%= link_to "Download Resume", rails_blob_path(application.cv_file_cloudinary, disposition: "attachment"), class: "btn btn-primary" %>
-                <% else %>
-                <p>No resume attached</p>
-              <% end %>
-                <%# <%= link_to("Download", application.cv_file_cloudinary("My_cv", :file, :attachment => true)) %>
+    <!-- Section for Viewing Job Applications -->
+    <div class="right-section job-applications-section">
+      <h2 class="dashboard-subtitle job-listing-title">Job Applications</h2>
+      <div class="row justify-content-center">
+        <% if @applications && @applications.any? %>
+          <% @applications.each do |application| %>
+            <div class="col-12 col-md-4">
+              <div class="card job-listing-card mb-3">
+                <div class="card-body job-listing-card-body">
+                  <h5 class="card-title job-listing-card-title"><%= application.user.first_name %> <%= application.user.last_name %></h5>
+                  <p class="card-text job-listing-card-text"><%= application.job.title %></p>
+                  <p class="card-text job-listing-card-text"><%= time_ago_in_words(application.created_at) %> ago</p>
+                </div>
+                <div class="card-footer job-listing-card-footer">
+                  <%= link_to "View Application", job_application_path(application.job, application), class: "btn btn-primary" %>
+                  <% if application.cv_file_cloudinary.attached? %>
+                    <%= link_to "Download Resume", rails_blob_path(application.cv_file_cloudinary, disposition: "attachment"), class: "btn btn-primary" %>
+                  <% else %>
+                    <p>No resume attached</p>
+                  <% end %>
+                </div>
               </div>
             </div>
-          </div>
+          <% end %>
+        <% else %>
+          <p class="text-center">You have no job applications yet.</p>
         <% end %>
-      <% else %>
-        <p class="text-center">You have no job applications yet.</p>
-      <% end %>
-    </div>
-  </div>
-</div>
+      </div> <!-- Closing tag for row -->
+    </div> <!-- Closing tag for right-section -->
+  </div> <!-- Closing tag for dashboard-business-container -->
+</div> <!-- Closing tag for container -->
