@@ -73,6 +73,18 @@
   margin-right: 10px;
 }
 
+
+.business-index-buttons-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px; /* Adjust as needed */
+}
+
+.business-index-buttons {
+  display: flex;
+  justify-content: center;
+}
+
 /* Adjustments for small screens */
 @media (max-width: 576px) {
   .business-index-container {
