@@ -18,6 +18,15 @@ class ResumesController < ApplicationController
   end
 
   def create
+    @resume = Resume.new(resume_params)
+    @resume.user = current_user
+
+    if @resume.save
+      redirect_to @resume, notice: 'Resume was successfully uploaded.'
+    else
+      render :new
+    end
+
   end
 
 end
