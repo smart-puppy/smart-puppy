@@ -16,8 +16,8 @@
 
 
   <!-- Section for Managing Job Postings -->
-  <div class="mt-4 dashboard-business-container">
-    <div class="left-section job-listing-section">
+  <div class="mt-4 dashboard-business-container" >
+    <div class="left-section job-listing-section" >
       <h2 class="dashboard-subtitle job-listing-title">Job Postings</h2>
       <div class="row justify-content-center">
         <% if @jobs && @jobs.any? %>
@@ -31,11 +31,6 @@
                   <p class="card-text job-listing-card-text"><strong>Description: </strong><%= job.description.truncate(50) %></p>
                   <p class="card-text job-listing-card-text"><strong>Requirements: </strong><%= job.requirements %></p>
                   <p class="card-text job-listing-card-text">Posted: <%= time_ago_in_words(job.updated_at) %> ago</p>
-
-
-
-
-
 
                   <div class="card-footer job-listing-card-footer">
 
@@ -61,7 +56,7 @@
       <div class="post-new-job-button">
         <%= link_to "Post New Job", new_job_path, class: "btn btn-success" %>
       </div>
-       <hr> <!-- Horizontal line to separate sections -->
+       <hr style="margin-top: 5%"> <!-- Horizontal line to separate sections -->
     </div>
 
 
