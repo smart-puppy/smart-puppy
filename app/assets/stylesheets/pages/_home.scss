@@ -30,6 +30,7 @@
   max-width: 1200px;
   margin: 0 auto;
   padding: 20px;
+  border-radius: 50px;  
 }
 /* All sections */
 .section,
@@ -62,7 +63,7 @@
   padding-top: 8%;
   padding-bottom: 8%;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  border-radius: 10px;
+  border-radius: 50px;   
   margin: 0 auto; /* Center horizontally */
   max-width: 1450px; /* Limit width */
   animation: fadeIn 1s ease-in-out, shelling 3s ease-in-out forwards; /* Apply fade-in and shelling animation */
@@ -111,8 +112,7 @@
     transition: background-color 0.3s;
 
     &:hover {
-      background-color: green;
-      color: white;
+      opacity: 0.8;
     }
   }
 }
@@ -260,8 +260,7 @@
   }
 
   .lower-button:hover {
-    background-color: green;
-    color: white;
+    opacity: 0.8;
   }
 }
 

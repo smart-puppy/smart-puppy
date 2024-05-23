@@ -1,0 +1,72 @@
+$primary-color: #1EDD88;
+$hover-color: darken($primary-color, 10%);
+
+.job-create-container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin-top: 60px;
+  margin-bottom: 100px;
+
+}
+
+.job-create-title {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  text-align: center;
+  color: #0D6EFD;
+}
+
+.job-create-form {
+  display: flex;
+  flex-direction: column;
+  color: #0D6EFD;
+  font-weight: bold;
+}
+
+.job-create-row {
+  margin-bottom: 20px;
+}
+
+.job-create-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.job-create-input,
+.job-create-file-input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.job-create-input:focus,
+.job-create-file-input:focus {
+  border-color: $primary-color;
+  box-shadow: 0 0 5px rgba($primary-color, 0.5);
+}
+
+.job-create-submit-btn {
+  background-color: #1EDD88;
+  color: #fff;
+  padding: 10px 20px;
+  font-size: 1.2rem;
+  width: 400px;
+
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  align-self: center;
+}
+
+.job-create-submit-btn:hover {
+  background-color: $hover-color;
+  color: #f9f9f9;
+}

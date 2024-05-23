@@ -1,6 +1,6 @@
 <div class="container text-center">
   <div class="dashboard-banner" style="background-image: url('https://source.unsplash.com/random/1600x900/?job,application');">
-    <h1 class="dashboard-title">Dashboard: Business-Partner</h1>
+    <h1 class="dashboard-title">Dashboard: Business Partner</h1>
     <h2>Overview</h2>
   </div>
 
@@ -78,7 +78,7 @@
                 <div class="card-footer job-listing-card-footer">
                   <%= link_to "View Application", job_application_path(application.job, application), class: "btn btn-primary" %>
                   <% if application.cv_file_cloudinary.attached? %>
-                    <%= link_to "Download Resume", rails_blob_path(application.cv_file_cloudinary, disposition: "attachment"), class: "btn btn-primary" %>
+                    <%= link_to "View Resume", rails_blob_path(application.cv_file_cloudinary, disposition: "attachment"), class: "btn btn-primary" %>
                   <% else %>
                     <p>No resume attached</p>
                   <% end %>
