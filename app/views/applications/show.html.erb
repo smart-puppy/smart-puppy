@@ -12,7 +12,7 @@
       <p class="card-text"><strong>Education:</strong> <%= @application.user.education %></p>
       <p class="card-text"><strong>Status:</strong> <%= @application.status %></p>
       <p class="card-text"><strong>Cover Letter:</strong> <%= @application.cover_letter %></p>
-      <p class="card-text"><strong>CV File:</strong> <%= link_to 'Download CV', rails_blob_path(@application.cv_file_cloudinary, disposition: "attachment") %></p>
+      <p class="card-text"><strong>Resume File:</strong> <%= link_to 'View Resume', rails_blob_path(@application.cv_file_cloudinary, disposition: "attachment") %></p>
       <p class="card-text"><strong>Applied:</strong> <%= time_ago_in_words(@application.created_at) %> ago</p>
       <%= link_to 'Back to Job', job_path(@application.job), class: "btn btn-secondary" %>
     </div>
