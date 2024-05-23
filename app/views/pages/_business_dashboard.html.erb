@@ -3,14 +3,17 @@
     <h1 class="dashboard-title">Dashboard: Business-Partner</h1>
     <h2>Overview</h2>
   </div>
-  <div class="mt-4 dashboard-overview">
-    <div class="row justify-content-center">
-      <div class="col-md-6">
-        <p><strong>Jobs Posted:</strong> <%= @jobs_count %></p>
-        <p><strong>Incoming Applications:</strong> <%= @applications_count %></p>
-      </div>
+
+
+<div class="text-center">
+  <div class="col-md-12 d-flex justify-content-center">
+    <div class="d-flex">
+      <p class="mr-12" style="margin-right: 10%; margin-left: 15%;"><strong>Jobs Posted:</strong> <%= @jobs_count %></p>
+      <p><strong>Incoming Applications:</strong> <%= @applications_count %></p>
     </div>
   </div>
+</div>
+
 
   <!-- Section for Managing Job Postings -->
   <div class="mt-4 dashboard-business-container">
@@ -19,35 +22,25 @@
       <div class="row justify-content-center">
         <% if @jobs && @jobs.any? %>
           <% @jobs.each do |job| %>
-            <div class="col-12 col-md-4"  style="margin-bottom: 5%">
+            <div class="col-12 col-md-4" style="margin-bottom: 5%">
               <div class="card job-listing-card mb-3">
                 <div class="card-body job-listing-card-body">
                   <h5 class="card-title job-listing-card-title"><%= job.title %></h5>
                   <p class="card-text job-listing-card-text"><%= job.company_name %></p>
                   <p class="card-text job-listing-card-text"><%= job.location %></p>
                 </div>
-
-
-
-
-<div class="card-footer job-listing-card-footer">
-  <%= link_to job_path(job), class: "btn btn-primary" do %>
-    <i class="fas fa-eye"></i> <!-- View icon -->
-  <% end %>
-
-  <%= link_to edit_job_path(job), class: "btn btn-primary" do %>
-    <i class="fas fa-edit"></i> <!-- Edit icon -->
-  <% end %>
-
-  <%= link_to job_path(job), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: "btn btn-danger" do %>
-    <i class="fas fa-trash-alt"></i> <!-- Delete icon -->
-  <% end %>
-</div>
-
-
-
+                <div class="card-footer job-listing-card-footer">
+                  <%= link_to job_path(job), class: "btn btn-primary btn-light-blue" do %>
+                    <i class="fas fa-eye"></i> <!-- View icon -->
+                  <% end %>
+                  <%= link_to edit_job_path(job), class: "btn btn-primary btn-light-blue" do %>
+                    <i class="fas fa-edit"></i> <!-- Edit icon -->
+                  <% end %>
+                  <%= link_to job_path(job), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: "btn btn-danger btn-light-blue" do %>
+                    <i class="fas fa-trash-alt"></i> <!-- Delete icon -->
+                  <% end %>
+                </div>
               </div>
-
             </div>
           <% end %>
         <% else %>
