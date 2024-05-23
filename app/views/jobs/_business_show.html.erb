@@ -3,85 +3,69 @@
 
 <div class="container-fluid great-show-container">
 
+  <div class="show-business-banner" style="background-image: url('https://source.unsplash.com/featured/?job');">
+    <h1 class="banner-text">Latest job opportunities and applications below</h1>
+  </div>
 
-<div class="show-business-banner" style="background-image: url('https://source.unsplash.com/featured/?job');">
-  <h1 class="banner-text">Latest job opportunities and applications below</h1>
-</div>
+  <div class="show-business-container">
 
-
-
-
-
-
-
-<div class="show-business-container">
-
-
-  <!-- Job Listings on the Left -->
-  <div class="show-business-job-listing">
-
-    <div class="card mb-3 text-center mx-auto p-0 p-md-5 show-business-card">
-
-
-      <div class="row g-0">
-
-        <div class="col-md-12">
-          <% if @job.photo.attached? %>
-            <%= cl_image_tag @job.photo.key, height: 200, width: 300, crop: :fill, class: "show-business-img-fluid rounded-start" %>
-          <% else %>
-            <img src="https://images.unsplash.com/photo-1502945015378-0e284ca1a5be?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="show-business-img-fluid rounded-start" alt="...">
-          <% end %>
-        </div>
-        <div class="col-md-12">
-          <div class="card-body">
-            <h5 class="card-title" ><strong>Job Title:</strong> <%= @job.title %></h5>
-            <p class="card-text"  style="text-align: center"><strong>Company:</strong> <%= @job.company_name %></p>
-            <p class="card-text"  style="text-align: center"><strong>Location:</strong> <%= @job.location %></p>
-            <p class="card-text"  style="text-align: center" style="text-align: justify;"><strong>Job Description:</strong> <%= @job.description %></p>
-            <p class="card-text"  style="text-align: center"><strong>Requirements:</strong> <%= @job.requirements %></p>
-            <p class="card-text text-muted" style="text-align: center"><small>Posted: <%= time_ago_in_words(@job.updated_at) %></small></p>
-            <div class="card mb-3 text-center mx-auto p-3" style="max-width: 800px;">
-              <div class="d-flex justify-content-center">
-                <% if @job.user == current_user %>
-                  <p>This job was posted by you.</p>
-                <% else %>
-                  <p>You are logged in as a Business Partner. You cannot apply for this job.</p>
-                <% end %>
+    <!-- Job Listings on the Left -->
+    <div class="show-business-job-listing">
+      <div class="card mb-3 text-center mx-auto p-0 p-md-5 show-business-card">
+        <div class="row g-0">
+          <div class="col-md-12">
+            <% if @job.photo.attached? %>
+              <%= cl_image_tag @job.photo.key, height: 200, width: 300, crop: :fill, class: "show-business-img-fluid rounded-start" %>
+            <% else %>
+              <img src="https://images.unsplash.com/photo-1502945015378-0e284ca1a5be?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="show-business-img-fluid rounded-start" alt="...">
+            <% end %>
+          </div>
+          <div class="col-md-12">
+            <div class="card-body">
+              <h5 class="card-title" ><strong>Job Title:</strong> <%= @job.title %></h5>
+              <p class="card-text"  style="text-align: center"><strong>Company:</strong> <%= @job.company_name %></p>
+              <p class="card-text"  style="text-align: center"><strong>Location:</strong> <%= @job.location %></p>
+              <p class="card-text"  style="text-align: center" style="text-align: justify;"><strong>Job Description:</strong> <%= @job.description %></p>
+              <p class="card-text"  style="text-align: center"><strong>Requirements:</strong> <%= @job.requirements %></p>
+              <p class="card-text text-muted" style="text-align: center"><small>Posted: <%= time_ago_in_words(@job.updated_at) %></small></p>
+              <div class="card mb-3 text-center mx-auto p-3" style="max-width: 800px;">
+                <div class="d-flex justify-content-center">
+                  <% if @job.user == current_user %>
+                    <p>This job was posted by you.</p>
+                  <% else %>
+                    <p>You are logged in as a Business Partner. You cannot apply for this job.</p>
+                  <% end %>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
 
-
-
-  <!-- Applications on the Right -->
-  <div class="show-business-applications">
-    <% if @job.user == current_user %>
-      <div class="card mb-3 text-center mx-auto p-3" style="max-width: 800px;">
-        <h3>Applications</h3>
-        <% if @applications.any? %>
-          <% @applications.each do |application| %>
-            <div class="card mb-3">
-              <div class="card-body">
-                <h5 class="card-title"><%= application.user.first_name %> <%= application.user.last_name %></h5>
-                <p class="card-text"><strong>Status:</strong> <%= application.status %></p>
-                <p class="card-text"><strong>Applied:</strong> <%= time_ago_in_words(application.created_at) %> ago</p>
-                <%= link_to 'View Application', job_application_path(application.job, application), class: "btn btn-primary" %>
+    <!-- Applications on the Right -->
+    <div class="show-business-applications">
+      <% if @job.user == current_user %>
+        <div class="card mb-3 text-center mx-auto p-3" style="max-width: 800px;">
+          <h3>Applications</h3>
+          <% if @applications.any? %>
+            <% @applications.each do |application| %>
+              <div class="card mb-3">
+                <div class="card-body">
+                  <h5 class="card-title"><%= application.user.first_name %> <%= application.user.last_name %></h5>
+                  <p class="card-text"><strong>Status:</strong> <%= application.status %></p>
+                  <p class="card-text"><strong>Applied:</strong> <%= time_ago_in_words(application.created_at) %> ago</p>
+                  <%= link_to 'View Application', job_application_path(application.job, application), class: "btn btn-primary" %>
+                </div>
               </div>
-            </div>
+            <% end %>
+          <% else %>
+            <p  style="margin-top: 15%; text-align: center">No applications yet.</p>
           <% end %>
-        <% else %>
-          <p  style="margin-top: 15%; text-align: center">No applications yet.</p>
-        <% end %>
-      </div>
-    <% end %>
+        </div>
+      <% end %>
+    </div>
   </div>
-
-</div>
-
 
 </div>
 
