@@ -1,10 +1,16 @@
 /* Business Index Container */
+body {
+  background-color: rgba(17, 113, 162, 255);
+}
+
 .business-index-container {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   background-color: rgba(212, 253, 254, 1);
-  padding: 20px;
+  padding: 0px;
+  padding-bottom: 5%;
+
   max-width: 90%; /* Make the container full width */
 }
 
@@ -12,9 +18,10 @@
 .business-index-banner {
   position: relative;
   width: 100%; /* Make the banner full width */
-  height: 500px; /* Adjust height as needed */
+  height: 600px; /* Adjust height as needed */
   background-size: cover;
   background-position: center;
+  z-index: 1; /* Ensure banner appears above other elements */
 }
 
 .banner-title {
@@ -24,7 +31,7 @@
   margin-bottom: 20px; /* Adjust spacing as needed */
 }
 
-.banner-overlay {
+.business-index-banner .banner-overlay {
   position: absolute;
   top: 0;
   left: 0;
@@ -36,35 +43,85 @@
   align-items: center;
 }
 
-.container-searchform {
-  width: 100%;
-  position: relative;
-  z-index: 1;
+.banner-text {
+  background-color: rgba(255, 255, 255, 0.7); /* Adjust the opacity and color as needed */
+  padding: 20px;
+  color: black; /* Change color as needed */
+  font-size: 30px; /* Adjust font size as needed */
+  text-align: center;
 }
 
-/* Job Cards Section */
+/* Container styles */
+.business-index-banner .container-searchform {
+  width: 100%;
+  position: relative;
+  z-index: 2; /* Ensure search form appears above other elements */
+}
+
+
+
+.card-body {
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
+/* Form styles */
+.business-index-banner .business-form-search {
+  display: flex;
+  align-items: center;
+}
+
+.business-index-banner .form-control,
+.business-index-banner .form-select,
+.business-index-banner .btn {
+  margin-right: 10px;
+}
+
+.business-index-banner .btn:last-child {
+  margin-right: 0;
+}
+
+.business-index-banner .form-control {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.business-index-banner .btn {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  text-decoration: none;
+  color: #fff;
+}
+
+.business-index-banner .btn-primary {
+  background-color: #007bff;
+}
+
+.business-index-banner .btn-secondary {
+  background-color: #6c757d;
+}
+
+.business-index-banner .form-select {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
 .row {
   margin-top: 20px; /* Add spacing between the banner and job cards */
 }
 
-.col-12 {
-  margin-bottom: 20px; /* Add spacing between job cards */
-}
-
-/* Job Card Styles */
-.business-card {
-  background-color: #fff;
-  border: 1px solid #ddd;
-  border-radius: 5px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-.business-card-title {
-  font-weight: bold;
-}
-
-.business-card-text {
-  margin-bottom: 0.5rem;
+/* Center buttons */
+.business-index-buttons {
+  max-width: 90%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px; /* Add margin below the button */
+  margin-left: 0 auto; /* Center the button */
 }
 
 .business-btn {
@@ -76,4 +133,17 @@
   .business-index-container {
     padding: 10px;
   }
+}
+
+/* Enlarge card on hover */
+.show-business-card,
+.show-business-applications .card {
+  transition: transform 0.3s ease;
+  transform: scale(0.8); /* Smaller scale for normal state */
+  z-index: 0; /* Ensure cards appear below banner */
+}
+
+.show-business-card:hover,
+.show-business-applications .card:hover {
+  transform: scale(1.1); /* Larger scale for hover state */
 }
