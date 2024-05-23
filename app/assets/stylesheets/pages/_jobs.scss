@@ -1,71 +1,75 @@
-/* jobs.scss */
-
-/* General styles for the jobs page */
-.jobs-body {
-  background-color: #f5f5f5;
-  margin: 0;
-  padding: 0;
-  font-family: Arial, sans-serif;
-}
-
-.jobs-container {
-  margin-top: 20px;
-}
-
-.jobs-title {
+.show-business-banner {
+  max-width: 90%;
+  background-size: cover;
+  background-position: center;
+  height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
   text-align: center;
-  margin-bottom: 30px;
+  font-size: 24px;
+  margin-bottom: 20px;
+  margin: 0 auto; /* Center the banner horizontally */
 }
 
-.jobs-card {
-  border: none;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  overflow: hidden;
+.banner-text {
+  background-color: rgba(41, 46, 52, 0.7); /* Adjust the opacity as needed */
+  padding: 20px 40px;
+  color: white;
+  text-align: center;
+  font-size: 24px; /* Adjust the font size as needed */
+  max-width: 80%; /* Adjust the width of the text box */
 }
 
-.jobs-card img {
-  border-top-left-radius: 10px;
-  border-bottom-left-radius: 10px;
+
+/* Job Listing Section */
+.show-business-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start; /* Align items at the start of the flex container */
 }
 
-.jobs-card-body {
-  padding: 20px;
+.show-business-job-listing,
+.show-business-applications {
+  width: calc(50% - 10px); /* Set width for each card */
+  padding: 0 10px;
+  display: flex;
+  justify-content: center;
 }
 
-.jobs-card-title {
-  font-size: 1.5rem;
-  margin-bottom: 10px;
+.show-business-card {
+  margin-bottom: 20px;
+  width: 100%; /* Ensure card takes full width */
+  max-width: 600px; /* Set maximum width for the card */
 }
 
-.jobs-card-text {
-  margin-bottom: 10px;
+.show-business-card-body {
+  text-align: center;
 }
 
-.jobs-card-text strong {
+.show-business-img-fluid {
   display: block;
-  margin-bottom: 5px;
+  margin: 0 auto;
+  width: 100%; /* Ensure the image fills the width of its container */
+  height: auto; /* Maintain aspect ratio */
+  max-height: 200px; /* Set maximum height for the image */
 }
 
-.jobs-btn-link {
-  color: #007bff;
-  text-decoration: none;
+/* Applications Section */
+.show-business-applications {
+  width: calc(50% - 10px); /* Set width for applications card */
+  padding: 0 10px;
+  margin: 0 auto; /* Center horizontally */
 }
 
-.jobs-btn-link:hover {
-  text-decoration: underline;
+/* Additional Styles */
+.show-business-container {
+  text-align: center; /* Center align all content */
 }
 
-.jobs-text-muted {
-  font-size: 0.875rem;
-  color: #6c757d;
-}
-
-/* Media queries for responsiveness */
-@media (max-width: 767.98px) {
-  .jobs-card img {
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
-    border-bottom-left-radius: 0;
-  }
+.show-business-card {
+  margin-bottom: 20px;
+  width: 100%; /* Ensure card takes full width */
+  max-width: 600px; /* Set maximum width for the card */
 }
