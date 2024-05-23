@@ -29,6 +29,7 @@ class ApplicationsController < ApplicationController
     @job = Job.find(params[:job_id])
     @application.user = current_user
     @application.job = @job
+    cv_file_cloudinary = params[:application][:cv_file_cloudinary]
     if @application.save!
       redirect_to job_path(@job), notice: 'Application was successfully sent.'
     else
@@ -39,6 +40,6 @@ class ApplicationsController < ApplicationController
   private
 
   def application_params
-    params.require(:application).permit(:job_id, :resume_id, :cover_letter_id, :cv_file)
+    params.require(:application).permit(:job_id, :resume_id, :cover_letter_id, :cv_file_cloudinary)
   end
 end

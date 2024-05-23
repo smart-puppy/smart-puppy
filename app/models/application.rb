@@ -5,5 +5,5 @@ class Application < ApplicationRecord
   belongs_to :cover_letter, optional: true
 
   # Cloudinary
-  has_one_attached :cv_file
+  has_one_attached :cv_file_cloudinary
 end
