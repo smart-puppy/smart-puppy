@@ -18,7 +18,7 @@
 
 $primary-color: #1EDD88;
 $hover-color: darken($primary-color, 10%);
-$secondary-color: #FD1015;
+$secondary-color: grey;
 
 .edit-user-container {
   max-width: 600px;
@@ -99,8 +99,8 @@ $secondary-color: #FD1015;
       &:hover {
         background-color: lighten($secondary-color, 10%);
         border-color: lighten($secondary-color, 10%);
-        background-color: #780608;
-        opacity: 0.8;
+        background-color: rgba(128, 128, 128, 0.2);
+        opacity: 0.3;
       }
     }
   }

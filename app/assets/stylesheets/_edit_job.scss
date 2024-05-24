@@ -81,8 +81,8 @@ $hover-color: darken($primary-color, 10%);
   }
 
   .cancel-btn-secondary {
-    background-color: #FD1015;
-    border-color: #FD1015;
+    background-color: grey;
+    border-color: grey;
     color: #fff;
     padding: 0.75rem 1.25rem;
     font-size: 1rem;
@@ -92,8 +92,8 @@ $hover-color: darken($primary-color, 10%);
     justify-content: center;
 
     &:hover {
-      background-color: #FD1015;
-      border-color: #FD1015;
+      background-color: rgba(128, 128, 128, 0.2);
+      border-color: rgba(128, 128, 128, 0.2);
       opacity: 0.3;
     }
   }
