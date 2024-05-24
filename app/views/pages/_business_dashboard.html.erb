@@ -18,21 +18,28 @@
     <div class="mt-4 dashboard-business-container" >
       <div class="left-section job-listing-section">
         <h2 class="dashboard-subtitle job-listing-title">Job Postings</h2>
+
+
+
+
         <div class="row justify-content-center">
           <% if @jobs && @jobs.any? %>
             <% @jobs.each do |job| %>
               <div class="col-12 col-md-4" style="margin-bottom: 5%">
                 <div class="card job-listing-card mb-3">
+                  <% if job.photo.attached? %>
+                  <%= cl_image_tag job.photo.key, height: 200, width: 300, crop: :fill %>
+                  <% else %>
+                  <img src="https://images.unsplash.com/photo-1502945015378-0e284ca1a5be?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="img-fluid rounded-start" alt="...">
+                  <% end %>
                   <div class="card-body job-listing-card-body">
-                    <h5 class="card-title job-listing-card-title"><strong>Job Title: </strong><%= job.title %></h5>
+                    <h5 class="card-title job-listing-card-title"><strong class="big-strong-title">Job Title: </strong><%= job.title %></h5>
                     <p class="card-text job-listing-card-text"><strong>Company: </strong><%= job.company_name %></p>
                     <p class="card-text job-listing-card-text"><strong>Location: </strong><%= job.location %></p>
                     <p class="card-text job-listing-card-text"><strong>Description: </strong><%= job.description.truncate(50) %></p>
                     <p class="card-text job-listing-card-text"><strong>Requirements: </strong><%= job.requirements %></p>
                     <p class="card-text job-listing-card-text">Posted: <%= time_ago_in_words(job.updated_at) %> ago</p>
-
                     <div class="card-footer job-listing-card-footer">
-
                     <%= link_to job_path(job), class: "btn btn-primary btn-light-blue" do %>
                       <i class="fas fa-eye"></i> <!-- View icon -->
                     <% end %>
@@ -44,14 +51,19 @@
                     <% end %>
                   </div>
                 </div>
-                  </div>
-
+                </div>
               </div>
             <% end %>
           <% else %>
             <p class="text-center no-job-postings">You have no job postings yet.</p>
           <% end %>
         </div>
+
+
+
+
+
+
         <div class="post-new-job-button">
           <%= link_to "Post New Job", new_job_path, class: "custom-btn" %>
 

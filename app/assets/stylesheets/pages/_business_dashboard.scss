@@ -99,6 +99,11 @@ body {
   font-size: 1.2rem;
 }
 
+.sp-myjobs-card-body {
+  padding: 20px;
+}
+
+
 .card-body {
   padding: 20px;
 }
@@ -110,6 +115,14 @@ body {
   background-color: #f8f9fa;
   border-top: 1px solid rgba(0, 0, 0, 0.1);
 }
+.card-title-title {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  text-align: left !important;
+}
 
 .card-title {
   font-size: 1.5rem;
@@ -120,12 +133,15 @@ body {
 }
 
 .card-text {
+  text-align: left;
   font-size: 1rem;
   margin-bottom: 5px;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
+
+
 
 /* Button Styles */
 .btn-light-blue {

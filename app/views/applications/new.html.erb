@@ -1,3 +1,5 @@
+
+<div class="sp-application-form">
 <h1>Application page</h1>
 
 <%= simple_form_for [@job, @application] do |f| %>
@@ -13,22 +15,10 @@
     </div>
   <% end %>
 
-<%# Upload from your computer %>
-<%#
-  <div class="row">
-    <div class="col-12">
-      <%= f.input :cv_file_cloudinary, as: :file %>
-    <%# </div> %>
-  <%# </div> %>
-
-<%# Pre-selected resumes %
- Input code, pliz :>
- Attaching an instance of resume that already has a resume attached.
-<%# > %>
-
   <div class="row">
     <div class="col-12">
       <%= f.button :submit, "Apply", class: "btn btn-primary" %>
     </div>
   </div>
 <% end %>
+</div>

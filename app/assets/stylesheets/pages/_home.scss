@@ -1,4 +1,32 @@
 /* General styles */
+
+
+
+.containertest {
+
+  width: 200px !important; /* Adjust image width */
+  height: 200px !important; /* Adjust image height */
+  object-fit: cover !important; /* Ensure the image covers the entire space */
+  display: block !important; /* Make image a block element */
+  margin: 0 auto 10px !important; /* Center image horizontally and add margin at the bottom */
+
+
+
+}
+
+
+
+
+
+
+
+.big-strong-title {
+  font-size: 1.5rem !important;
+  margin-bottom: 10px !important;
+}
+
+
+
 #body {
   background-color: rgba(17, 113, 162, 255);
   margin: 0;
@@ -126,6 +154,8 @@
   cursor: pointer;
   margin-bottom: 20px; /* Add margin bottom for consistent spacing */
 
+
+  
   h3 {
     margin-top: 0;
     margin-bottom: 10px;
@@ -429,4 +459,15 @@ footer {
     width: 100%; /* Take full width */
     text-align: center; /* Center accordion button */
   }
+}
+
+
+
+.sp-jobs {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 0 auto;
+  padding: 20px;
+  max-width: 1200px;
 }

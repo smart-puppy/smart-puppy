@@ -5,6 +5,28 @@
   box-sizing: border-box;
 }
 
+.sp-pup-dashboard-card-text {
+  text-align: left;
+  font-size: 1rem;
+  margin-bottom: 5px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.sp-pup-dashboard-card-text strong{
+  text-align: left;
+  font-size: 1rem;
+  margin-bottom: 5px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+
+
+
+
 /* Pup Dashboard Container */
 .pup-dashboard-container {
   margin-top: 20px;
@@ -41,11 +63,17 @@
 
 /* Pup Dashboard Card */
 .pup-dashboard-card {
+  width: 1000px;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s;
   background-color: rgba(245, 245, 245, 255);
   border: none;
+
+  .title-for-job-card {
+    font-size: 1.25rem !important;
+  }
+
 }
 
 /* Pup Dashboard Card Hover */
@@ -54,9 +82,23 @@
 }
 
 /* Pup Dashboard Card Body */
-.pup-dashboard-card .card-body {
+.pup-dashboard-card {
   text-align: center;
+  max-width: 100% !important;
+
+  img{
+    width: 100%;
+    object-fit: cover;
+  }
+
 }
+
+
+
+
+
+
+
 
 /* Pup Dashboard Button Container */
 .pup-dashboard-btn-container {
@@ -70,20 +112,22 @@
 
 /* Pup Dashboard Button Link */
 .pup-dashboard-btn-link {
-  color: rgba(17, 113, 162, 255);
+  color: #fff;
   text-decoration: none;
-  background-color: rgba(212, 253, 254, 255);
+  background-color: #1170A3;
   border: 1px solid rgba(17, 113, 162, 255);
   padding: 10px 20px;
   border-radius: 5px;
-  transition: background-color 0.3s, color 0.3s;
 }
 
 /* Pup Dashboard Button Link Hover */
 .pup-dashboard-btn-link:hover {
-  background-color: rgba(17, 113, 162, 255);
-  color: white;
+  opacity: 0.8;
 }
+
+
+
+
 
 /* Pup Dashboard Button Primary */
 .pup-dashboard-btn-primary {
@@ -102,9 +146,9 @@
 
 /* Pup Dashboard Button Secondary */
 .pup-dashboard-btn-secondary {
-  background-color: rgba(212, 253, 254, 255);
+  background-color: #fff;
   border: 1px solid rgba(17, 113, 162, 255);
-  color: rgba(17, 113, 162, 255);
+  background-color: #1170A3;
   padding: 10px 20px;
   border-radius: 5px;
   transition: background-color 0.3s, color 0.3s;
@@ -112,8 +156,7 @@
 
 /* Pup Dashboard Button Secondary Hover */
 .pup-dashboard-btn-secondary:hover {
-  background-color: rgba(17, 113, 162, 255);
-  color: white;
+  opacity: 0.8;
 }
 
 /* Margin Top 4 */
