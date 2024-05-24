@@ -1,79 +1,60 @@
 <body>
   <div class="container-fluid business-index-container">
-
     <div class="business-index-banner" style="background-image: url('https://source.unsplash.com/1600x900/?job,application');">
       <div class="banner-overlay">
         <h1 class="banner-title">Post a new job to find the right candidates!</h1>
-
-        <div class="container-searchform">
-          <div class="row justify-content-center">
-            <div class="col-12 col-md-8 my-3">
-              <%= form_with url: jobs_path, method: :get, class: "business-form-search d-flex" do %>
-              <%= text_field_tag :query, params[:query], class: "form-control me-2 business-form-control", placeholder: "Type a keyword" %>
-              <%= submit_tag "Search", name: "", class: "btn btn-primary me-2 business-btn" %>
-              <%= select_tag :sort, options_for_select([["Newest", "newest"], ["Oldest", "oldest"], ["Title", "title"], ["Company", "company_name"], ["Location", "location"]], params[:sort]), class: "form-select me-2 business-form-control" %>
-              <%= link_to 'Reset', jobs_path, class: "btn btn-secondary business-btn" %>
-              <% end %>
-            </div>
-            <div class="col-12 col-md-2 my-3">
-              <%= form_with url: jobs_path, method: :get, local: true, class: "business-form-per-page" do %>
-              <%= select_tag :per_page, options_for_select([5, 10, 20, 50, 100], params[:per_page]), class: "form-select business-form-control", onchange: "this.form.submit();" %>
-              <% end %>
-            </div>
-          </div>
-        </div>
       </div>
     </div>
 
-    <div class="row">
+    <div class="row" style="background-color: rgba(212,253,254,255); max-width: 90%; margin-left: auto; margin-right: auto; text-align: center; margin-top: 5%;">
       <% if @jobs.any? %>
-      <% @jobs.each do |job| %>
-      <div class="col-12 col-sm-6 mb-4">
-        <div class="card h-100 business-card" style="margin-left: 15%; margin-right: 15%; margin-top: 5%">
-          <div class="row g-0">
-            <div class="col-md-4">
-              <% if job.photo.attached? %>
-              <%= cl_image_tag job.photo.key, height: 200, width: 300, crop: :fill %>
-              <% else %>
-              <img src="https://images.unsplash.com/photo-1502945015378-0e284ca1a5be?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="img-fluid rounded-start" alt="...">
-              <% end %>
-            </div>
-            <div class="col-md-8">
-              <div class="card-body">
-                <h5 class="card-title business-card-title"><strong>Job Title:</strong> <%= job.title %></h5>
-                <p class="card-text business-card-text"><strong>Company Name:</strong> <%= job.company_name %></p>
-                <p class="card-text business-card-text"><strong>Location:</strong> <%= job.location %></p>
-                <p class="card-text business-card-text">
-                  <strong class="description-title">Job Description:</strong>
-                  <span class="description-content"><%= job.description.truncate(50) %></span>
-                </p>
-                <p class="card-text business-card-text"><strong>Requirements:</strong> <%= job.requirements %></p>
-                <%= link_to 'View job', job_path(job), class: "btn btn-link business-btn" %>
-                <p class="card-text business-card-text"><small class="text-muted">Posted: <%= time_ago_in_words(job.updated_at) %></small></p>
+        <% @jobs.each_slice(3) do |jobs_slice| %>
+          <div class="row" style="margin-right: 5%">
+            <% jobs_slice.each do |job| %>
+              <div class="col-12 col-md-4 mb-4">
+                <div class="card business-card">
+                  <div class="text-center mb-3">
+                    <% if job.photo.attached? %>
+                      <%= image_tag(job.photo, class: "img-fluid rounded-start mt-0") %>
+                    <% else %>
+                      <%= image_tag("https://images.unsplash.com/photo-1502945015378-0e284ca1a5be?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", class: "img-fluid rounded-start mt-0") %>
+                    <% end %>
+                  </div>
+                  <div class="card-body">
+                    <h5 class="card-title business-card-title"><strong>Job Title:</strong> <%= job.title %></h5>
+                    <p class="card-text business-card-text"><strong>Company Name:</strong> <%= job.company_name %></p>
+                    <p class="card-text business-card-text"><strong>Location:</strong> <%= job.location %></p>
+                    <p class="card-text business-card-text">
+                      <strong class="description-title">Job Description:</strong>
+                      <span class="description-content"><%= job.description.truncate(50) %></span>
+                    </p>
+                    <p class="card-text business-card-text"><strong>Requirements:</strong> <%= job.requirements %></p>
+                    <%= link_to 'View job', job_path(job), class: "btn btn-link business-btn" %>
+                    <p class="card-text business-card-text"><small class="text-muted">Posted: <%= time_ago_in_words(job.updated_at) %></small></p>
+                  </div>
+                </div>
               </div>
-            </div>
+            <% end %>
           </div>
-        </div>
-      </div>
-      <% end %>
+        <% end %>
       <% else %>
-      <div class="col-12">
-        <p class="text-center">No jobs found.</p>
-      </div>
+        <div class="col-12">
+          <p class="text-center" style="background-color: rgba(212,253,254,255)">No jobs found.</p>
+        </div>
       <% end %>
     </div>
+
     <div class="row">
       <div class="col-12 d-flex justify-content-center">
         <%= will_paginate @jobs %>
       </div>
     </div>
-
   </div>
 
-  <div class="d-flex justify-content-center">
-    <div class="col-12 business-index-buttons text-center" style="width: 100%">
-      <%= link_to 'Back to Dashboard', dashboard_path, class: "btn btn-secondary mb-3 business-btn" %>
-      <%= link_to 'Create a new Job listing', new_job_path, class: "btn btn-primary mb-3 business-btn" %>
+  <div class="d-flex justify-content-center" style="background-color: rgba(17,113,162,255)">
+    <div class="col-12 business-index-buttons text-center" style="width: 90%">
+      <%= link_to 'Back to Dashboard', dashboard_path, class: "btn btn-secondary mb-3 business-btn index-business-button" %>
+      <%= link_to 'Create a new Job listing', new_job_path, class: "btn btn-secondary mb-3 business-btn index-business-button" %>
     </div>
   </div>
 </body>
