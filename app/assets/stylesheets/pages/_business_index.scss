@@ -1,151 +1,179 @@
-/* Business Index Container */
+/* General Styles */
 body {
-  background-color: rgba(17, 113, 162, 255);
+  font-family: Arial, sans-serif;
+
+  margin: 0;
+  padding: 0;
 }
 
-.business-index-container {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  background-color: rgba(212, 253, 254, 1);
-  padding: 0px;
-  padding-bottom: 5%;
-  border-radius: 50px;
-
-  max-width: 90%; /* Make the container full width */
+.container-fluid.business-index-container {
+  background-color: rgba(17,113,162,255);
+  padding: 20px;
 }
 
-/* Banner styles */
 .business-index-banner {
-  position: relative;
-  width: 100%; /* Make the banner full width */
-  height: 600px; /* Adjust height as needed */
+  height: 500px; /* Keep the height as before */
   background-size: cover;
   background-position: center;
-  z-index: 1; /* Ensure banner appears above other elements */
-
-}
-
-.banner-title {
-  text-align: center;
-  color: white; /* Change color as needed */
-  font-size: 50px; /* Adjust font size as needed */
-  margin-bottom: 20px; /* Adjust spacing as needed */
+  color: white;
+  position: relative;
+  border-radius: 50px;
 }
 
 .business-index-banner .banner-overlay {
   position: absolute;
   top: 0;
   left: 0;
-  width: 100%; /* Make it full width */
+  width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.5);
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding: 20px;
+  border-radius: 50px;
 }
 
-.banner-text {
-  background-color: rgba(255, 255, 255, 0.7); /* Adjust the opacity and color as needed */
+.banner-title {
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 20px;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 5px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  padding-top: 2%;
+  padding-bottom: 2%;
+  padding-left: 2%;
+  padding-right: 2%;
+}
+
+.container-searchform {
+  margin-top: 20px;
+}
+
+.business-card {
+  border: none;
+  max-width: 250px; /* Adjusted width to make the cards smaller */
+  margin: 0 auto;
+  margin-bottom: 20px; /* Added margin bottom to separate cards */
+}
+
+.business-card .card-body {
   padding: 20px;
-  color: black; /* Change color as needed */
-  font-size: 30px; /* Adjust font size as needed */
+}
+
+.business-card .card-title.business-card-title {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.business-card .card-text.business-card-text {
+  font-size: 1rem;
+  margin-bottom: 5px;
+}
+
+.business-card img {
+  width: 200px; /* Adjust image width */
+  height: 200px; /* Adjust image height */
+  object-fit: cover; /* Ensure the image covers the entire space */
+  display: block; /* Make image a block element */
+  margin: 0 auto 10px; /* Center image horizontally and add margin at the bottom */
+}
+
+.business-card .description-title {
+  font-weight: bold;
+}
+
+.business-card .description-content {
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  text-align: center;
+  text-decoration: none;
+  border: none;
+  color: white;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.btn-primary {
+  background-color: rgba(17, 113, 162, 255);
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: rgba(0, 81, 117, 255);
+  color: white;
+}
+
+.btn-secondary {
+  background-color: rgba(212, 253, 254, 255);
+  color: rgba(17, 113, 162, 255);
+}
+
+.btn-secondary:hover {
+  background-color: rgba(171, 242, 250, 255);
+  color: white;
+}
+
+/* Business Button Styles */
+.business-btn {
+  margin: 10px;
+}
+
+/* Centering Buttons */
+.text-center {
   text-align: center;
 }
 
-/* Container styles */
-.business-index-banner .container-searchform {
-  width: 100%;
-  position: relative;
-  z-index: 2; /* Ensure search form appears above other elements */
-}
-
-
-
-.card-body {
-  margin-left: 5%;
-  margin-right: 5%;
-}
-
-/* Form styles */
-.business-index-banner .business-form-search {
-  display: flex;
-  align-items: center;
-}
-
-.business-index-banner .form-control,
-.business-index-banner .form-select,
-.business-index-banner .btn {
-  margin-right: 10px;
-}
-
-.business-index-banner .btn:last-child {
-  margin-right: 0;
-}
-
-.business-index-banner .form-control {
-  padding: 8px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-}
-
-.business-index-banner .btn {
-  padding: 8px 16px;
+/* Button Styles */
+.business-btn {
   border: none;
   border-radius: 5px;
+  padding: 10px 20px;
+  background-color: rgba(17, 113, 162, 255);
+  color: white;
+  font-size: 16px;
   cursor: pointer;
-  text-decoration: none;
-  color: #fff;
+  transition: background-color 0.3s ease;
+  margin: 10px; /* Add margin for spacing */
 }
 
-.business-index-banner .btn-primary {
-  background-color: #007bff;
+.business-btn:hover {
+  background-color: rgba(0, 84, 121, 1);
+  color: white;
 }
 
-.business-index-banner .btn-secondary {
-  background-color: #6c757d;
-}
-
-.business-index-banner .form-select {
-  padding: 8px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-}
-
-.row {
-  margin-top: 20px; /* Add spacing between the banner and job cards */
-}
-
-/* Center buttons */
+/* Button Container */
 .business-index-buttons {
-  max-width: 90%;
   display: flex;
   justify-content: center;
-  align-items: center;
-  margin-bottom: 20px; /* Add margin below the button */
-  margin-left: 0 auto; /* Center the button */
 }
 
-.business-btn {
-  margin-right: 10px;
-}
 
-/* Adjustments for small screens */
-@media (max-width: 576px) {
-  .business-index-container {
-    padding: 10px;
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .business-index-banner {
+    height: 200px;
   }
-}
 
-/* Enlarge card on hover */
-.show-business-card,
-.show-business-applications .card {
-  transition: transform 0.3s ease;
-  transform: scale(0.8); /* Smaller scale for normal state */
-  z-index: 0; /* Ensure cards appear below banner */
-}
+  .banner-title {
+    font-size: 1.5rem;
+  }
 
-.show-business-card:hover,
-.show-business-applications .card:hover {
-  transform: scale(1.1); /* Larger scale for hover state */
+  .index-business-button {
+    width: auto;
+  }
+
+  .business-card {
+    max-width: calc(33.333% - 20px); /* Adjusted max-width to fit more cards in a row */
+  }
 }

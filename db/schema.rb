@@ -44,6 +44,8 @@ ActiveRecord::Schema[7.1].define(version: 2024_05_21_155226) do
 
   create_table "applications", force: :cascade do |t|
     t.string "status"
+    t.binary "cv_file"
+    t.binary "cover_letter"
     t.bigint "user_id", null: false
     t.bigint "job_id", null: false
     t.bigint "resume_id"
@@ -105,9 +107,10 @@ ActiveRecord::Schema[7.1].define(version: 2024_05_21_155226) do
   end
 
   create_table "skills", force: :cascade do |t|
-    t.string "name"
+    t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_skills_on_user_id"
   end
 
   create_table "user_skills", force: :cascade do |t|
@@ -140,6 +143,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_05_21_155226) do
     t.string "job_position"
     t.string "location"
     t.string "education"
+    t.boolean "business_role"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
@@ -156,6 +160,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_05_21_155226) do
   add_foreign_key "job_skills", "skills"
   add_foreign_key "jobs", "users"
   add_foreign_key "resumes", "users"
+  add_foreign_key "skills", "users"
   add_foreign_key "user_skills", "skills"
   add_foreign_key "user_skills", "users"
 end

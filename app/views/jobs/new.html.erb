@@ -1,33 +1,39 @@
-<div class="job-create-container">
-  <h1 class="job-create-title"><strong>Create an Exciting Opportunity For Our <em>SmartPups</em></strong></h1>
+  <div class="background">
+    <%= image_tag "logoicon.png", class: "logo-icon", alt: "Logo" %>
+  </div>
 
-  <%= simple_form_for(@job, html: {class: "job-create-form"}) do |f| %>
-    <% fields = [
-      { attribute: :title, label: "Job Title" },
-      { attribute: :company_name, label: "Company Name" },
-      { attribute: :location, label: "Location" },
-      { attribute: :description, label: "Job Description" },
-      { attribute: :requirements, label: "Requirements" }
-    ] %>
+  <div class="content">
+    <div class="job-create-container">
+      <h1 class="job-create-title"><strong>Create an Exciting Opportunity For Our <em>SmartPups</em></strong></h1>
 
-    <% fields.each do |field| %>
-      <div class="job-create-row">
-        <div class="job-create-col">
-          <%= f.input field[:attribute], label: field[:label], required: true, input_html: { class: "job-create-input" } %>
+      <%= simple_form_for(@job, html: {class: "job-create-form"}) do |f| %>
+        <% fields = [
+          { attribute: :title, label: "Job Title" },
+          { attribute: :company_name, label: "Company Name" },
+          { attribute: :location, label: "Location" },
+          { attribute: :description, label: "Job Description" },
+          { attribute: :requirements, label: "Requirements" }
+        ] %>
+
+        <% fields.each do |field| %>
+          <div class="job-create-row">
+            <div class="job-create-col">
+              <%= f.input field[:attribute], label: field[:label], required: true, input_html: { class: "job-create-input" } %>
+            </div>
+          </div>
+        <% end %>
+
+        <div class="job-create-row">
+          <div class="job-create-col">
+            <%= f.input :photo, as: :file, label: "Upload Photo", input_html: { class: "job-create-file-input" } %>
+          </div>
         </div>
-      </div>
-    <% end %>
 
-    <div class="job-create-row">
-      <div class="job-create-col">
-        <%= f.input :photo, as: :file, label: "Upload Photo", input_html: { class: "job-create-file-input" } %>
-      </div>
+        <div class="job-create-row">
+          <div class="job-create-col">
+            <%= f.button :submit, "Create Job", class: "job-create-submit-btn" %>
+          </div>
+        </div>
+      <% end %>
     </div>
-
-    <div class="job-create-row">
-      <div class="job-create-col">
-        <%= f.button :submit, "Create Job", class: "job-create-submit-btn" %>
-      </div>
-    </div>
-  <% end %>
-</div>
+  </div>

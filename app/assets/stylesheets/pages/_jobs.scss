@@ -1,8 +1,4 @@
 /* General Body Styles */
-body {
-  background-color: rgba(17, 113, 162, 1); /* Set the body background color */
-}
-
 .great-show-container {
   min-height: 100vh;
   display: flex;
@@ -10,6 +6,8 @@ body {
   background-color: rgba(212, 253, 254, 255);
   padding: 0px;
   max-width: 90%; /* Make the container full width */
+  border-radius: 50px;
+  text-align: center; /* Center all text within the container */
 }
 
 /* Banner Section */
@@ -22,6 +20,7 @@ body {
   display: flex; /* Add flexbox display */
   justify-content: center; /* Center horizontally */
   align-items: center; /* Center vertically */
+  border-radius: 50px;
 }
 
 .show-business-banner h1.banner-text {
@@ -39,10 +38,9 @@ body {
   margin-top: 2%;
   margin-bottom: 20px; /* Add bottom margin to separate from button */
   display: flex;
-  justify-content: space-between;
-  align-items: flex; /* Align items at the start of the flex container */
+  align-items: center; /* Align items at the start of the flex container */
   text-align: center; /* Center align all content */
-
+  margin-left: o auto; /* Center the container */
 }
 
 /* Job Listings Section */
@@ -65,9 +63,7 @@ body {
   transition: transform 0.3s ease; /* Add transition for smooth hover effect */
 }
 
-.show-business-card:hover {
-  transform: scale(1.02); /* Enlarge the card on hover */
-}
+
 
 .show-business-img-fluid {
   display: block;
