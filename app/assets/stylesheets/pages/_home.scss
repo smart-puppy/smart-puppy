@@ -2,6 +2,53 @@
 
 
 
+
+.sp-default-btn {
+  background-color: #D5FDFF ; 
+  text-decoration: none; 
+  color: black;
+  margin-right: 5px;
+  font-size: 16px;
+  border: none;
+  border-radius: 10px;
+  padding: 7px 20px;
+  border-style: solid;
+  border-color: black;
+  border-width: 1px;
+}
+
+.sp-default-btn:hover {
+  opacity: 0.9;
+}
+
+
+
+
+
+.sp-default-btn-dark {
+  background-color: #1170A3 ; 
+  text-decoration: none; 
+  color: white;
+  margin-right: 5px;
+  font-size: 16px;
+  border: none;
+  border-radius: 10px;
+  padding: 7px 20px;
+  border-style: solid;
+  border-color: black;
+  border-width: 1px;
+}
+
+.sp-default-btn-dark:hover {
+  opacity: 0.9;
+}
+
+
+
+
+
+
+
 .containertest {
 
   width: 200px !important; /* Adjust image width */

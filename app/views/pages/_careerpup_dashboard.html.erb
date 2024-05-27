@@ -4,8 +4,7 @@
 
   <div class="mt-4">
     <h2>Overview</h2>
-    <p><strong>Jobs Applied For:</strong> <%= @applied_jobs_count %></p>
-    <p><strong>Resumes Uploaded:</strong> <%= @resumes_count %></p>
+
   </div>
 
   <div class="pup-dashboard-section mt-4">
@@ -37,7 +36,7 @@
       <% end %>
     </div>
     <div class="pup-dashboard-btn-container">
-      <%= link_to 'View All My Jobs', my_jobs_path, class: "btn pup-dashboard-btn-secondary" %>
+      <%= link_to 'View All My Jobs', my_jobs_path, class: " sp-default-btn-dark" %>
     </div>
   </div>
 
@@ -63,7 +62,7 @@
       <% end %>
     </div>
     <div class="pup-dashboard-btn-container">
-      <%= link_to 'View All My Resumes', my_resumes_path, class: "btn pup-dashboard-btn-secondary" %>
+      <%= link_to 'View All My Resumes', my_resumes_path, class: "btn sp-default-btn-dark" %>
     </div>
     <div class="post-new-job-button">
       <%= link_to "Create a New Resume", "http://www.smartpuppy-resume.tech/cv-import", class: "btn btn-success" %>
