@@ -44,12 +44,12 @@
 <script>
     // JavaScript function to handle selecting role buttons
     function chooseRole(role) {
-        // Remove 'active' class from all buttons
-        document.querySelectorAll('.role-button').forEach(button => {
-            button.classList.remove('active');
+        // Remove 'clicked' class from all buttons
+        document.querySelectorAll('.sp-default-btn-dark').forEach(button => {
+            button.classList.remove('clicked');
         });
 
-        // Add 'active' class to the clicked button
-        document.getElementById(`${role}-btn`).classList.add('active');
+        // Add 'clicked' class to the clicked button
+        document.getElementById(`${role}-btn`).classList.add('clicked');
     }
 </script>

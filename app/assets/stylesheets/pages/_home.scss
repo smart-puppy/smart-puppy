@@ -3,14 +3,14 @@
 
 
 
-.sp-Careerpup-index-card { 
+.sp-Careerpup-index-card {
   flex: 0 0 auto;
   width: 25%;
 }
 
 .sp-default-btn {
-  background-color: #D5FDFF ; 
-  text-decoration: none; 
+  background-color: #D5FDFF ;
+  text-decoration: none;
   color: black;
   margin-right: 5px;
   font-size: 16px;
@@ -27,8 +27,8 @@
 }
 
 .sp-default-btn-dark {
-  background-color: #1170A3 ; 
-  text-decoration: none; 
+  background-color: #1170A3;
+  text-decoration: none;
   color: white;
   margin-right: 5px;
   font-size: 16px;
@@ -42,6 +42,19 @@
 
 .sp-default-btn-dark:hover {
   opacity: 0.9;
+  background-color: yellow;
+  color: black;
+  transition: 0.7s;
+}
+
+
+.sp-default-btn-dark:clickable {
+  cursor: pointer;
+}
+
+.sp-default-btn-dark.clicked {
+  background-color: yellow; /* Change background color to yellow */
+  color: black; /* Change text color to black for better readability */
 }
 
 .sp-role-buttons {
@@ -54,8 +67,8 @@
 
 
 .sp-default-btn-justins-green {
-  background-color: #C5FF95 ; 
-  text-decoration: none; 
+  background-color: #C5FF95 ;
+  text-decoration: none;
   color: black;
   margin-right: 5px;
   font-size: 16px;
@@ -126,7 +139,7 @@
   max-width: 1200px;
   margin: 0 auto;
   padding: 20px;
-  border-radius: 50px;  
+  border-radius: 50px;
 }
 /* All sections */
 .section,
@@ -159,7 +172,7 @@
   padding-top: 8%;
   padding-bottom: 8%;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  border-radius: 50px;   
+  border-radius: 50px;
   margin: 0 auto; /* Center horizontally */
   max-width: 1450px; /* Limit width */
   animation: fadeIn 1s ease-in-out, shelling 3s ease-in-out forwards; /* Apply fade-in and shelling animation */
@@ -223,7 +236,7 @@
   margin-bottom: 20px; /* Add margin bottom for consistent spacing */
 
 
-  
+
   h3 {
     margin-top: 0;
     margin-bottom: 10px;
