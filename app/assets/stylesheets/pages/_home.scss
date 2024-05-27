@@ -8,8 +8,6 @@
   width: 25%;
 }
 
-
-
 .sp-default-btn {
   background-color: #D5FDFF ;
   text-decoration: none;
@@ -27,10 +25,6 @@
 .sp-default-btn:hover {
   opacity: 0.9;
 }
-
-
-
-
 
 .sp-default-btn-dark {
   background-color: #1170A3;
@@ -53,6 +47,7 @@
   transition: 0.7s;
 }
 
+
 .sp-default-btn-dark:clickable {
   cursor: pointer;
 }
@@ -69,9 +64,6 @@
   margin-top: 5%;
   margin-bottom: 5%;
 }
-
-
-
 
 
 .sp-default-btn-justins-green {
@@ -98,18 +90,12 @@
 
 
 .containertest {
-
   width: 200px !important; /* Adjust image width */
   height: 200px !important; /* Adjust image height */
   object-fit: cover !important; /* Ensure the image covers the entire space */
   display: block !important; /* Make image a block element */
   margin: 0 auto 10px !important; /* Center image horizontally and add margin at the bottom */
-
-
-
 }
-
-
 
 
 
