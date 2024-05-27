@@ -25,9 +25,11 @@
   }
 
   .left-section {
+    border-radius: 30px;
     background-color: #f0f0f0;
     text-align: center;
     color: rgba(17,113,162,255);
+    
   }
 
   .left-section h1 {
@@ -59,8 +61,8 @@
 
 
   .divider {
-    width: 1px;
-    background-color: black;
+    width: 2px;
+    background-color: gray;
   }
 
   .role-buttons {

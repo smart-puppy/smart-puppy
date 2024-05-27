@@ -25,7 +25,8 @@
                 <p class="sp-pup-dashboard-card-text"><strong>Location:</strong><%= job.location %></p>
                 <p class="sp-pup-dashboard-card-text" style="text-align: justify;"><strong>Job Description:</strong><%= job.description.truncate(50) %></p>
                 <p class="sp-pup-dashboard-card-text"><strong>Requirements:</strong><%= job.requirements %></p>
-                <%= link_to 'View job', job_path(job), class: "btn pup-dashboard-btn-link" %>
+                <br>
+                <%= link_to 'View job', job_path(job), class: "sp-default-btn-dark" %>
                 <p class="sp-pup-dashboard-card-text"><small class="jobs-text-muted">Posted: <%= time_ago_in_words(job.updated_at) %></small></p>
               </div>
             </div>
@@ -51,7 +52,6 @@
                 <h5 class="card-title"><%= resume.title %></h5>
                 <p class="card-text"><%= time_ago_in_words(resume.created_at) %> ago</p>
 
-                
                  <%= link_to 'Download', rails_blob_path(resume.resume_file, disposition: "attachment"), class: "btn pup-dashboard-btn-primary" %>
               </div>
             </div>
@@ -62,10 +62,10 @@
       <% end %>
     </div>
     <div class="pup-dashboard-btn-container">
-      <%= link_to 'View All My Resumes', my_resumes_path, class: "btn sp-default-btn-dark" %>
+      <%= link_to 'View All My Resumes', my_resumes_path, class: "sp-default-btn-dark" %>
     </div>
     <div class="post-new-job-button">
-      <%= link_to "Create a New Resume", "http://www.smartpuppy-resume.tech/cv-import", class: "btn btn-success" %>
+      <%= link_to "Create a New Resume", "http://www.smartpuppy-resume.tech/cv-import", class: "sp-default-btn-justins-green" %>
     </div>
   </div>
 </div>

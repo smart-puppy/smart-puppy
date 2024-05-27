@@ -21,7 +21,7 @@
   padding: 7px 20px;
   border-style: solid;
   border-color: black;
-  border-width: 1px;
+  border-width: 2px;
 }
 
 .sp-default-btn:hover {
@@ -43,13 +43,44 @@
   padding: 7px 20px;
   border-style: solid;
   border-color: black;
-  border-width: 1px;
+  border-width: 2px;
 }
 
 .sp-default-btn-dark:hover {
   opacity: 0.9;
 }
 
+
+
+.sp-role-buttons {
+  font-size: 16px;
+  border-radius: 5px;
+  padding: 10px 20px;
+  margin-top: 5%;
+  margin-bottom: 5%;
+}
+
+
+
+
+
+.sp-default-btn-justins-green {
+  background-color: #C5FF95 ; 
+  text-decoration: none; 
+  color: black;
+  margin-right: 5px;
+  font-size: 16px;
+  border: none;
+  border-radius: 10px;
+  padding: 7px 20px;
+  border-style: solid;
+  border-color: black;
+  border-width: 2px;
+}
+
+.sp-default-btn-dark:hover {
+  opacity: 0.9;
+}
 
 
 
