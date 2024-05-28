@@ -1,4 +1,37 @@
+.sp-role-btn {
+  background-color: #D5FDFF ;
+  text-decoration: none;
+  color: black;
+  margin-right: 5px;
+  font-size: 16px;
+  border: none;
+  border-radius: 10px;
+  padding: 7px 20px;
+  border-style: solid;
+  border-color: black;
+  border-width: 2px;
+}
 
+.sp-role-btn:hover {
+  opacity: 0.9;
+}
+
+// CareerPup and Business Partner sign-up buttons
+.sp-role-btn:hover {
+  opacity: 0.9;
+  background-color: #1170A3;
+  color: white;
+  transition: 0.7s;
+}
+
+.sp-role-btn:clickable {
+  cursor: pointer;
+}
+
+.sp-role-btn.clicked {
+  background-color: #1170A3; /* Change background color to yellow */
+  color: white; /* Change text color to black for better readability */
+}
 
 
 .sp-application-form{
@@ -29,7 +62,7 @@
     background-color: #f0f0f0;
     text-align: center;
     color: rgba(17,113,162,255);
-    
+
   }
 
   .left-section h1 {
@@ -116,4 +149,3 @@
   }
 
 }
-

@@ -9,8 +9,8 @@
             <h3>Become a part of the pack</h3>
             <%= link_to "Already a user? Get back in here!", new_user_session_path, style: "text-decoration: none; color: black;" %>
             <div class="sp-role-buttons">
-                <button class="sp-default-btn-dark" id="careerpup-btn" onclick="chooseRole('careerpup')" data-action="click->business#uncheckBusiness">CareerPup</button>
-                <button class="sp-default-btn-dark" id="business-btn" onclick="chooseRole('business')" data-action="click->business#checkBusiness">Business Partner</button>
+                <button class="sp-role-btn" id="careerpup-btn" onclick="chooseRole('careerpup')" data-action="click->business#uncheckBusiness">CareerPup</button>
+                <button class="sp-role-btn" id="business-btn" onclick="chooseRole('business')" data-action="click->business#checkBusiness">Business Partner</button>
             </div>
 
             <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
@@ -45,7 +45,7 @@
     // JavaScript function to handle selecting role buttons
     function chooseRole(role) {
         // Remove 'clicked' class from all buttons
-        document.querySelectorAll('.sp-default-btn-dark').forEach(button => {
+        document.querySelectorAll('.sp-role-btn').forEach(button => {
             button.classList.remove('clicked');
         });
 
