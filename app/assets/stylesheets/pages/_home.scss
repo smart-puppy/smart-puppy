@@ -40,22 +40,6 @@
   border-width: 2px;
 }
 
-.sp-default-btn-dark:hover {
-  opacity: 0.9;
-  background-color: yellow;
-  color: black;
-  transition: 0.7s;
-}
-
-
-.sp-default-btn-dark:clickable {
-  cursor: pointer;
-}
-
-.sp-default-btn-dark.clicked {
-  background-color: yellow; /* Change background color to yellow */
-  color: black; /* Change text color to black for better readability */
-}
 
 .sp-role-buttons {
   font-size: 16px;
