@@ -1,61 +1,83 @@
-<div class="container">
-  <div class="row">
-    <div class="col-12">
-      <%= link_to 'Back to Dashboard', dashboard_path, class: "sp-default-btn" %>
-      <%= link_to 'Create a new Job listing', new_job_path, class: "sp-default-btn" %>
+<body style="background-color: rgba(17, 113, 162, 255)">
+  <div class="container-fluid great-show-container">
+    <!-- Banner Section -->
+    <div class="show-page-banner" style="background-image: url('/assets/banner2.png');">
+      <h1 class="banner-text">Browse the Jobs</h1>
+      <h2 class="banner-subtitle">Find your perfect one</h2>
+      <!-- Search Bar -->
+      <div class="container mt-3">
+        <div class="row justify-content-center">
+          <div class="col-12 col-md-8 my-3">
+            <%= form_with url: jobs_path, method: :get, class: "d-flex" do %>
+              <%= text_field_tag :query, params[:query], class: "form-control me-2", placeholder: "Type a keyword" %>
+              <%= submit_tag "Search", name: "", class: "btn btn-primary me-2" %>
+              <%= link_to 'Reset', jobs_path, class: "btn btn-primary me-2" %>
+            <% end %>
+          </div>
+          <div class="col-12 col-md-2 my-3">
+            <%= form_with url: jobs_path, method: :get, local: true do %>
+              <%= select_tag :per_page, options_for_select([5, 10, 20, 50, 100], params[:per_page]), class: "form-select", onchange: "this.form.submit();" %>
+            <% end %>
+          </div>
+        </div>
+      </div>
+      <!-- End of Search Bar -->
     </div>
-  </div>
-  <div class="row justify-content-center">
-    <div class="col-12 col-md-8 my-3">
-      <%= form_with url: jobs_path, method: :get, class: "d-flex" do %>
-        <%= text_field_tag :query, params[:query], class: "form-control me-2", placeholder: "Type a keyword" %>
-        <%= submit_tag "Search", name: "", class: "btn btn-primary me-2" %>
-        <%= link_to 'Reset', jobs_path, class: "btn btn-primary me-2" %>
-      <% end %>
-    </div>
-    <div class="col-12 col-md-2 my-3">
-      <%= form_with url: jobs_path, method: :get, local: true do %>
-        <%= select_tag :per_page, options_for_select([5, 10, 20, 50, 100], params[:per_page]), class: "form-select", onchange: "this.form.submit();" %>
-      <% end %>
-    </div>
-  </div>
-  <div class="row">
-    <% if @jobs.any? %>
-      <% @jobs.each do |job| %>
-        <div class="col-12 sp-Careerpup-index-card mb-4">
-          <div class="card h-100">
-            <div class="row">
-              <div class="pup-dashboard-card card mb-3">
-                <% if job.photo.attached? %>
-                 <%= cl_image_tag job.photo.key, height: 200, width: 300, crop: :fill %>
-                <% else %>
-                 <img src="https://images.unsplash.com/photo-1502945015378-0e284ca1a5be?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="img-fluid rounded-start" alt="...">
-                <% end %>
-              </div>
-              <div class="">
-                 <div class="sp-myjobs-card-body">
-                <h3 class="sp-pup-dashboard-card-text title-for-job-card  "><strong class="big-strong-title">Job Title: </strong><%= job.title %></h3>
-                <p class="sp-pup-dashboard-card-text"><strong>Company Name:</strong><%= job.company_name %></p>
-                <p class="sp-pup-dashboard-card-text"><strong>Location:</strong><%= job.location %></p>
-                <p class="sp-pup-dashboard-card-text" style="text-align: justify;"><strong>Job Description:</strong><%= job.description.truncate(50) %></p>
-                <p class="sp-pup-dashboard-card-text"><strong>Requirements:</strong><%= job.requirements %></p>
-                <%= link_to 'View job', job_path(job), class: "btn pup-dashboard-btn-link" %>
-                <p class="sp-pup-dashboard-card-text"><small class="jobs-text-muted">Posted: <%= time_ago_in_words(job.updated_at) %></small></p>
+    <!-- End of Banner Section -->
+
+    <!-- Job Listings Section -->
+    <div class="container-fluid business-index-container mt-4">
+      <div class="row">
+        <% if @jobs.any? %>
+          <% @jobs.each do |job| %>
+            <div class="col-12 col-md-4 mb-4">
+              <div class="business-card" style="background-color: white;">
+                <div class="card-image" style="padding: 10px;"> <!-- Adjust padding as needed -->
+                  <% if job.photo.attached? %>
+                    <%= image_tag(job.photo, class: "img-fluid rounded-start mt-0") %>
+                  <% else %>
+                    <%= image_tag("https://images.unsplash.com/photo-1502945015378-0e284ca1a5be?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", class: "img-fluid rounded-start mt-0") %>
+                  <% end %>
+                </div>
+                <div class="card-body">
+                  <h5 class="card-title"><strong>Job Title:</strong> <%= job.title.truncate(8) %></h5>
+                  <p class="card-text"><strong>Company Name:</strong> <%= job.company_name.truncate(8) %></p>
+                  <p class="card-text"><strong>Location:</strong> <%= job.location.truncate(8) %></p>
+                  <p class="card-text">
+                    <strong class="description-title">Job Description:</strong>
+                    <span class="description-content"><%= job.description.truncate(8) %></span>
+                  </p>
+                  <p class="card-text"><strong>Requirements:</strong> <%= job.requirements.truncate(8) %></p>
+                  <%= link_to 'View job', job_path(job), class: "btn btn-link business-btn" %>
+                  <p class="card-text"><small class="text-muted">Posted: <%= time_ago_in_words(job.updated_at) %></small></p>
                 </div>
               </div>
             </div>
+          <% end %>
+        <% else %>
+          <div class="col-12">
+            <p class="text-center">No jobs found.</p>
           </div>
-        </div>
-      <% end %>
-    <% else %>
-      <div class="col-12">
-        <p class="text-center">No jobs found.</p>
+        <% end %>
       </div>
-    <% end %>
-  </div>
-  <div class="row">
-    <div class="col-12 d-flex justify-content-center">
-      <%= will_paginate @jobs %>
     </div>
+    <!-- End of Job Listings Section -->
+
+    <!-- Pagination Section -->
+    <div class="row">
+      <div class="col-12 d-flex justify-content-center">
+        <%= will_paginate @jobs %>
+      </div>
+    </div>
+    <!-- End of Pagination Section -->
+
+    <!-- Button Section -->
+    <div class="d-flex justify-content-center mt-3">
+      <div class="back-to-jobs-button text-center">
+        <%= link_to 'Back to Dashboard', dashboard_path, class: "sp-default-btn" %>
+        <%= link_to 'Create a new Job listing', new_job_path, class: "sp-default-btn" %>
+      </div>
+    </div>
+    <!-- End of Button Section -->
   </div>
-</div>
+</body>

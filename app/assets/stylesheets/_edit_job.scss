@@ -1,104 +1,45 @@
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-@keyframes grow {
-  from {
-    transform: scale(1);
-  }
-  to {
-    transform: scale(1.05);
-  }
-}
-$primary-color: #1EDD88;
-$hover-color: darken($primary-color, 10%);
-
-
 .edit-container {
-  max-width: 600px;
-  margin: 0 auto;
-  padding: 2rem;
-  background-color: #f9f9f9;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  margin-top: 60px;
-  margin-bottom: 100px;
+  width: 50%; /* Adjust the maximum width of the container */
+  margin: 50px auto; /* Center the container horizontally and add margin from the top */
+  padding: 20px; /* Add padding inside the container */
+  background-color: #f8f9fa; /* Set background color */
+  border-radius: 10px; /* Add border radius for rounded corners */
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Add box shadow for depth */
+}
 
+.edit-h1 {
+  text-align: center; /* Center the heading */
+  margin-bottom: 20px; /* Add margin below the heading */
+  color: #333; /* Set text color */
+}
 
-  .edit-h1 {
-    text-align: center;
-    margin-bottom: 2rem;
-    color: #0D6EFD;
-  }
+.form-group {
+  margin-bottom: 20px; /* Add margin between form groups */
+}
 
-  .form-group {
-    margin-bottom: 1.5rem;
+.form-label {
+  display: block; /* Display labels as block elements */
+  margin-bottom: 5px; /* Add margin below labels */
+  color: #333; /* Set label text color */
+}
 
-    .form-label {
-      display: block;
-      margin-bottom: 0.5rem;
-      font-weight: bold;
-      color: #0D6EFD;
-    }
+.form-control {
+  width: 100%; /* Set input width to 100% */
+  padding: 10px; /* Add padding inside inputs */
+  border: 1px solid #ccc; /* Add border */
+  border-radius: 5px; /* Add border radius */
+}
 
-    .form-control {
-      width: 100%;
-      padding: 0.75rem;
-      font-size: 1rem;
-      border: 1px solid #ccc;
-      border-radius: 4px;
-      box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+.form-textarea {
+  resize: vertical; /* Allow vertical resizing of text areas */
+}
 
-      &:focus {
-        border-color: #007bff;
-        box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
-      }
-    }
+.update-btn-primary {
+  width: 100%; /* Set button width to 100% */
+  margin-top: 20px; /* Add margin from the top */
+}
 
-    .form-textarea {
-      resize: vertical;
-    }
-  }
-
-  .update-btn-primary {
-    background-color: #1EDD88;
-    border-color: #1EDD88;
-    color: #fff;
-    padding: 0.75rem 1.25rem;
-    font-size: 1rem;
-    border-radius: 4px;
-    cursor: pointer;
-    margin-right: 1rem;
-    justify-content: center;
-
-    &:hover {
-      background-color: $hover-color;
-    }
-  }
-
-  .cancel-btn-secondary {
-    background-color: grey;
-    border-color: grey;
-    color: #fff;
-    padding: 0.75rem 1.25rem;
-    font-size: 1rem;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    justify-content: center;
-
-    &:hover {
-      background-color: rgba(128, 128, 128, 0.2);
-      border-color: rgba(128, 128, 128, 0.2);
-      opacity: 0.3;
-    }
-  }
-
-  .mt-3 {
-    margin-top: 1rem;
-  }
+.cancel-btn-secondary {
+  width: 100%; /* Set button width to 100% */
+  margin-top: 10px; /* Add margin from the top */
 }

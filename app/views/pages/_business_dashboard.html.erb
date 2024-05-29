@@ -1,56 +1,47 @@
-<div class="container text-center">
-  <div class="dashboard-banner job-banner" style="background-image: url('https://source.unsplash.com/random/1600x900/?job,application');">
-    <h1 class="dashboard-title">Dashboard: Business-Partner</h1>
-    <h2>Overview</h2>
-  </div>
+<body style="background-color: rgba(17, 113, 162, 255)">
 
+    <!-- Banner Section -->
+  <div class="show-page-banner" style="background-image: url('/assets/business-banner1.png');">
 
-  <div class="text-center">
-    <div class="col-md-12 d-flex justify-content-center">
-
-
+        <h1 class="banner-text">Dashboard: Business-Partner</h1>
+        <h2 class="banner-subtitle">Overview</h2>
 
     </div>
-  </div>
 
+      <div class="container-fluid great-show-container">
 
     <!-- Section for Managing Job Postings -->
-    <div class="mt-4 dashboard-business-container" >
+    <div class="mt-4 dashboard-business-container">
+      <!-- Job Listings on the Left -->
       <div class="left-section job-listing-section">
-        <h2 class="dashboard-subtitle job-listing-title">Job Postings</h2>
-
-
-
-
+        <div class="text-center">
+          <h2 class="dashboard-subtitle job-listing-title">Job Postings</h2>
+        </div>
         <div class="row justify-content-center">
           <% if @jobs && @jobs.any? %>
             <% @jobs.each do |job| %>
               <div class="col-12 col-md-4" style="margin-bottom: 5%">
                 <div class="card job-listing-card mb-3">
-                  <% if job.photo.attached? %>
-                  <%= cl_image_tag job.photo.key, height: 200, width: 300, crop: :fill %>
-                  <% else %>
-                  <img src="https://images.unsplash.com/photo-1502945015378-0e284ca1a5be?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="img-fluid rounded-start" alt="...">
-                  <% end %>
                   <div class="card-body job-listing-card-body">
-                    <h5 class="card-title job-listing-card-title"><strong class="big-strong-title">Job Title: </strong><%= job.title %></h5>
+                    <%= image_tag("https://images.unsplash.com/photo-1502945015378-0e284ca1a5be?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", class: "img-fluid rounded-start mt-0") %>
+                    <h5 class="card-title job-listing-card-title"><strong>Job Title: </strong><%= job.title %></h5>
                     <p class="card-text job-listing-card-text"><strong>Company: </strong><%= job.company_name %></p>
                     <p class="card-text job-listing-card-text"><strong>Location: </strong><%= job.location %></p>
                     <p class="card-text job-listing-card-text"><strong>Description: </strong><%= job.description.truncate(50) %></p>
                     <p class="card-text job-listing-card-text"><strong>Requirements: </strong><%= job.requirements %></p>
                     <p class="card-text job-listing-card-text">Posted: <%= time_ago_in_words(job.updated_at) %> ago</p>
-                    <div class="card-footer job-listing-card-footer">
-                    <%= link_to job_path(job), class: "btn btn-primary btn-light-blue" do %>
-                      <i class="fas fa-eye"></i> <!-- View icon -->
-                    <% end %>
-                    <%= link_to edit_job_path(job), class: "btn btn-primary btn-light-blue" do %>
-                      <i class="fas fa-edit"></i> <!-- Edit icon -->
-                    <% end %>
-                    <%= link_to job_path(job), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: "btn btn-danger btn-light-blue" do %>
-                      <i class="fas fa-trash-alt"></i> <!-- Delete icon -->
-                    <% end %>
+                    <div class="card-footer job-listing-card-footer d-flex justify-content-center">
+                      <%= link_to job_path(job), class: "btn btn-primary btn-light-blue" do %>
+                        <i class="fas fa-eye"></i> <!-- View icon -->
+                      <% end %>
+                      <%= link_to edit_job_path(job), class: "btn btn-primary btn-light-blue" do %>
+                        <i class="fas fa-edit"></i> <!-- Edit icon -->
+                      <% end %>
+                      <%= link_to job_path(job), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: "btn btn-danger btn-light-blue" do %>
+                        <i class="fas fa-trash-alt"></i> <!-- Delete icon -->
+                      <% end %>
+                    </div>
                   </div>
-                </div>
                 </div>
               </div>
             <% end %>
@@ -58,26 +49,18 @@
             <p class="text-center no-job-postings">You have no job postings yet.</p>
           <% end %>
         </div>
-
-
-
-
-
-
         <div class="post-new-job-button">
-          <%= link_to "Post New Job", new_job_path, class: "custom-btn" %>
-
-        </div>
-         <hr class="mt-4 mb-4"> <!-- Horizontal line to separate sections -->
+  <%= link_to "Post New Job", new_job_path, class: "custom-btn" %>
+</div>
+        <hr class="mt-4 mb-4"> <!-- Horizontal line to separate sections -->
       </div>
-
-
-
 
       <!-- Section for Viewing Job Applications -->
       <div class="right-section job-applications-section">
-        <h2 class="dashboard-subtitle job-listing-title">Job Applications</h2>
-        <div class="row justify-content-center" >
+        <div class="text-center">
+          <h2 class="dashboard-subtitle job-listing-title">Job Applications</h2>
+        </div>
+        <div class="row justify-content-center">
           <% if @applications && @applications.any? %>
             <% @applications.each do |application| %>
               <div class="col-12 col-md-4">
@@ -107,4 +90,14 @@
         </div> <!-- Closing tag for row -->
       </div> <!-- Closing tag for right-section -->
     </div> <!-- Closing tag for dashboard-business-container -->
-  </div> <!-- Closing tag for container -->
+  </div> <!-- Closing tag for great-show-container -->
+
+  <!-- Button Section -->
+  <div class="d-flex justify-content-center">
+    <div class="back-to-jobs-button text-center">
+      <%= link_to 'Back to Jobs', jobs_path, class: "btn btn-secondary mb-3" %>
+    </div>
+  </div>
+  <!-- End of Button Section -->
+
+</body>

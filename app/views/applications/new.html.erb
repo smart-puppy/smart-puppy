@@ -1,24 +1,35 @@
+<style>
+  .sp-application-form {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    margin: auto;
+    margin-top: 50px;
+  }
+</style>
 
 <div class="sp-application-form">
-<h1>Application page</h1>
+  <h1>Application page</h1>
 
-<%= simple_form_for [@job, @application] do |f| %>
-  <% fields = [
-    { attribute: :cv_file_cloudinary, label: "CV File"}
-  ] %>
+  <%= simple_form_for [@job, @application] do |f| %>
+    <% fields = [
+      { attribute: :cv_file_cloudinary, label: "CV File"}
+    ] %>
 
-  <% fields.each do |field| %>
+    <% fields.each do |field| %>
+      <div class="row">
+        <div class="col-12">
+          <%= f.input field[:attribute], label: field[:label], required: true, input_html: { class: "form-control" } %>
+        </div>
+      </div>
+    <% end %>
+
     <div class="row">
       <div class="col-12">
-        <%= f.input field[:attribute], label: field[:label], required: true, input_html: { class: "form-control" } %>
+        <%= f.button :submit, "Apply", class: "btn btn-primary" %>
       </div>
     </div>
   <% end %>
-
-  <div class="row">
-    <div class="col-12">
-      <%= f.button :submit, "Apply", class: "btn btn-primary" %>
-    </div>
-  </div>
-<% end %>
 </div>

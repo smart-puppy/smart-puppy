@@ -1,76 +1,81 @@
- <div class="pup-dashboard-container">
-  <h1 class="pup-dashboard-title">Dashboard - CareerPup</h1>
-
-
-  <div class="mt-4">
-    <h2>Overview</h2>
-
+<body>
+  <!-- Banner Section -->
+  <div class="show-page-banner" style="background-image: url('/assets/banner2.png');">
+    <h1 class="banner-text">Dashboard - CareerPup</h1>
+    <h2 class="banner-subtitle">Overview</h2>
   </div>
 
-  <div class="pup-dashboard-section mt-4">
-    <h2 class="pup-dashboard-subtitle">My Jobs</h2>
-    <div class="row">
-      <% if @jobs && @jobs.any? %>
-        <% @jobs.each do |job| %>
-          <div class="col-md-4">
-            <div class="pup-dashboard-card card mb-3">
-              <% if job.photo.attached? %>
-                <%= cl_image_tag job.photo.key, height: 200, width: 300, crop: :fill %>
-              <% else %>
-                <img src="https://images.unsplash.com/photo-1502945015378-0e284ca1a5be?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="img-fluid rounded-start" alt="...">
-              <% end %>
-              <div class="sp-myjobs-card-body">
-                <h3 class="sp-pup-dashboard-card-text title-for-job-card  "><strong class="big-strong-title">Job Title: </strong><%= job.title %></h3>
-                <p class="sp-pup-dashboard-card-text"><strong>Company Name:</strong><%= job.company_name %></p>
-                <p class="sp-pup-dashboard-card-text"><strong>Location:</strong><%= job.location %></p>
-                <p class="sp-pup-dashboard-card-text" style="text-align: justify;"><strong>Job Description:</strong><%= job.description.truncate(50) %></p>
-                <p class="sp-pup-dashboard-card-text"><strong>Requirements:</strong><%= job.requirements %></p>
-                <br>
-                <%= link_to 'View job', job_path(job), class: "sp-default-btn-dark" %>
-                <p class="sp-pup-dashboard-card-text"><small class="jobs-text-muted">Posted: <%= time_ago_in_words(job.updated_at) %></small></p>
+  <!-- Dashboard Container -->
+  <div class="pup-dashboard-container container-fluid mt-4">
+
+    <!-- My Jobs Section -->
+    <div class="pup-dashboard-section">
+      <h2 class="pup-dashboard-subtitle text-center">My Jobs</h2>
+      <div class="row">
+        <% if @jobs && @jobs.any? %>
+          <% @jobs.each do |job| %>
+            <div class="col-12 col-md-4 mb-4">
+              <div class="business-card" style="background-color: white;">
+                <div class="card-image" style="padding: 10px;"> <!-- Adjust padding as needed -->
+                  <% if job.photo.attached? %>
+                    <%= image_tag(job.photo, class: "img-fluid rounded-start mt-0") %>
+                  <% else %>
+                    <%= image_tag("https://images.unsplash.com/photo-1502945015378-0e284ca1a5be?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", class: "img-fluid rounded-start mt-0") %>
+                  <% end %>
+                </div>
+                <div class="card-body">
+                  <h5 class="card-title"><strong>Job Title:</strong> <%= job.title.truncate(8) %></h5>
+                  <p class="card-text"><strong>Company Name:</strong> <%= job.company_name.truncate(8) %></p>
+                  <p class="card-text"><strong>Location:</strong> <%= job.location.truncate(8) %></p>
+                  <p class="card-text">
+                    <strong class="description-title">Job Description:</strong>
+                    <span class="description-content"><%= job.description.truncate(8) %></span>
+                  </p>
+                  <p class="card-text"><strong>Requirements:</strong> <%= job.requirements.truncate(8) %></p>
+                  <%= link_to 'View job', job_path(job), class: "btn btn-link business-btn" %>
+                  <p class="card-text"><small class="text-muted">Posted: <%= time_ago_in_words(job.updated_at) %></small></p>
+                </div>
               </div>
             </div>
+          <% end %>
+        <% else %>
+          <div class="col-12">
+            <p class="text-center">You have no jobs posted yet.</p>
           </div>
         <% end %>
-      <% else %>
-        <p class="text-center">You have no jobs posted yet.</p>
-      <% end %>
+      </div>
     </div>
-    <div class="pup-dashboard-btn-container">
-      <%= link_to 'View All My Jobs', my_jobs_path, class: " sp-default-btn-dark" %>
-    </div>
-  </div>
 
-  <div class="pup-dashboard-section mt-4">
-    <h2 class="pup-dashboard-subtitle">My Resumes</h2>
-    <div class="row">
-      <% if @resumes && @resumes.any? %>
-        <% @resumes.each do |resume| %>
-          <div class="sp-col-12 sp-col-md-4">
-            <div class="pup-dashboard-card card mb-3">
-              <div class="card-body">
-                <h5 class="card-title"><%= resume.title %></h5>
-                <p class="card-text"><%= time_ago_in_words(resume.created_at) %> ago</p>
+    <hr class="section-divider"> <!-- Line divider -->
 
-                 <%= link_to 'Download', rails_blob_path(resume.resume_file, disposition: "attachment"), class: "btn pup-dashboard-btn-primary" %>
+    <!-- My Resumes Section -->
+    <div class="pup-dashboard-section">
+      <h2 class="pup-dashboard-subtitle text-center">My Resumes</h2>
+      <div class="row">
+        <% if @resumes && @resumes.any? %>
+          <% @resumes.each do |resume| %>
+            <div class="col-12 col-md-4 mb-4">
+              <div class="business-card" style="background-color: white;">
+                <div class="card-body">
+                  <h5 class="card-title"><%= resume.title.truncate(8) %></h5>
+                  <p class="card-text"><%= time_ago_in_words(resume.created_at) %> ago</p>
+                  <%= link_to 'Download', rails_blob_path(resume.resume_file, disposition: "attachment"), class: "btn pup-dashboard-btn-primary" %>
+                </div>
               </div>
             </div>
+          <% end %>
+        <% else %>
+          <div class="col-12">
+            <p class="text-center">You have no resumes uploaded yet.</p>
           </div>
         <% end %>
-      <% else %>
-        <p class="text-center">You have no resumes uploaded yet.</p>
-      <% end %>
-    </div>
-    <div class="pup-dashboard-btn-container">
-      <%= link_to 'View All My Resumes', my_resumes_path, class: "sp-default-btn-dark" %>
-    </div>
-    <div class="post-new-job-button">
-      <%= link_to "Create a New Resume", "http://www.smartpuppy-resume.tech/cv-import", class: "sp-default-btn-justins-green" %>
+      </div>
+      <div class="pup-dashboard-btn-container text-center">
+        <%= link_to 'View All My Resumes', my_resumes_path, class: "sp-default-btn-dark" %>
+        <div class="post-new-job-button">
+          <%= link_to "Create a New Resume", "http://www.smartpuppy-resume.tech/cv-import", class: "sp-default-btn-justins-green" %>
+        </div>
+      </div>
     </div>
   </div>
-</div>
-
-
-
-
-
+</body>

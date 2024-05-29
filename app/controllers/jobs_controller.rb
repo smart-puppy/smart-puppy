@@ -27,6 +27,7 @@ class JobsController < ApplicationController
 
   def new
     @job = Job.new
+    @application = Application.new
   end
 
   def edit

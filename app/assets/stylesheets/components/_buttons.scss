@@ -1,0 +1,126 @@
+/* Global button styles */
+
+/* Button text color */
+.btn {
+  color: black; /* Change to your desired text color */
+}
+
+/* Button background color */
+.btn {
+  background-color: #1e90ff; /* Change to your desired background color */
+}
+
+/* Button hover effect */
+.btn:hover {
+  opacity: 0.8; /* Adjust the opacity for the hover effect */
+  background-color: #adb72b; /* Change the background color to indicate selection */
+
+}
+
+/* Button border radius */
+.btn {
+  border-radius: 5px; /* Adjust the border radius as needed */
+}
+
+/* Button padding */
+.btn {
+  padding: 10px 20px; /* Adjust padding as needed */
+}
+
+
+
+/* Custom button styling */
+.custom-btn {
+  /* Define custom button styles here */
+  background-color: #1e90ff; /* Change to your desired background color */
+  color: white; /* Change to your desired text color */
+  border: none; /* Remove border */
+  border-radius: 5px; /* Adjust the border radius as needed */
+  padding: 10px 20px; /* Adjust padding as needed */
+  text-decoration: none; /* Remove underline */
+  display: inline-block; /* Ensure inline display */
+  cursor: pointer; /* Show pointer cursor on hover */
+  transition: opacity 0.3s ease; /* Smooth transition on hover */
+  margin-top: 10px; /* Add margin to the top */
+}
+
+.custom-btn:hover {
+  opacity: 0.8; /* Adjust the opacity for the hover effect */
+  background-color: #adb72b; /* Change the background color to indicate selection */
+  color: white;
+  transition: 1s;
+}
+
+
+.custom-signup-btn {
+  color: white; /* Button text color */
+  background-color: #1e90ff; /* Button background color */
+  border-radius: 5px; /* Button border radius */
+  padding: 10px 20px; /* Button padding */
+  text-decoration: none; /* Remove underline */
+  display: inline-block; /* Ensure inline display */
+  cursor: pointer; /* Show pointer cursor on hover */
+  transition: opacity 0.3s ease; /* Smooth transition on hover */
+  margin-top: 10px; /* Add margin to the top */
+}
+
+.custom-signup-btn:hover {
+  opacity: 0.8; /* Adjust the opacity for the hover effect */
+  background-color: #adb72b; /* Change the background color to indicate selection */
+  color: #333;
+
+}
+
+
+
+.custom-btn.clicked {
+  background-color: #adb72b; /* Change the background color to indicate selection */
+  color: #fff; /* Change the text color for better visibility */
+}
+
+
+/* buttons.css */
+
+/* Primary Button */
+.btn-primary {
+  background-color: #007bff; /* Button background color */
+  color: #fff; /* Button text color */
+  border-color: #007bff; /* Button border color */
+}
+
+/* Light Blue Button */
+.btn-light-blue {
+  background-color: #6c757d; /* Button background color */
+  color: #fff; /* Button text color */
+  border-color: #6c757d; /* Button border color */
+}
+
+/* Danger Button */
+.btn-danger {
+  background-color: #dc3545; /* Button background color */
+  color: #fff; /* Button text color */
+  border-color: #dc3545; /* Button border color */
+}
+
+/* Button Hover Effect */
+.btn:hover {
+  opacity: 0.8; /* Reduce opacity on hover */
+}
+
+
+.job-create-submit-btn,
+.back-to-jobs-button .btn {
+  width: 100%;
+  padding: 10px;
+  background-color: #fff; /* Set background color to white */
+  color: #333;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+}
+
+.job-create-submit-btn:hover,
+.back-to-jobs-button .btn:hover {
+  opacity: 0.8;
+}

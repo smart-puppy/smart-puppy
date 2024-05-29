@@ -1,0 +1,11 @@
+development:
+  cloud_name: "dd5mp1jyj"
+  api_key: "254637732471932"
+  api_secret: "cnfB0be2wQEqNoLd1lU3Hp7exUA"
+  secure: true
+
+production:
+  cloud_name: "dd5mp1jyj"
+  api_key: "254637732471932"
+  api_secret: "cnfB0be2wQEqNoLd1lU3Hp7exUA"
+  secure: true

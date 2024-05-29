@@ -1,0 +1,32 @@
+<!-- Job Listing or Application Card -->
+<div class="card standard-card mb-3">
+  <div class="row g-0">
+    <!-- Card Image -->
+    <div class="col-md-4">
+      <% if @job.photo.attached? %>
+        <%= cl_image_tag @job.photo.key, height: 200, width: 300, crop: :fill, class: "card-img-top" %>
+      <% else %>
+        <img src="https://images.unsplash.com/photo-1502945015378-0e284ca1a5be?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="card-img-top" alt="...">
+      <% end %>
+    </div>
+    <!-- Card Body -->
+    <div class="col-md-8">
+      <div class="card-body">
+        <h5 class="card-title"><strong>Job Title:</strong> <%= @job.title %></h5>
+        <p class="card-text"><strong>Company:</strong> <%= @job.company_name %></p>
+        <p class="card-text"><strong>Location:</strong> <%= @job.location %></p>
+        <p class="card-text" style="text-align: justify;"><strong>Details:</strong> <%= @job.description.truncate(100) %></p>
+        <p class="card-text"><strong>Requirements:</strong> <%= @job.requirements %></p>
+        <% if @job.status.present? %>
+          <p class="card-text"><strong>Status:</strong> <%= @job.status %></p>
+        <% end %>
+        <% if @job.user == current_user %>
+          <div class="text-center">
+            <%= link_to 'Edit', edit_job_path(@job), class: "btn btn-primary" %>
+            <%= link_to 'Delete', @job, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

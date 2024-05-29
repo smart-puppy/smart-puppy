@@ -1,19 +1,20 @@
-<body>
-  <div class="container-fluid business-index-container">
-    <div class="business-index-banner" style="background-image: url('https://source.unsplash.com/1600x900/?job,application');">
-      <div class="banner-overlay">
-        <h1 class="banner-title">Post a new job to find the right candidates!</h1>
-      </div>
+<body style="background-color: rgba(17, 113, 162, 255)">
+  <div class="container-fluid great-show-container">
+    <!-- Banner Section -->
+  <div class="show-page-banner" style="background-image: url('/assets/banner2.png');">
+      <h1 class="banner-text">Post a new job to find the right candidates!</h1>
     </div>
+    <!-- End of Banner Section -->
 
-    <div class="row" style="background-color: rgba(212,253,254,255); max-width: 90%; margin-left: auto; margin-right: auto; text-align: center; margin-top: 5%;">
-      <% if @jobs.any? %>
-        <% @jobs.each_slice(4) do |jobs_slice| %>
-          <div class="row" style="margin-top: 20px">
+    <!-- Job Listings Section -->
+    <div class="container-fluid business-index-container mt-4">
+      <div class="row">
+        <% if @jobs.any? %>
+          <% @jobs.each_slice(3) do |jobs_slice| %>
             <% jobs_slice.each do |job| %>
-              <div class="col-12 sp-Careerpup-index-card mb-4">
-                <div class="card h-100">
-                  <div class="pup-dashboard-card col-md-4">
+              <div class="col-12 col-md-4 mb-4">
+                <div class="business-card" style="background-color: white;">
+                  <div class="card-image" style="padding: 10px;"> <!-- Adjust padding as needed -->
                     <% if job.photo.attached? %>
                       <%= image_tag(job.photo, class: "img-fluid rounded-start mt-0") %>
                     <% else %>
@@ -21,40 +22,46 @@
                     <% end %>
                   </div>
                   <div class="card-body">
-                    <h5 class="card-title business-card-title"><strong>Job Title:</strong> <%= job.title %></h5>
-                    <p class="card-text business-card-text"><strong>Company Name:</strong> <%= job.company_name %></p>
-                    <p class="card-text business-card-text"><strong>Location:</strong> <%= job.location %></p>
-                    <p class="card-text business-card-text">
+                    <h5 class="card-title"><strong>Job Title:</strong> <%= job.title.truncate(8) %></h5>
+                    <p class="card-text"><strong>Company Name:</strong> <%= job.company_name.truncate(8) %></p>
+                    <p class="card-text"><strong>Location:</strong> <%= job.location.truncate(8) %></p>
+                    <p class="card-text">
                       <strong class="description-title">Job Description:</strong>
-                      <span class="description-content"><%= job.description.truncate(50) %></span>
+                      <span class="description-content"><%= job.description.truncate(8) %></span>
                     </p>
-                    <p class="card-text business-card-text"><strong>Requirements:</strong> <%= job.requirements %></p>
+                    <p class="card-text"><strong>Requirements:</strong> <%= job.requirements.truncate(8) %></p>
                     <%= link_to 'View job', job_path(job), class: "btn btn-link business-btn" %>
-                    <p class="card-text business-card-text"><small class="text-muted">Posted: <%= time_ago_in_words(job.updated_at) %></small></p>
+                    <p class="card-text"><small class="text-muted">Posted: <%= time_ago_in_words(job.updated_at) %></small></p>
                   </div>
                 </div>
               </div>
             <% end %>
+          <% end %>
+        <% else %>
+          <div class="col-12">
+            <p class="text-center">No jobs found.</p>
           </div>
         <% end %>
-      <% else %>
-        <div class="col-12">
-          <p class="text-center" style="background-color: rgba(212,253,254,255)">No jobs found.</p>
-        </div>
-      <% end %>
-    </div>
-
-    <div class="row">
-      <div class="col-12 d-flex justify-content-center">
-        <%= will_paginate @jobs %>
       </div>
     </div>
-  </div>
+    <!-- End of Job Listings Section -->
 
-  <div class="d-flex justify-content-center" style="background-color: rgba(17,113,162,255)">
-    <div class="col-12 business-index-buttons text-center" style="width: 90%">
-      <%= link_to 'Back to Dashboard', dashboard_path, class: "btn btn-secondary mb-3 business-btn index-business-button" %>
-      <%= link_to 'Create a new Job listing', new_job_path, class: "btn btn-secondary mb-3 business-btn index-business-button" %>
+
+<!-- Pagination Section -->
+<div class="row pagination-row">
+  <div class="col-12 d-flex justify-content-center">
+<%= will_paginate @jobs, class: "pagination", style: "display: flex; justify-content: center;" %>
+  </div>
+</div>
+<!-- End of Pagination Section -->
+
+
+    <!-- Button Section -->
+    <div class="d-flex justify-content-center mt-3">
+      <div class="back-to-jobs-button text-center">
+        <%= link_to 'Back to Jobs', jobs_path, class: "btn btn-secondary mb-3" %>
+      </div>
     </div>
+    <!-- End of Button Section -->
   </div>
 </body>

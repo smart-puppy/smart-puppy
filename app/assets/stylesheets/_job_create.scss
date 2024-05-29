@@ -1,108 +1,39 @@
-/* Reset some default styles */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  font-family: Arial, sans-serif;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-}
-
-header {
-  /* Your header styles here */
-}
-
-.background {
-  position: relative;
-  flex: 1; /* Fill remaining space */
-  width: 100%;
-  height: 100%;
-}
-
-.background img {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  z-index: -1; /* Ensure the image stays behind other content */
-}
-
-.content {
-  position: relative;
-  z-index: 1;
-  flex: 1; /* Fill remaining space */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
 .job-create-container {
-  max-width: 600px;
-  padding: 20px;
-  background-color: rgba(212, 253, 254, 0.9); /* Update to match the provided color */
-  border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: 50%; /* Adjust the maximum width of the container */
+  margin: 50px auto; /* Center the container horizontally and add margin from the top */
+  padding: 20px; /* Add padding inside the container */
+  background-color: #f8f9fa; /* Set background color */
+  border-radius: 10px; /* Add border radius for rounded corners */
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Add box shadow for depth */
 }
 
 .job-create-title {
-  font-size: 2rem;
-  margin-bottom: 20px;
-  text-align: center;
-  color: #0D6EFD;
+  text-align: center; /* Center the heading */
+  margin-bottom: 20px; /* Add margin below the heading */
+  color: #333; /* Set text color */
 }
 
 .job-create-form {
-  font-weight: bold;
+  margin-top: 20px; /* Add margin from the top */
 }
-
-.job-create-container label {
-  color: #0D6EFD; /* Use the same color as the title */
-}
-
 
 .job-create-row {
-  margin-bottom: 20px;
+  margin-bottom: 20px; /* Add margin between rows */
 }
 
 .job-create-col {
-  display: flex;
-  flex-direction: column;
+  display: flex; /* Use flexbox for column layout */
+  flex-direction: column; /* Set column direction */
 }
 
-.job-create-input,
+.job-create-input {
+  width: 100%; /* Set input width to 100% */
+  padding: 10px; /* Add padding inside inputs */
+  border: 1px solid #ccc; /* Add border */
+  border-radius: 5px; /* Add border radius */
+}
+
 .job-create-file-input {
-  padding: 10px;
-  border: 1px solid #574d4d;
-  border-radius: 4px;
-  font-size: 1rem;
-  width: 100%;
-  box-sizing: border-box;
-}
-
-.job-create-input:focus,
-.job-create-file-input:focus {
-  border-color: #1EDD88;
-  box-shadow: 0 0 5px rgba(30, 221, 136, 0.5);
-}
-
-.job-create-submit-btn {
-  background-color: rgba(17, 113, 162, 1); /* Update to match the provided color */
-  color: #474a59;
-  padding: 10px 20px;
-  font-size: 1.2rem;
-  width: 100%;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.job-create-submit-btn:hover {
-  background-color: rgba(17, 113, 162, 0.8); /* Lighten on hover */
+  width: 100%; /* Set input width to 100% */
+  padding: 10px; /* Add padding inside inputs */
 }
