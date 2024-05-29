@@ -36,22 +36,6 @@ body {
 }
 
 
-/* Responsive Styles */
-@media (max-width: 768px) {
-  .business-index-banner {
-    height: 200px;
-  }
-
-  .banner-title {
-    font-size: 1.5rem;
-  }
-
-  .index-business-button {
-    width: auto;
-  }
-}
-
-
 
 .pagination {
   display: flex;
@@ -75,4 +59,39 @@ body {
 
 .current {
   margin-right: 8%; /* Adjust the value as needed for the desired space */
+}
+
+
+/* Responsive Styles */
+@media (max-width: 1100px) {
+  .business-index-banner {
+    height: 200px;
+  }
+
+  .banner-title {
+    font-size: 1.5rem;
+  }
+
+  .index-business-button {
+    width: auto;
+  }
+}
+
+
+/* Custom CSS for responsive card layout */
+@media (max-width: 1100px) {
+  .job-card-container .col-md-4 {
+    flex: 0 0 100%; /* Force the cards to take full width on medium screens */
+    max-width: 100%; /* Ensure maximum width */
+
+}
+
+/* For all screen sizes */
+.job-card-container .business-card {
+  height: auto; /* Allow height to adjust based on content */
+}
+
+.job-card-container .card-image {
+  padding: 10px; /* Adjust padding as needed */
+}
 }
