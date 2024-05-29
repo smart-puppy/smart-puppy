@@ -6,11 +6,11 @@
   </div>
 
   <!-- Dashboard Container -->
-  <div class="pup-dashboard-container container-fluid mt-4">
+  <div class="pup-dashboard-container container-fluid mt-4" style="border-radius: 50px; padding-bottom: 3%">
 
     <!-- My Jobs Section -->
     <div class="pup-dashboard-section">
-      <h2 class="pup-dashboard-subtitle text-center">My Jobs</h2>
+      <h2 class="pup-dashboard-subtitle text-center" style="background-color: transparent">My Jobs</h2>
       <div class="row">
         <% if @jobs && @jobs.any? %>
           <% @jobs.each do |job| %>
@@ -70,7 +70,7 @@
           </div>
         <% end %>
       </div>
-      <div class="pup-dashboard-btn-container text-center">
+      <div class="pup-dashboard-btn-container text-center" style="background-color: transparent">
         <%= link_to 'View All My Resumes', my_resumes_path, class: "sp-default-btn-dark" %>
         <div class="post-new-job-button">
           <%= link_to "Create a New Resume", "http://www.smartpuppy-resume.tech/cv-import", class: "sp-default-btn-justins-green" %>

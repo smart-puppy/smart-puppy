@@ -57,3 +57,53 @@ body {
 .text-white {
   color: rgba(17, 113, 162, 255);
 }
+
+
+/* Media queries for responsiveness */
+@media screen and (max-width: 768px) {
+  .show-page-banner {
+    min-height: 150px;
+  }
+
+  .banner-text {
+    font-size: 24px;
+  }
+
+  .banner-subtitle {
+    font-size: 18px;
+  }
+
+  .post-new-job-button {
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
+
+  .section-divider {
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .show-page-banner {
+    min-height: 100px;
+  }
+
+  .banner-text {
+    font-size: 18px;
+  }
+
+  .banner-subtitle {
+    font-size: 14px;
+  }
+
+  .post-new-job-button {
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+
+  .section-divider {
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+}
