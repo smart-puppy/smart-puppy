@@ -2,10 +2,36 @@
 
 
 
+.sp-job-card-img {
+  border-radius: 15px;
+
+}
+
+
+.sp-job-card {
+  border-radius: 15px;
+  background-color: white;
+  background-color: rgba(245, 245, 245, 255);
+}
+
+.pup-dashboard-card {
+  width: 1000px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
+  background-color: rgba(245, 245, 245, 255);
+  border: none;
+
+  .title-for-job-card {
+    font-size: 1.25rem !important;
+  }
+
+}
+
 
 .sp-Careerpup-index-card {
   flex: 0 0 auto;
-  width: 25%;
+  width: 33.33333%;
 }
 
 .sp-default-btn {
