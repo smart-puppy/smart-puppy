@@ -8,7 +8,11 @@
     </div>
     <div class="right-section" data-controller='business'>
         <div class="element">
+            
             <h3>Become a part of the pack</h3>
+              <div class="already-user-link">
+                    <%= link_to "Already a user? Get back in here!", new_user_session_path, class: "custom-btn" %>
+                </div>
             <div class="sp-role-buttons">
                 <button class="custom-btn" id="careerpup-btn" onclick="chooseRole('careerpup')" data-action="click->business#uncheckBusiness">CareerPup</button>
                 <button class="custom-btn" id="business-btn" onclick="chooseRole('business')" data-action="click->business#checkBusiness">Business Partner</button>
@@ -35,9 +39,7 @@
                 <div class="form-actions" style="margin-top: 20px">
                     <%= f.button :submit, "Signup", class: "custom-btn" %>
                 </div>
-                <div class="already-user-link">
-                    <%= link_to "Already a user? Get back in here!", new_user_session_path, class: "custom-btn" %>
-                </div>
+              
             <% end %>
 
             <!-- Sign up with social icons -->

@@ -111,6 +111,18 @@ $secondary-color: grey;
     justify-content: center;
     margin-top: 2rem;
 
+
+  .form-actions-too-edit-user {
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+  }
+
+
+
+
+
+
     .update-btn-primary {
       background-color: $primary-color;
       border-color: $primary-color;
@@ -120,6 +132,10 @@ $secondary-color: grey;
       border-radius: 4px;
       cursor: pointer;
       margin-right: 1rem;
+      border-radius: 10px;
+      border-style: solid;
+      border-color: black;
+      border-width: 2px;
 
       &:hover {
         background-color: $hover-color;
@@ -134,7 +150,12 @@ $secondary-color: grey;
       font-size: 1rem;
       border-radius: 4px;
       cursor: pointer;
-      transition: background-color 0.3s ease;
+      margin-right: 1rem;
+      border-radius: 10px;
+      border-style: solid;
+      border-color: black;
+      border-width: 2px;
+      text-decoration: none;
 
       &:hover {
         background-color: lighten($secondary-color, 10%);
@@ -145,3 +166,13 @@ $secondary-color: grey;
     }
   }
 }
+
+
+
+
+
+
+
+
+
+

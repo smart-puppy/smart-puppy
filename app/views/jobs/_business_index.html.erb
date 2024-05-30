@@ -60,7 +60,7 @@
                       <span class="description-content"><%= job.description.truncate(18) %></span>
                     </p>
                     <p class="card-text" style="padding-bottom: 5px;"><strong>Requirements:</strong> <%= job.requirements.truncate(18) %></p>
-                    <%= link_to 'View job', job_path(job),  class: "sp-default-btn", styles: "margin: 5px;"%>
+                    <%= link_to 'View job', job_path(job), class: "custom-btn"%>
                     <p class="card-text" style="padding-top: 10px;"><small class="text-muted">Posted: <%= time_ago_in_words(job.updated_at) %></small></p>
                   </div>
                 </div>
@@ -85,10 +85,10 @@
 <!-- End of Pagination Section -->
 
 
-    <!-- Button Section -->
+    <!-- Button Section         could this not be a Component? -->
     <div class="d-flex justify-content-center mt-3">
       <div class="back-to-jobs-button text-center">
-        <%= link_to 'Back to Jobs', jobs_path, class: "sp-btn-jobs-edit sp-default-btn" %>
+        <%= link_to 'Back to Jobs', jobs_path, class: "custom-btn" %>
       </div>
     </div>
     <!-- End of Button Section -->
