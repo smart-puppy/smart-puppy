@@ -1,3 +1,7 @@
+
+<div class="background"></div>
+    <div class="content">
+
 <div class="edit-user-container">
   <h2 class="edit-h1"><strong>Edit</strong> <%= resource_name.to_s.humanize %></h2>
 
@@ -68,15 +72,13 @@
 
     <div class="form-actions">
       <%= f.button :submit, "Update", class: "update-btn-primary" %>
-      <%= link_to "Cancel", :back, class: "cancel-btn-secondary" %>
     </div>
   <% end %>
 
-  <h3>Cancel my account</h3>
-
   <div>
-    Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?", turbo_confirm: "Are you sure?" }, method: :delete, class: "cancel-btn-secondary" %>
+    <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?", turbo_confirm: "Are you sure?" }, method: :delete, class: "custom-btn form-actions-too-edit-user", style: "width: 100%;" %>
   </div>
 
-  <%= link_to "Back", :back, class: "btn btn-link" %>
+  <%= link_to "Back", :back, class: "custom-btn form-actions-too-edit-user", style: "width: 100%;" %>
+</div>
 </div>

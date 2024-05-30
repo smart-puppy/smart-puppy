@@ -27,6 +27,7 @@ class JobsController < ApplicationController
 
   def new
     @job = Job.new
+    @application = Application.new
   end
 
   def edit
@@ -62,7 +63,7 @@ class JobsController < ApplicationController
   end
 
   def job_params
-    params.require(:job).permit(:title, :description, :company_name, :requirements, :location, :skill_id, :photo)
+    params.require(:job).permit(:title, :description, :company_name, :requirements, :location, :skill_id, :photo, :latitude, :longitude)
   end
 
   def authenticate_business!

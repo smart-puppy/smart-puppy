@@ -1,4 +1,247 @@
 /* General styles */
+
+
+
+
+
+
+.custom-btn {
+  background-color: #1170A3;
+  color: #fff;
+  padding: 10px 20px;
+  font-size: 1.2rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  text-decoration: none;
+  display: inline-block;
+  text-align: center;
+
+  border-radius: 10px;
+  border-style: solid;
+  border-color: black;
+  border-width: 2px;
+}
+
+.custom-btn:hover {
+  background-color: rgba(17, 113, 162, 0.8);
+}
+
+
+
+.custom-btn-justins-green {
+  background-color: rgba(197, 255, 149, 1);
+  color: #fff;
+  padding: 10px 20px;
+  font-size: 1.2rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  text-decoration: none;
+  display: inline-block;
+  text-align: center;
+
+  border-radius: 10px;
+  border-style: solid;
+  border-color: black;
+  border-width: 2px;
+}
+
+.custom-btn:hover {
+  background-color: rgba(197, 255, 149, 0.8);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.sp-btn-jobs-edit{
+  width: 100%;
+  
+}
+
+
+
+
+
+
+
+.sp-update-btn {
+  width: 100%;
+  margin-top: 20px;
+  display: inline-block;
+  text-align: center;
+}
+
+
+.sp-job-card-img {
+  border-radius: 15px;
+
+}
+
+
+.sp-job-card {
+  border-radius: 15px;
+  background-color: white;
+  background-color: rgba(245, 245, 245, 255);
+}
+
+.pup-dashboard-card {
+  width: 1000px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
+  background-color: rgba(245, 245, 245, 255);
+  border: none;
+
+  .title-for-job-card {
+    font-size: 1.25rem !important;
+  }
+
+}
+
+
+.sp-Careerpup-index-card {
+  flex: 0 0 auto;
+  width: 33.33333%;
+}
+
+.sp-default-btn {
+  background-color: #D5FDFF;
+  text-decoration: none;
+  color: black;
+  margin-right: 5px;
+  font-size: 16px;
+  border: none;
+  border-radius: 10px;
+  padding: 7px 20px;
+  border-style: solid;
+  border-color: black;
+  border-width: 2px;
+}
+
+.sp-default-btn:hover {
+  opacity: 0.9;
+}
+
+.sp-default-btn-dark {
+  background-color: #1170A3;
+  text-decoration: none;
+  color: white;
+  margin-right: 5px;
+  font-size: 16px;
+  border: none;
+  padding: 7px 20px;
+  border-radius: 10px;
+  border-style: solid;
+  border-color: black;
+  border-width: 2px;
+}
+
+.sp-default-btn-dark:hover {
+  opacity: 0.9;
+  background-color: yellow;
+  color: black;
+  transition: 0.7s;
+}
+
+
+.sp-default-btn-dark:clickable {
+  cursor: pointer;
+}
+
+.sp-default-btn-dark.clicked {
+  background-color: yellow;
+  /* Change background color to yellow */
+  color: black;
+  /* Change text color to black for better readability */
+}
+
+.sp-role-buttons {
+  font-size: 16px;
+  border-radius: 5px;
+  padding: 10px 20px;
+  margin-top: 5%;
+  margin-bottom: 5%;
+}
+
+
+.sp-default-btn-justins-green {
+  background-color: #C5FF95;
+  text-decoration: none;
+  color: black;
+  margin-right: 5px;
+  font-size: 16px;
+  border: none;
+  border-radius: 10px;
+  padding: 7px 20px;
+  border-style: solid;
+  border-color: black;
+  border-width: 2px;
+}
+
+.sp-default-btn-dark:hover {
+  opacity: 0.9;
+}
+
+
+
+
+
+
+.containertest {
+  width: 200px !important;
+  /* Adjust image width */
+  height: 200px !important;
+  /* Adjust image height */
+  object-fit: cover !important;
+  /* Ensure the image covers the entire space */
+  display: block !important;
+  /* Make image a block element */
+  margin: 0 auto 10px !important;
+  /* Center image horizontally and add margin at the bottom */
+}
+
+
+
+
+
+.big-strong-title {
+  font-size: 1.5rem !important;
+  margin-bottom: 10px !important;
+}
+
+
+
 #body {
   background-color: rgba(17, 113, 162, 255);
   margin: 0;
@@ -10,8 +253,13 @@
 
 /* Fade-in animation */
 @keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
 }
 
 /* Shelling animation */
@@ -19,8 +267,10 @@
   0% {
     box-shadow: inset 0 0 0 0 rgba(17, 113, 162, 0);
   }
+
   100% {
-    box-shadow: inset 0 0 0 20px rgba(17, 113, 162, 1); /* Increased width of shadow */
+    box-shadow: inset 0 0 0 20px rgba(17, 113, 162, 1);
+    /* Increased width of shadow */
   }
 }
 
@@ -30,8 +280,9 @@
   max-width: 1200px;
   margin: 0 auto;
   padding: 20px;
-  border-radius: 50px;  
+  border-radius: 50px;
 }
+
 /* All sections */
 .section,
 .carousel-item,
@@ -43,36 +294,45 @@
 .section-to-start {
   background-color: rgba(212, 253, 254, 255);
   padding: 40px 20px;
-  margin: 20px auto; /* Center horizontally */
+  margin: 20px auto;
+  /* Center horizontally */
   border-radius: 10px;
-  text-align: center; /* Center text */
-  animation: fadeIn 1s ease-in-out; /* Apply fade-in animation */
+  text-align: center;
+  /* Center text */
+  animation: fadeIn 1s ease-in-out;
+  /* Apply fade-in animation */
 
   p {
     text-align: justify;
   }
 }
+
 /* Banner section */
 .banner {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center; /* Center horizontally */
+  justify-content: center;
+  /* Center horizontally */
   align-items: center;
   background-color: rgba(212, 253, 254, 255);
   color: rgba(17, 113, 162, 255);
   padding-top: 8%;
   padding-bottom: 8%;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  border-radius: 50px;   
-  margin: 0 auto; /* Center horizontally */
-  max-width: 1450px; /* Limit width */
-  animation: fadeIn 1s ease-in-out, shelling 3s ease-in-out forwards; /* Apply fade-in and shelling animation */
+  border-radius: 50px;
+  margin: 0 auto;
+  /* Center horizontally */
+  max-width: 1450px;
+  /* Limit width */
+  animation: fadeIn 1s ease-in-out, shelling 3s ease-in-out forwards;
+  /* Apply fade-in and shelling animation */
 
   .banner-content {
     flex: 1;
     margin-left: 15%;
     margin-right: 10%;
-    animation: fadeIn 3s ease-in-out; /* Apply fade-in animation */
+    animation: fadeIn 3s ease-in-out;
+    /* Apply fade-in animation */
 
     h1 {
       text-align: left;
@@ -87,7 +347,8 @@
     overflow: hidden;
     border-radius: 50%;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    animation: fadeIn 3s ease-in-out; /* Apply fade-in animation */
+    animation: fadeIn 3s ease-in-out;
+    /* Apply fade-in animation */
 
     img {
       width: 100%;
@@ -124,7 +385,10 @@
   padding: 20px;
   text-align: center;
   cursor: pointer;
-  margin-bottom: 20px; /* Add margin bottom for consistent spacing */
+  margin-bottom: 20px;
+  /* Add margin bottom for consistent spacing */
+
+
 
   h3 {
     margin-top: 0;
@@ -140,21 +404,25 @@
   }
 
   img {
-    max-width: 100%; /* Ensure images fit inside the card */
+    max-width: 100%;
+    /* Ensure images fit inside the card */
     height: auto;
     border-radius: 10px;
-    margin-bottom: 10px; /* Add margin bottom for spacing between image and text */
+    margin-bottom: 10px;
+    /* Add margin bottom for spacing between image and text */
   }
 }
 
 /* Zoom effect */
 .zoomed-image {
-  transform: scale(1.2); /* Increase scale for zoom effect */
+  transform: scale(1.2);
+  /* Increase scale for zoom effect */
 }
 
 @media screen and (max-width: 768px) {
   .carousel-card {
-    padding: 10px; /* Reduce padding for smaller devices */
+    padding: 10px;
+    /* Reduce padding for smaller devices */
   }
 }
 
@@ -164,9 +432,11 @@
   flex-wrap: wrap;
   background-color: rgba(212, 253, 254, 255);
   padding: 40px 20px;
-  margin: 20px auto; /* Center horizontally */
+  margin: 20px auto;
+  /* Center horizontally */
   border-radius: 10px;
-  animation: fadeIn 1s ease-in-out; /* Apply fade-in and shelling animation */
+  animation: fadeIn 1s ease-in-out;
+  /* Apply fade-in and shelling animation */
 }
 
 .ats-content {
@@ -212,19 +482,24 @@
 
   .questions-image {
     flex: 1;
-    max-width: 50%; /* Take up half of the container */
+    max-width: 50%;
+    /* Take up half of the container */
     overflow: hidden;
 
     img {
-      width: 100%; /* Ensure the image fills its container */
-      height: auto; /* Maintain aspect ratio */
-      display: block; /* Prevent any whitespace below the image */
+      width: 100%;
+      /* Ensure the image fills its container */
+      height: auto;
+      /* Maintain aspect ratio */
+      display: block;
+      /* Prevent any whitespace below the image */
     }
   }
 
   .questions-content {
     flex: 1;
-    max-width: 50%; /* Take up half of the container */
+    max-width: 50%;
+    /* Take up half of the container */
     padding: 20px;
 
     .accordion-item {
@@ -240,7 +515,8 @@
 }
 
 .section-to-start {
-  text-align: center; /* Center the content horizontally */
+  text-align: center;
+  /* Center the content horizontally */
   padding: 40px 20px;
 
   .lower-button {
@@ -292,7 +568,8 @@ footer {
       color: white;
       text-decoration: none;
       margin: 0 10px;
-      font-size: 24px; /* Increase font size */
+      font-size: 24px;
+      /* Increase font size */
       transition: transform 0.3s;
 
       &:hover {
@@ -383,18 +660,21 @@ footer {
 /* For smaller devices */
 @media screen and (max-width: 768px) {
   .ats-section {
-    flex-direction: column-reverse; /* Reverse the flex direction */
+    flex-direction: column-reverse;
+    /* Reverse the flex direction */
   }
 
   .ats-content,
   .ats-image {
-    max-width: 100%; /* Allow content to take full width */
+    max-width: 100%;
+    /* Allow content to take full width */
     padding: 20px;
     box-sizing: border-box;
   }
 
   .ats-image img {
-    max-width: 100%; /* Ensure image fills its container */
+    max-width: 100%;
+    /* Ensure image fills its container */
     height: auto;
     border-radius: 10px;
   }
@@ -409,24 +689,42 @@ footer {
 /* For smaller devices */
 @media screen and (max-width: 768px) {
   .section-questions {
-    flex-direction: column; /* Stack items vertically */
-    align-items: center; /* Center items horizontally */
+    flex-direction: column;
+    /* Stack items vertically */
+    align-items: center;
+    /* Center items horizontally */
   }
 
   .questions-content,
   .questions-image {
-    width: 100%; /* Take full width */
+    width: 100%;
+    /* Take full width */
     padding: 20px;
     box-sizing: border-box;
   }
 
   .accordion-item {
-    width: 100%; /* Take full width */
-    text-align: center; /* Center accordion items */
+    width: 100%;
+    /* Take full width */
+    text-align: center;
+    /* Center accordion items */
   }
 
   .accordion-button {
-    width: 100%; /* Take full width */
-    text-align: center; /* Center accordion button */
+    width: 100%;
+    /* Take full width */
+    text-align: center;
+    /* Center accordion button */
   }
+}
+
+
+
+.sp-jobs {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 0 auto;
+  padding: 20px;
+  max-width: 1200px;
 }

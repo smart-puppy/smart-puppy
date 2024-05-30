@@ -1,151 +1,94 @@
-/* Business Index Container */
 body {
+  font-family: Arial, sans-serif;
   background-color: rgba(17, 113, 162, 255);
+  margin: 0;
+  padding: 0;
 }
 
-.business-index-container {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  background-color: rgba(212, 253, 254, 1);
-  padding: 0px;
-  padding-bottom: 5%;
-  border-radius: 50px;
-
-  max-width: 90%; /* Make the container full width */
+.container-fluid.business-index-container {
+  background-color: rgba(212, 253, 254, 255);
+  max-width: 90%;
+  padding: 20px;
 }
 
-/* Banner styles */
-.business-index-banner {
+/* Banner styling */
+.show-page-banner {
+  background-image: url('/assets/business-man-bunner.jpg');
+  min-height: 200px;
   position: relative;
-  width: 100%; /* Make the banner full width */
-  height: 600px; /* Adjust height as needed */
-  background-size: cover;
-  background-position: center;
-  z-index: 1; /* Ensure banner appears above other elements */
-
-}
-
-.banner-title {
-  text-align: center;
-  color: white; /* Change color as needed */
-  font-size: 50px; /* Adjust font size as needed */
-  margin-bottom: 20px; /* Adjust spacing as needed */
-}
-
-.business-index-banner .banner-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%; /* Make it full width */
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
   display: flex;
   justify-content: center;
   align-items: center;
+  text-align: center;
+  border-radius: 50px;
 }
 
 .banner-text {
-  background-color: rgba(255, 255, 255, 0.7); /* Adjust the opacity and color as needed */
-  padding: 20px;
-  color: black; /* Change color as needed */
-  font-size: 30px; /* Adjust font size as needed */
-  text-align: center;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
-/* Container styles */
-.business-index-banner .container-searchform {
-  width: 100%;
-  position: relative;
-  z-index: 2; /* Ensure search form appears above other elements */
+
+.container-searchform {
+  margin-top: 20px;
 }
 
 
 
-.card-body {
-  margin-left: 5%;
-  margin-right: 5%;
-}
-
-/* Form styles */
-.business-index-banner .business-form-search {
+.pagination {
   display: flex;
-  align-items: center;
+  justify-content: space-evenly; /* Adjusts spacing between elements */
+  width: 40%;
 }
 
-.business-index-banner .form-control,
-.business-index-banner .form-select,
-.business-index-banner .btn {
-  margin-right: 10px;
+
+
+.previous_page
+ {
+  padding-right: 2%;
 }
 
-.business-index-banner .btn:last-child {
-  margin-right: 0;
+
+.next_page {
+
+  padding-left: 2%;
 }
 
-.business-index-banner .form-control {
-  padding: 8px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
+
+.current {
+  margin-right: 8%; /* Adjust the value as needed for the desired space */
 }
 
-.business-index-banner .btn {
-  padding: 8px 16px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  text-decoration: none;
-  color: #fff;
-}
 
-.business-index-banner .btn-primary {
-  background-color: #007bff;
-}
+/* Responsive Styles */
+@media (max-width: 1100px) {
+  .business-index-banner {
+    height: 200px;
+  }
 
-.business-index-banner .btn-secondary {
-  background-color: #6c757d;
-}
+  .banner-title {
+    font-size: 1.5rem;
+  }
 
-.business-index-banner .form-select {
-  padding: 8px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-}
-
-.row {
-  margin-top: 20px; /* Add spacing between the banner and job cards */
-}
-
-/* Center buttons */
-.business-index-buttons {
-  max-width: 90%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 20px; /* Add margin below the button */
-  margin-left: 0 auto; /* Center the button */
-}
-
-.business-btn {
-  margin-right: 10px;
-}
-
-/* Adjustments for small screens */
-@media (max-width: 576px) {
-  .business-index-container {
-    padding: 10px;
+  .index-business-button {
+    width: auto;
   }
 }
 
-/* Enlarge card on hover */
-.show-business-card,
-.show-business-applications .card {
-  transition: transform 0.3s ease;
-  transform: scale(0.8); /* Smaller scale for normal state */
-  z-index: 0; /* Ensure cards appear below banner */
+
+/* Custom CSS for responsive card layout */
+@media (max-width: 1100px) {
+  .job-card-container .col-md-4 {
+    flex: 0 0 100%; /* Force the cards to take full width on medium screens */
+    max-width: 100%; /* Ensure maximum width */
+
 }
 
-.show-business-card:hover,
-.show-business-applications .card:hover {
-  transform: scale(1.1); /* Larger scale for hover state */
+/* For all screen sizes */
+.job-card-container .business-card {
+  height: auto; /* Allow height to adjust based on content */
+}
+
+.job-card-container .card-image {
+  padding: 10px; /* Adjust padding as needed */
+}
 }

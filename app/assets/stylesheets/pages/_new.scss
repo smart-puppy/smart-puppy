@@ -1,3 +1,15 @@
+
+.signin-container{
+  margin-top: 3%;
+}
+
+.sp-application-form{
+  margin: 100px;
+  margin-bottom: 400px;
+  margin-top: 5%;
+}
+
+
 .signin-container {
   display: flex;
   width: 80%;
@@ -16,9 +28,11 @@
   }
 
   .left-section {
+    border-radius: 30px;
     background-color: #f0f0f0;
     text-align: center;
     color: rgba(17,113,162,255);
+
   }
 
   .left-section h1 {
@@ -50,34 +64,10 @@
 
 
   .divider {
-    width: 1px;
-    background-color: black;
+    width: 2px;
+    background-color: gray;
   }
 
-  .role-buttons {
-    color: black;
-    font-size: 16px;
-    border: none;
-    border-radius: 5px;
-    padding: 10px 20px;
-    margin-top: 5%;
-    margin-bottom: 5%;
-  }
-
-  .role-button {
-    margin: 0 10px; /* Add space between buttons */
-    padding: 10px 20px; /* Add padding for better clickability */
-    cursor: pointer; /* Change cursor to pointer on hover */
-  }
-
-  .role-button.active {
-    background-color: #333; /* Change background color when button is active */
-    color: #fff; /* Change text color when button is active */
-  }
-
-  .role-button:focus {
-    outline: none; /* Remove default focus outline */
-  }
 
   .hidden-checkbox-container {
     display: none;
@@ -107,11 +97,42 @@
 }
 
 
+.custom-signup-btn {
+  width: 200px; /* Adjust the width as needed */
+  height: auto; /* Adjust the height as needed */
+  display: inline-block;
+  text-align: center;
+  line-height: 40px; /* Should be equal to height for vertical centering */
+}
 
-.sp-signup{
-  text-decoration: none;
+
+.already-user-link {
+  margin-top: 20px; /* Adjust the value according to your preference */
+}
 
 
 
 
+
+
+/* Media queries for responsiveness */
+@media screen and (max-width: 768px) {
+  .signin-container {
+    width: 100%; /* Full width on small screens */
+  }
+
+  .left-section, .right-section {
+    padding: 20px; /* Reduce padding on small screens */
+  }
+
+  .left-section img {
+    border-radius: 0; /* Remove border radius on small screens */
+    margin-bottom: 20px; /* Add space between logo and text on small screens */
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .signin-container {
+    margin-top: 5%; /* Adjust the top margin for smaller devices */
+  }
 }

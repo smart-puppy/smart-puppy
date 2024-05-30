@@ -1,72 +1,39 @@
-$primary-color: #1EDD88;
-$hover-color: darken($primary-color, 10%);
-
 .job-create-container {
-  max-width: 600px;
-  margin: 0 auto;
-  padding: 20px;
-  background-color: #f9f9f9;
-  border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  margin-top: 60px;
-  margin-bottom: 100px;
-
+  width: 50%; /* Adjust the maximum width of the container */
+  margin: 50px auto; /* Center the container horizontally and add margin from the top */
+  padding: 20px; /* Add padding inside the container */
+  background-color: #f8f9fa; /* Set background color */
+  border-radius: 10px; /* Add border radius for rounded corners */
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Add box shadow for depth */
 }
 
 .job-create-title {
-  font-size: 2rem;
-  margin-bottom: 20px;
-  text-align: center;
-  color: #0D6EFD;
+  text-align: center; /* Center the heading */
+  margin-bottom: 20px; /* Add margin below the heading */
+  color: #333; /* Set text color */
 }
 
 .job-create-form {
-  display: flex;
-  flex-direction: column;
-  color: #0D6EFD;
-  font-weight: bold;
+  margin-top: 20px; /* Add margin from the top */
 }
 
 .job-create-row {
-  margin-bottom: 20px;
+  margin-bottom: 20px; /* Add margin between rows */
 }
 
 .job-create-col {
-  display: flex;
-  flex-direction: column;
+  display: flex; /* Use flexbox for column layout */
+  flex-direction: column; /* Set column direction */
 }
 
-.job-create-input,
+.job-create-input {
+  width: 100%; /* Set input width to 100% */
+  padding: 10px; /* Add padding inside inputs */
+  border: 1px solid #ccc; /* Add border */
+  border-radius: 5px; /* Add border radius */
+}
+
 .job-create-file-input {
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  font-size: 1rem;
-  width: 100%;
-  box-sizing: border-box;
-}
-
-.job-create-input:focus,
-.job-create-file-input:focus {
-  border-color: $primary-color;
-  box-shadow: 0 0 5px rgba($primary-color, 0.5);
-}
-
-.job-create-submit-btn {
-  background-color: #1EDD88;
-  color: #fff;
-  padding: 10px 20px;
-  font-size: 1.2rem;
-  width: 400px;
-
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-  align-self: center;
-}
-
-.job-create-submit-btn:hover {
-  background-color: $hover-color;
-  color: #f9f9f9;
+  width: 100%; /* Set input width to 100% */
+  padding: 10px; /* Add padding inside inputs */
 }

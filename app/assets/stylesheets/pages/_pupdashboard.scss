@@ -1,132 +1,109 @@
-/* Reset CSS */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-/* Pup Dashboard Container */
-.pup-dashboard-container {
-  margin-top: 20px;
-  padding: 20px;
-  background-color: rgba(212, 253, 254, 255);
-  border-radius: 10px;
-}
-
-/* Pup Dashboard Title */
-.pup-dashboard-title {
-  text-align: center;
-  color: rgba(17, 113, 162, 255);
-  font-size: 2.5em;
-  margin-bottom: 30px;
-  font-family: Arial, sans-serif;
-}
-
-/* Pup Dashboard Section */
-.pup-dashboard-section {
-  padding: 20px;
-  margin-bottom: 40px;
+body {
   background-color: white;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-/* Pup Dashboard Subtitle */
-.pup-dashboard-subtitle {
-  text-align: center;
   color: rgba(17, 113, 162, 255);
+}
+
+.pup-dashboard-container {
+  background-color: rgba(212, 253, 254, 255);
+  width: 90%; /* Updated to 100% */
+  padding: 0 15px; /* Updated padding */
+  text-align: center;
+  margin: 0 auto; /* Centering the container */
+}
+
+.show-page-banner {
+  background-image: url('/assets/business-man-bunner.jpg');
+  min-height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  flex-direction: column;
+  border-radius: 50px;
   margin-bottom: 20px;
-  font-size: 1.8em;
 }
 
-/* Pup Dashboard Card */
-.pup-dashboard-card {
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s;
-  background-color: rgba(245, 245, 245, 255);
-  border: none;
+.banner-text {
+  font-size: 32px;
+  margin-bottom: 10px;
 }
 
-/* Pup Dashboard Card Hover */
-.pup-dashboard-card:hover {
-  transform: scale(1.05);
+.banner-subtitle {
+  font-size: 24px;
+  margin-bottom: 10px;
 }
 
-/* Pup Dashboard Card Body */
-.pup-dashboard-card .card-body {
-  text-align: center;
-}
-
-/* Pup Dashboard Button Container */
-.pup-dashboard-btn-container {
-  text-align: center;
+.pup-dashboard-section {
   margin-top: 20px;
 }
 
-.pup-dashboard-section.my-jobs > .row {
-  color: white;
+.post-new-job-button {
+  margin-top: 50px; /* Adjusted margin */
+  margin-bottom: 50px; /* Adjusted margin */
 }
 
-/* Pup Dashboard Button Link */
-.pup-dashboard-btn-link {
-  color: rgba(17, 113, 162, 255);
-  text-decoration: none;
-  background-color: rgba(212, 253, 254, 255);
-  border: 1px solid rgba(17, 113, 162, 255);
-  padding: 10px 20px;
-  border-radius: 5px;
-  transition: background-color 0.3s, color 0.3s;
+.section-divider {
+  border-top: 2px solid rgb(6, 6, 6);
+  margin-top: 40px; /* Added space above */
+  margin-bottom: 40px; /* Added space below */
 }
 
-/* Pup Dashboard Button Link Hover */
-.pup-dashboard-btn-link:hover {
-  background-color: rgba(17, 113, 162, 255);
-  color: white;
-}
-
-/* Pup Dashboard Button Primary */
-.pup-dashboard-btn-primary {
-  background-color: rgba(17, 113, 162, 255);
-  border: none;
-  color: white;
-  padding: 10px 20px;
-  border-radius: 5px;
-  transition: background-color 0.3s;
-}
-
-/* Pup Dashboard Button Primary Hover */
-.pup-dashboard-btn-primary:hover {
-  background-color: rgba(13, 90, 130, 255);
-}
-
-/* Pup Dashboard Button Secondary */
-.pup-dashboard-btn-secondary {
-  background-color: rgba(212, 253, 254, 255);
-  border: 1px solid rgba(17, 113, 162, 255);
-  color: rgba(17, 113, 162, 255);
-  padding: 10px 20px;
-  border-radius: 5px;
-  transition: background-color 0.3s, color 0.3s;
-}
-
-/* Pup Dashboard Button Secondary Hover */
-.pup-dashboard-btn-secondary:hover {
-  background-color: rgba(17, 113, 162, 255);
-  color: white;
-}
-
-/* Margin Top 4 */
-.mt-4 {
-  margin-top: 40px;
-}
-
-/* Centered Text */
-.centered-text {
+/* Centering Text */
+.text-center {
   text-align: center;
+}
 
+/* Text Color */
+.text-white {
+  color: rgba(17, 113, 162, 255);
+}
+
+
+/* Media queries for responsiveness */
+@media screen and (max-width: 768px) {
+  .show-page-banner {
+    min-height: 150px;
   }
 
-  p.text-center {
-    background-color: white;
+  .banner-text {
+    font-size: 24px;
   }
+
+  .banner-subtitle {
+    font-size: 18px;
+  }
+
+  .post-new-job-button {
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
+
+  .section-divider {
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .show-page-banner {
+    min-height: 100px;
+  }
+
+  .banner-text {
+    font-size: 18px;
+  }
+
+  .banner-subtitle {
+    font-size: 14px;
+  }
+
+  .post-new-job-button {
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+
+  .section-divider {
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+}

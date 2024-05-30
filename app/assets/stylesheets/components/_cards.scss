@@ -1,0 +1,65 @@
+/* cards.css */
+
+/* Card Container */
+.sp-Careerpup-index-card {
+  margin-bottom: 1rem; /* Adjust margin as needed */
+}
+
+/* Card Body */
+.card-body {
+  padding: 1rem; /* Adjust padding as needed */
+  text-align: left;
+}
+
+/* Card Title */
+.card-title {
+  font-size: 1.25rem; /* Adjust font size as needed */
+  margin-bottom: 0.5rem; /* Adjust margin as needed */
+}
+
+/* Card Text */
+.card-text {
+  margin-bottom: 0.5rem; /* Adjust margin as needed */
+}
+
+/* Card Link Button */
+.btn-link {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+
+/* Job Description */
+.description-title {
+  font-weight: bold;
+}
+
+.description-content {
+  margin-left: 0.5rem; /* Adjust margin as needed */
+}
+
+/* Card Image */
+.pup-dashboard-card img {
+  width: 90%; /* Ensure image fills the container */
+  height: auto; /* Maintain aspect ratio */
+  border-radius: 0.25rem; /* Add rounded corners */
+  margin: 0 auto; /* Center the image horizontally */
+}
+
+
+.card-image {
+  margin-bottom: 10px; /* Add margin to bottom */
+  margin-top: 2%;
+  margin-left: 2%;
+  margin-right: 2%;
+}
+
+
+@media (max-width: 1100px) {
+  .job-card-container .col-md-4 {
+    flex: 0 0 100%; /* Force the cards to take full width on medium screens */
+    max-width: 100%; /* Ensure maximum width */
+
+}
+
+}

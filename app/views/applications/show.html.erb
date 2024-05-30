@@ -1,6 +1,7 @@
 <div class="container">
-  <div class="card mb-3 mx-auto p-0 p-md-5" style="max-width: 800px;">
+  <div class="card mb-3 mx-auto p-0 p-md-5" style="max-width: 800px; border-radius: 50px; background-color: rgba(212,253,254,255)">
     <div class="card-body">
+
       <h2 class="card-title"><%= @application.user.first_name %> <%= @application.user.middle_name %> <%= @application.user.last_name %></h2>
       <p class="card-text"><strong>Username:</strong> <%= @application.user.username %></p>
       <p class="card-text"><strong>Email:</strong> <%= @application.user.email %></p>
@@ -14,7 +15,20 @@
       <p class="card-text"><strong>Cover Letter:</strong> <%= @application.cover_letter %></p>
       <p class="card-text"><strong>Resume File:</strong> <%= link_to 'View Resume', rails_blob_path(@application.cv_file_cloudinary, disposition: "attachment") %></p>
       <p class="card-text"><strong>Applied:</strong> <%= time_ago_in_words(@application.created_at) %> ago</p>
-      <%= link_to 'Back to Job', job_path(@application.job), class: "btn btn-secondary" %>
+      <p class="card-text"><strong>Updated:</strong> <%= time_ago_in_words(@application.updated_at) %> ago</p>
+
+
+
+        <div class="d-flex justify-content-center mt-3">
+      <div class="back-to-jobs-button text-center">
+        <%= link_to 'Back to Jobs', job_path(@application.job), class: "btn btn-secondary mb-3" %>
+
+
+      </div>
+    </div>
+
+
+
     </div>
   </div>
 </div>

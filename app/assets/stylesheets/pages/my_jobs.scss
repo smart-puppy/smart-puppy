@@ -3,6 +3,7 @@
   max-width: 1200px;
   margin: 0 auto;
   padding: 20px;
+
 }
 
 .jobs-title {
@@ -117,3 +118,12 @@
 .jobs-text-muted {
   color: #6c757d;
 }
+
+
+
+  @media (max-width: 560px) {
+    .col-md-4, .col-md-8 {
+      flex: 0 0 100%;
+      max-width: 100%;
+    }
+  }

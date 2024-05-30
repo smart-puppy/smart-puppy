@@ -1,58 +1,66 @@
+<body>
+
 <div class="signin-container container">
     <div class="left-section">
         <%= image_tag "logoicon.png", alt: "Logo" %>
         <h1>Stay ahead of the pack with</h1>
         <h1><strong>Smart Puppy</strong></h1>
     </div>
-
-    <div class="divider"></div>
-
     <div class="right-section" data-controller='business'>
         <div class="element">
+            
             <h3>Become a part of the pack</h3>
-            <%= link_to "Already a user? Get back in here!", new_user_session_path, style: "text-decoration: none; color: black;" %>
-            <div class="role-buttons">
-                <button class="role-button" id="careerpup-btn" onclick="chooseRole('careerpup')" data-action="click->business#uncheckBusiness">CareerPup</button>
-                <button class="role-button" id="business-btn" onclick="chooseRole('business')" data-action="click->business#checkBusiness">Business Partner</button>
+              <div class="already-user-link">
+                    <%= link_to "Already a user? Get back in here!", new_user_session_path, class: "custom-btn" %>
+                </div>
+            <div class="sp-role-buttons">
+                <button class="custom-btn" id="careerpup-btn" onclick="chooseRole('careerpup')" data-action="click->business#uncheckBusiness">CareerPup</button>
+                <button class="custom-btn" id="business-btn" onclick="chooseRole('business')" data-action="click->business#checkBusiness">Business Partner</button>
             </div>
 
             <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-                <div class="form-inputs">
+                <div class="form-inputs" style="text-align: center;">
                     <%= f.input :email, required: false, autofocus: true, input_html: { autocomplete: "email" } %>
                     <%= f.input :password, required: false, input_html: { autocomplete: "current-password" } %>
                     <%= f.input :password_confirmation, required: false, input_html: { autocomplete: "current-password" } %>
 
-                    <div class="hidden-checkbox-container">
+                    <div class="hidden-checkbox-container" style="display: none;">
                         <%= f.input :business, required: true, input_html: { data: { business_target: "checkbox" } } %>
                     </div>
 
-                    <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
+                   <div class="remember-me-container" style="text-align: center;">
+    <%= f.label :remember_me, class: "remember-me-label" do %>
+        <%= f.check_box :remember_me, class: "custom-checkbox" if devise_mapping.rememberable? %>
+        Remember Me
+    <% end %>
+</div>
+
                 </div>
-                <div class="form-actions">
-                    <%= f.button :submit, "Signup" %>
+                <div class="form-actions" style="margin-top: 20px">
+                    <%= f.button :submit, "Signup", class: "custom-btn" %>
                 </div>
+              
             <% end %>
 
             <!-- Sign up with social icons -->
-            <div class="social-icons">
-                <a href="#" class="social-icon"><i class="fab fa-facebook"></i>Sign up with</a>
-                <a href="#" class="social-icon"><i class="fab fa-linkedin"></i>Sign up with</a>
-                <a href="#" class="social-icon"><i class="fab fa-instagram"></i>Sign up with</a>
-            </div>
+
         </div>
     </div>
 </div>
 
-
 <script>
     // JavaScript function to handle selecting role buttons
     function chooseRole(role) {
-        // Remove 'active' class from all buttons
-        document.querySelectorAll('.role-button').forEach(button => {
-            button.classList.remove('active');
-        });
+        const clickedButton = document.getElementById(`${role}-btn`);
+        const otherButton = role === 'careerpup' ? document.getElementById('business-btn') : document.getElementById('careerpup-btn');
 
-        // Add 'active' class to the clicked button
-        document.getElementById(`${role}-btn`).classList.add('active');
+        // Toggle 'clicked' class for the clicked button
+        clickedButton.classList.toggle('clicked');
+
+        // Remove 'clicked' class from the other button
+        otherButton.classList.remove('clicked');
     }
 </script>
+
+
+</body>

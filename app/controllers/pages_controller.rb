@@ -20,6 +20,7 @@ class PagesController < ApplicationController
   def my_jobs
     @user = current_user
     @jobs = @user.applied_jobs
+
   end
 
   def my_resumes

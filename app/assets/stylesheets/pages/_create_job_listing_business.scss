@@ -1,58 +1,54 @@
-/* Center the job creation form on the page */
 .job-create-container {
-  width: 80%;
-  margin: 0 auto;
-  padding: 50px 0;
+  max-width: 50%; /* Adjust the maximum width of the container */
+  margin: 50px auto; /* Center the container horizontally and add margin from the top */
+  padding: 20px; /* Add padding inside the container */
+  background-color: #f8f9fa; /* Set background color */
+  border-radius: 10px; /* Add border radius for rounded corners */
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Add box shadow for depth */
 }
 
-/* Style the form title */
 .job-create-title {
-  text-align: center;
-  font-size: 24px;
-  margin-bottom: 30px;
+  text-align: center; /* Center the heading */
+  margin-bottom: 20px; /* Add margin below the heading */
+  color: #333; /* Set text color */
 }
 
-/* Style the form rows */
+.job-create-form {
+  margin-top: 20px; /* Add margin from the top */
+}
+
 .job-create-row {
-  margin-bottom: 20px;
+  margin-bottom: 20px; /* Add margin between rows */
 }
 
-/* Style the form columns */
 .job-create-col {
-  width: 100%;
+  display: flex; /* Use flexbox for column layout */
+  flex-direction: column; /* Set column direction */
 }
 
-/* Style the form inputs */
 .job-create-input {
-  width: 100%;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  box-sizing: border-box;
+  width: 100%; /* Set input width to 100% */
+  padding: 10px; /* Add padding inside inputs */
+  border: 1px solid #ccc; /* Add border */
+  border-radius: 5px; /* Add border radius */
 }
 
-/* Style the file input */
 .job-create-file-input {
-  width: 100%;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  box-sizing: border-box;
+  width: 100%; /* Set input width to 100% */
+  padding: 10px; /* Add padding inside inputs */
 }
 
-/* Style the submit button */
 .job-create-submit-btn {
-  width: 100%;
-  padding: 10px;
-  background-color: rgba(17,113,162,255);
-  color: #fff;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s;
+  width: 100%; /* Set button width to 100% */
+  padding: 10px; /* Add padding inside button */
+  background-color: #1e90ff; /* Button background color */
+  color: white; /* Button text color */
+  border: none; /* Remove border */
+  border-radius: 5px; /* Add border radius */
+  cursor: pointer; /* Show pointer cursor on hover */
+  transition: opacity 0.3s ease; /* Smooth transition on hover */
 }
 
-/* Change button color on hover */
 .job-create-submit-btn:hover {
-  background-color: rgba(212,253,254,255);
+  opacity: 0.8; /* Adjust the opacity for the hover effect */
 }
