@@ -24,15 +24,15 @@
                   <% end %>
                 </div>
                 <div class="card-body">
-                  <h5 class="card-title"><strong>Job Title:</strong> <%= job.title.truncate(8) %></h5>
-                  <p class="card-text"><strong>Company Name:</strong> <%= job.company_name.truncate(8) %></p>
-                  <p class="card-text"><strong>Location:</strong> <%= job.location.truncate(8) %></p>
+                  <h5 class="card-title"><strong>Job Title:</strong> <%= job.title.truncate(18) %></h5>
+                  <p class="card-text"><strong>Company Name:</strong> <%= job.company_name.truncate(18) %></p>
+                  <p class="card-text"><strong>Location:</strong> <%= job.location.truncate(18) %></p>
                   <p class="card-text">
                     <strong class="description-title">Job Description:</strong>
-                    <span class="description-content"><%= job.description.truncate(8) %></span>
+                    <span class="description-content"><%= job.description.truncate(18) %></span>
                   </p>
-                  <p class="card-text"><strong>Requirements:</strong> <%= job.requirements.truncate(8) %></p>
-                  <%= link_to 'View job', job_path(job), class: "btn btn-link business-btn" %>
+                  <p class="card-text"><strong>Requirements:</strong> <%= job.requirements.truncate(18) %></p>
+                  <%= link_to 'View job', job_path(job), class: "custom-btn" %>
                   <p class="card-text"><small class="text-muted">Posted: <%= time_ago_in_words(job.updated_at) %></small></p>
                 </div>
               </div>
@@ -71,9 +71,9 @@
         <% end %>
       </div>
       <div class="pup-dashboard-btn-container text-center" style="background-color: transparent">
-        <%= link_to 'View All My Resumes', my_resumes_path, class: "sp-default-btn-dark" %>
+        <%= link_to 'View All My Resumes', my_resumes_path, class: "custom-btn" %>
         <div class="post-new-job-button">
-          <%= link_to "Create a New Resume", "http://www.smartpuppy-resume.tech/cv-import", class: "sp-default-btn-justins-green" %>
+          <%= link_to "Create a New Resume", "http://www.smartpuppy-resume.tech/cv-import", class: "custom-btn-justins-green" %>
         </div>
       </div>
     </div>
