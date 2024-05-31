@@ -50,7 +50,7 @@
               <h5 class="card-title"><%= application.user.first_name %> <%= application.user.last_name %></h5>
               <p class="card-text"><strong>Status:</strong> <%= application.status %></p>
               <p class="card-text"><strong>Applied:</strong> <%= time_ago_in_words(application.created_at) %> ago</p>
-              <%= link_to 'View Application', job_application_path(application.job, application), class: "btn btn-primary" %>
+              <%= link_to 'View Application', job_application_path(application.job, application), class: "custom-btn" %>
             </div>
           </div>
         <% end %>
