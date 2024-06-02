@@ -68,7 +68,7 @@ class JobsController < ApplicationController
 
   def authenticate_business!
     unless current_user&.business?
-      redirect_to jobs_path, alert: 'You are not authorized to edit this job.'
+      redirect_to jobs_path, alert: 'You are not authorised to edit this job.'
     end
   end
 end
