@@ -11,6 +11,6 @@ class Job < ApplicationRecord
   validates :requirements, presence: true
   validates :location, presence: true
 
-  # Geocoder attributes
-  after_validation :geocode, if: :location_changed?
+ #  Geocoder attributes
+ # after_validation :geocode, if: :location_changed?
 end
