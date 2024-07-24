@@ -103,7 +103,7 @@ puts "Reseeding the seeds file"
     education: Faker::Educator.course,
     business: false
   )
-  user.photo.attach(io: URI.open('https://source.unsplash.com/200x200/?user'), filename: 'user-avatar.jpg')
+  user.photo.attach(io: URI.open('https://picsum.photos/200'), filename: 'user-avatar.jpg')
   user.save!
 end
 
@@ -119,7 +119,7 @@ end
     industry: Faker::Company.industry,
     location: Faker::Address.city
   )
-  user.photo.attach(io: URI.open('https://source.unsplash.com/200x200/?user'), filename: 'user-avatar.jpg')
+  user.photo.attach(io: URI.open('https://picsum.photos/200'), filename: 'user-avatar.jpg')
   user.save!
 end
 
@@ -133,7 +133,7 @@ end
     location: Faker::Address.city,
     user: User.where(business: true).sample
   )
-  job.photo.attach(io: URI.open('https://source.unsplash.com/1600x900/?company-logo'), filename: 'company-logo.jpg')
+  job.photo.attach(io: URI.open('https://picsum.photos/800/400'), filename: 'company-logo.jpg')
   job.save!
 end
 
